@@ -1,0 +1,22 @@
+.forum-edited {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $c-border-light;
+
+    &:last-of-type {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    &__date {
+        margin-top: 10px;
+        @include fontSize(14px);
+        color: $c-border;
+    }
+
+    p, ul, ol, blockquote {
+        margin: .5rem 0;
+    }
+
+}

@@ -1,0 +1,30 @@
+.context-menu {
+    padding: 10px 0;
+    cursor: pointer;
+
+    .context-menu-icon {
+        display: block;
+
+        rect {
+            transition: none;
+        }
+    }
+
+    &:hover {
+        .context-menu-icon {
+            rect {
+                fill: $c_pink;
+            }
+        }
+    }
+}
+
+.react-contexify__item__content {
+    font-weight: $fw_bold;
+    color: $c_pink !important;
+}
+
+.react-contexify__item:not(.react-contexify__item--disabled):hover > .react-contexify__item__content {
+    background-color: $c_pink !important;
+    color: $c_yellow !important;
+}

@@ -1,0 +1,57 @@
+.pika-single {
+    .is-selected {
+        .pika-button {
+            color: $c_yellow;
+            background: $c_pink;
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
+
+    .is-today {
+        .pika-button {
+            color: $c_pink;
+        }
+    }
+
+    .pika-table {
+        th {
+            color: $fc_prim;
+
+            abbr {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .pika-prev,
+    .pika-next {
+        background-image: url('data:image/svg+xml;utf8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjgwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6IzMzMzt9LmNscy0ye2ZpbGw6IzAwYTdlNTt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPkFrdGl2IDE8L3RpdGxlPjxnIGlkPSJMYWdfMiIgZGF0YS1uYW1lPSJMYWcgMiI+PGcgaWQ9IkxhZ18xLTIiIGRhdGEtbmFtZT0iTGFnIDEiPjxyZWN0IGNsYXNzPSJjbHMtMSIgeT0iMTIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiLz48cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjQwIiB5PSI4MCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIi8+PHJlY3QgY2xhc3M9ImNscy0xIiB4PSI4MCIgeT0iNDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIvPjxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iMTIwIiB3aWR0aD0iODAiIGhlaWdodD0iNDAiLz48cmVjdCBjbGFzcz0iY2xzLTEiIHg9IjQwIiB5PSIxNjAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIvPjxyZWN0IGNsYXNzPSJjbHMtMSIgeD0iODAiIHk9IjIwMCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIi8+PHJlY3QgY2xhc3M9ImNscy0xIiB4PSIxMjAiIHk9IjI0MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjQwIi8+PHJlY3QgY2xhc3M9ImNscy0xIiB4PSIxNjAiIHk9IjQwIiB3aWR0aD0iNDAiIGhlaWdodD0iMjAwIi8+PHBvbHlnb24gcG9pbnRzPSIwIDEyMCA0MCAxMjAgNDAgODAgODAgODAgODAgNDAgMTIwIDQwIDEyMCAwIDIwMCAwIDIwMCAyODAgMTIwIDI4MCAxMjAgMjQwIDgwIDI0MCA4MCAyMDAgNDAgMjAwIDQwIDE2MCAwIDE2MCAwIDEyMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxNjAgNDAgMTYwIDI0MCAxMjAgMjQwIDEyMCAyMDAgODAgMjAwIDgwIDE2MCA0MCAxNjAgNDAgMTIwIDgwIDEyMCA4MCA4MCAxMjAgODAgMTIwIDQwIDE2MCA0MCIvPjwvZz48L2c+PC9zdmc+');
+        opacity: .75;
+        background-size: 60% 60%;
+    }
+    
+    .pika-next,
+    .is-rtl .pika-prev {
+        transform: rotate(180deg);
+    }
+
+    .pika-button {
+        padding: 10px;
+        text-align: center;
+
+        &:hover {
+            color: $c_pink;
+            background: $c_yellow;
+            border-radius: 0;
+        }
+    }
+
+    .pika-label:after {
+        content:" \25be";
+        font-size: 12px;
+        position: relative;
+        top: -1px;
+        margin-right: 2px;
+    }
+}

@@ -1,0 +1,42 @@
+.island-above {
+    $self: &;
+
+    &--wrapper {
+        position: absolute;
+    
+        .shadow {
+            fill: #000000;
+            opacity: 0.1;
+        }
+    }
+
+    &__link {
+        display: block;
+    }
+
+    &--yellow {
+        #{ $self }__fill {
+            fill: $c_yellow;
+        }
+    }
+
+    &--pink {
+        #{ $self }__fill {
+            fill: $c_pink;
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .island-above--yellow {
+        .island-above__fill {
+            fill: darken($c_yellow, 30%);
+        }
+    }
+
+    .island-above--pink {
+        .island-above__fill {
+            fill: darken($c_pink, 30%);
+        }
+    }
+}

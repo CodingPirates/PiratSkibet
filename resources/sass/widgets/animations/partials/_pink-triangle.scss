@@ -1,0 +1,125 @@
+.project-surface__wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    .project-surface {
+        width: 23%;
+        height: 20%;
+        text-align: center;
+        right: -45.5%;
+        top: 17%;
+        position: relative;
+        transform: rotateX(63deg) rotateY(12deg) rotateZ(-43deg);
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.pink-triangle {
+    $self: &;
+    overflow: visible;
+	box-shadow: 0px -0px 100px transparent; // Chrome overflow fix
+    /*-webkit-transform-style: preserve-3d;*/
+
+    .st1 { fill: #FFFFFF; }
+    .st2 { fill: #F285B5; }
+    .st3 { fill: #EC008C; }
+    .st4 { opacity: 0.6; fill: #5C5E60; }
+    .st5 { fill: #231F20; }
+    .st6 { fill: #F38BB9; }
+	.st7 { fill: $c_yellow; }
+    .window-glare { fill: #FFFFFF; }
+    
+    .st7--light {
+        fill: rgba($c_yellow, 0);
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--enter-done {
+        #{ $self }__body {
+            animation: floatTriangle 4s ease-in-out infinite alternate;
+            -moz-animation: floatTriangle 4s ease-in-out infinite alternate;
+        }
+
+        #{ $self }__water {
+            animation: scaleTriangleWater 4s ease-in-out infinite alternate;
+            -moz-animation: scaleTriangleWater 4s ease-in-out infinite alternate;
+
+            &--tr {
+                animation-name: scaleTriangleWaterTr;
+                -moz-animation-name: scaleTriangleWaterTr;
+                animation-delay: 1s;
+                -moz-animation-delay: 1s;
+            }
+        }
+
+        .project-surface__wrapper {
+            animation: floatTriangle 4s ease-in-out infinite alternate;
+            -moz-animation: floatTriangle 4s ease-in-out infinite alternate;
+        }
+    }
+
+    &__water {
+        fill: #FFFFFF;
+        transform-origin: center;
+
+        &--tr {
+            opacity: .47;
+        }
+    }
+}
+
+@include timeOfDay("night") {
+	.pink-triangle {
+		.st1 { fill: #a21d57; }
+		.st2 { fill: darken(#F285B5, 45%); }
+		.st3 { fill: darken(#EC008C, 35%); }
+		.st4 { fill: darken(#5C5E60, 35%); }
+		.st5 { fill: darken(#231F20, 35%); }
+        .st6 { fill: darken(#F38BB9, 55%); }
+
+        .st7--light {
+            fill: rgba($c_yellow, 1);
+        }
+
+        &__water {
+            fill: darken(#223640, 4%);
+        }
+    }
+}
+
+@keyframes floatTriangle {
+    from {
+        transform: translate(0, 0) rotate(0.01deg);
+    }
+
+    to {
+        transform: translate(1%, 4%) rotate(0.01deg);
+    }
+}
+
+@keyframes scaleTriangleWater {
+    from {
+        transform: scale(1) rotate(0.01deg);
+    }
+
+    to {
+        transform: scale(1.06) rotate(0.01deg);
+    }
+}
+
+@keyframes scaleTriangleWaterTr {
+    from {
+        transform: scale(1) rotate(0.01deg);
+    }
+
+    to {
+        transform: scale(1.07) rotate(0.01deg);
+    }
+}

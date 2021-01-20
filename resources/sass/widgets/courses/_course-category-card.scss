@@ -1,0 +1,121 @@
+.course-category-card {
+    margin-top: 120px;
+    padding-bottom: 60px;
+    position: relative;
+    z-index: 5;
+
+    @include break(1300) {
+        padding-bottom: 40px;
+    }
+
+    @include break($navigation_break-small) {
+        padding-bottom: 30px;
+    }
+
+    &:nth-of-type(3n+2) {
+		.paper__edges {
+			&--horizontal {
+				&:before, &:after {
+					background-position: center;
+				}
+			}
+		}
+    }
+
+    &:nth-of-type(3n+3) {
+		.paper__edges {
+			&--horizontal {
+				&:before, &:after {
+					background-position: right;
+				}
+			}
+		}
+	}
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        @include break(900) {
+            flex-direction: column-reverse;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+    }
+
+    &__text-wrap {
+        width: 50%;
+        max-width: 550px;
+
+        @include break(900) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+
+    &__text {
+        margin-bottom: 30px;
+    }
+
+    &__buttons {
+        display: flex;
+        margin: -5px;
+
+        .button {
+            margin: 5px;
+        }
+    }
+
+    &__thumbnail {
+        width: 50%;
+        margin-left: 60px;
+
+        @include break(900) {
+            width: 100%;
+            margin-left: 0;
+            margin-bottom: 30px;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+    }
+
+    .paper {
+        z-index: 4;
+    }
+
+    .paper__content {
+        padding: 30px;
+
+        @include break(600) {
+            padding: 10px;
+        }
+    }
+
+    .island-sign--wrapper {
+        max-width: 190px;
+        transform: translateY(-90%);
+
+        @include break(900) {
+            max-width: 150px;
+        }
+    }
+}
+
+.course-categories {
+    padding: 90px 0;
+
+    @include break(600) {
+        padding: 40px 0;
+    }
+}

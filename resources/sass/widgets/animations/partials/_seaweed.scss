@@ -1,0 +1,53 @@
+.seaweed {
+    &--wrapper {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+
+        svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &--type0 {
+        .cls-1 { fill: #3aa621; }
+        .cls-2 { fill: #2cd934; }
+        .cls-3 { fill: #26be00; }
+        .cls-4 { fill: #6dff26; }
+    }
+
+    &--type1 {
+        .cls-1 { fill: #34ac00; }
+        .cls-2 { fill: #00460f; }
+        .cls-3 { fill: #007500; }
+    }
+
+    &--type2 {
+        .cls-1 { fill: #a31200; }
+        .cls-2 { fill: #de4700; }
+    }
+}
+
+@include timeOfDay("night") {
+    .seaweed {
+        &--type0 {
+            .cls-1 { fill: darken(#3aa621, 30%); }
+            .cls-2 { fill: darken(#2cd934, 30%); }
+            .cls-3 { fill: darken(#26be00, 30%); }
+            .cls-4 { fill: darken(#6dff26, 36%); }
+        }
+
+        &--type1 {
+            .cls-1 { fill: darken(#34ac00, 25%); }
+            .cls-2 { fill: darken(#00460f, 10%); }
+            .cls-3 { fill: darken(#007500, 8%); }
+        }
+    
+        &--type2 {
+            .cls-1 { fill: darken(#a31200, 25%); }
+            .cls-2 { fill: darken(#de4700, 25%); }
+        }
+    }
+}

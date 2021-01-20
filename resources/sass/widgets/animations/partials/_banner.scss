@@ -1,0 +1,68 @@
+.banner-wrap {
+	position: relative;
+
+	svg {
+		display: block;
+	}
+
+	.morphing-text--wrapper {
+		position: absolute;
+		top: 48%;
+		left: 0;
+		width: 100%;
+		transform: translateY(-50%);
+
+		.text {
+			color: $c_yellow;
+			text-align: center;
+			font-family: "Courier New", monospace;
+			transition: color $shutdown_transition_props;
+			@include fontSize(18px);
+			white-space: nowrap;
+			position: relative;
+			top: -0.05vw;
+			cursor: pointer;
+			padding: 15px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+
+			@include break(2000) {
+				@include fontSize(16px);
+			}
+
+			@include break(1920) {
+				font-size: 0.7vw;
+				letter-spacing: -0.05vw;
+			}
+			
+			@include break(1700) {
+				font-size: 0.78vw;
+			}
+		}
+	}
+}
+
+.animated-banner {
+    .st0{opacity:0.48;}
+	.st1{fill:#231F20;}
+	.st2{fill:#F179AF;}
+
+	&--wrapper {
+		position: absolute;
+	}
+}
+
+@include timeOfDay("night") {
+	.banner-wrap {
+		.morphing-text--wrapper {
+			.text {
+				color: darken($c_yellow, 30%);
+			}
+		}
+	}
+
+	.animated-banner {
+		.st1{ fill: $black; }
+		.st2{ fill: darken(#F179AF, 45%); }
+	}
+}

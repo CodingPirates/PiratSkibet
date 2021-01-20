@@ -1,0 +1,215 @@
+.custom-table {
+    background: $white;
+    box-shadow: $shadow;
+
+    &__titlebar {
+        background: $c_pink;
+        padding: 12px 25px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            color: $c_yellow;
+        }
+    }
+
+    &__title {
+        color: $c_yellow;
+        font-family: $font_headings;
+        @include setFontSize(26px, 24px, 18px);
+        
+        &--subtitle {
+            @include setFontSize(20px, 18px, 16px);
+            width: 180px;
+            text-align: center;
+            flex-shrink: 0;
+
+            @include break(1050) {
+                width: 150px;
+            }
+        }
+    }
+
+    &__subtitles {
+        display: flex;
+        align-items: center;
+
+        @include break(750) {
+            display: none;
+        }
+    }
+}
+
+.custom-table-row {
+    $self: &;
+    color: $fc_prim;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 1px solid $c_grey;
+
+    @include break(750) {
+        display: block;
+    }
+
+    &:last-of-type {
+        border-bottom: none;
+    }
+
+    > form {
+        width: 100%;
+
+        .form-element {
+            margin-bottom: 20px;
+        }
+
+        .content-box-inner-block {
+            margin-bottom: 0;
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+        #{ $self }__title {
+            color: $c_pink;
+        }
+    }
+
+    &__link {
+        color: $fc_prim;
+        text-decoration: none;
+        display: block;
+        min-width: 0;
+
+        &:hover {
+            #{ $self }__title {
+                color: $c_pink;
+            }
+        }
+    }
+
+    &__fallback,
+    &__title {
+        font-weight: $fw_bold;
+        max-width: 500px;
+        @include fontSize(18px);
+        @include ellipsis();
+
+        .checkmark {
+            display: none;
+        }
+
+        &--accepted {
+            display: flex;
+            align-items: center;
+
+            @include break(750) {
+                display: block;
+            }
+
+            .checkmark {
+                width: 30px;
+                height: 30px;
+                margin-right: 15px;
+                display: block;
+                flex-shrink: 0;
+
+                @include break(750) {
+                    margin-right: 0;
+                    margin-bottom: 15px;
+                }
+            }
+        }
+
+        @include break(900) {
+            max-width: 100%;
+            white-space: normal;
+            overflow: auto;
+        }
+
+        .subtitle {
+            span {
+                font-size: 0.8em;
+                font-weight: normal;
+            }
+        }
+    }
+
+    &__badges {
+        display: flex;
+
+        .thread-message__badge {
+            margin-top: 8px;
+            margin-right: 10px;
+        }
+    }
+
+    &__description {
+        margin-top: 5px;
+        max-width: 500px;
+    }
+
+    &__info-wrap {
+        display: flex;
+        align-items: center;
+
+        @include break(750) {
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+    }
+
+    &__info {
+        width: 180px;
+        text-align: center;
+        flex-shrink: 0;
+
+        &--entries {
+            @include break(750) {
+                font-weight: $fw_bold;
+            }
+        }
+
+        &--activity {
+            @include break(750) {
+                color: darken($c_grey, 33%);
+            }
+        }
+
+        > span {
+            display: none;
+        }
+
+        @include break(1100) {
+            width: 150px;
+        }
+
+        @include break(750) {
+            width: auto;
+            text-align: left;
+
+            > span {
+                display: inline;
+            }
+        }
+    }
+
+    &--sticky {
+        .custom-table__list--showSticky & {
+            // TODO
+            color: $c-pink;
+            background: #ECECEC;
+        }
+    }
+
+    &__sticky {
+        margin-bottom: 8px;
+        display: none;
+
+        .custom-table__list--showSticky & {
+            display: block;
+        }
+    }
+}

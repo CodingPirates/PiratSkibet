@@ -1,0 +1,595 @@
+.treasure-chest {
+    overflow: visible;
+    cursor: pointer;
+
+    // SVG STYLE
+    .cls-1 {
+        fill: #3a2415;
+    }
+
+    .cls-2 {
+        fill: #573e1c;
+    }
+
+    .cls-3 {
+        fill: #f8ec23;
+    }
+
+    .cls-4 {
+        fill: #875d26;
+    }
+
+    .cls-5 {
+        fill: #3b2314;
+    }
+
+    .cls-6 {
+        fill: #ffe309;
+    }
+
+    .cls-7 {
+        fill: #f6bb49;
+    }
+
+    .cls-8 {
+        fill: #ffd00a;
+    }
+
+    .cls-9 {
+        fill: #5b3d1a;
+    }
+
+    .cls-10,
+    .cls-12 {
+        fill: #60421b;
+    }
+
+    .cls-11,
+    .cls-18,
+    .cls-26,
+    .cls-28 {
+        fill: #fff;
+    }
+
+    .cls-11 {
+        opacity: 0.34;
+    }
+
+    .cls-12 {
+        opacity: 0.25;
+    }
+
+    .cls-13,
+    .cls-22 {
+        fill: #422918;
+    }
+
+    .cls-14 {
+        fill: #1d70b7;
+    }
+
+    .cls-15 {
+        fill: #4bbced;
+    }
+
+    .cls-16,
+    .cls-25,
+    .cls-30,
+    .cls-32,
+    .cls-33,
+    .cls-34 {
+        fill: none;
+        stroke-miterlimit: 10;
+    }
+
+    .cls-16 {
+        stroke: #ffec00;
+    }
+
+    .cls-16,
+    .cls-32,
+    .cls-33,
+    .cls-34 {
+        stroke-linecap: round;
+    }
+
+    .cls-16 {
+        stroke-width: 3.46px;
+    }
+
+    .cls-17 {
+        fill: #a2d7e5;
+    }
+
+    .cls-19 {
+        fill: #8f5e1d;
+    }
+
+    .cls-20 {
+        fill: #009ee2;
+    }
+
+    .cls-21 {
+        fill: #e5007e;
+    }
+
+    .cls-22 {
+        opacity: 0.35;
+    }
+
+    .cls-23 {
+        fill: #ffec00;
+    }
+
+    .cls-24 {
+        fill: #f8bf3e;
+    }
+
+    .cls-25 {
+        stroke: #644119;
+        stroke-width: 1.83px;
+    }
+
+    .cls-26 {
+        opacity: 0.86;
+    }
+
+    .cls-27 {
+        fill: #fcea0d;
+    }
+
+    .cls-28 {
+        opacity: 0.65;
+    }
+
+    .cls-29 {
+        fill: #214459;
+    }
+
+    .cls-30 {
+        stroke: #422918;
+    }
+
+    .cls-30,
+    .cls-34 {
+        stroke-width: 5.19px;
+    }
+
+    .cls-31 {
+        fill: #C5EFEF;
+    }
+
+    .cls-32 {
+        stroke: #80cad5;
+        stroke-width: 3.69px;
+    }
+
+    .cls-33 {
+        stroke: #d1eaf6;
+        stroke-width: 0.87px;
+    }
+
+    .cls-34 {
+        stroke: #e5007e;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    .sparkles,
+	.lock,
+	.top,
+	.bottom,
+	.wires_bottom {
+		transform-origin: 250px 200px;
+	}
+
+	.lock {
+		transform-origin: 200px 200px;
+	}
+
+	.left_handle {
+		transform-origin: 10% 50%;
+	}
+
+	.right_handle {
+		transform-origin: 80% 50%;
+	}
+	
+	.sparkles {
+		.sparkle_mid {
+			opacity: 0;
+			animation: fadeIn 2s infinite alternate;
+		}
+
+		.sparkle_left {
+			opacity: 0;
+			animation: fadeIn 2s infinite alternate 0.75s;
+		}
+
+		.sparkle_right {
+			opacity: 0;
+			animation: fadeIn 2s infinite alternate 1.5s;
+		}
+	}
+
+	.lock_line {
+		opacity: 0;
+	}
+
+	&.shake-chest {
+		.lock {
+			animation: shakeChestTop 1.2s infinite ease;
+		}
+
+		.bottom, .wires_bottom {
+			animation: shakeChestBottom 1.2s infinite ease;
+		}
+
+		.top {
+			animation: shakeChestTop 1.2s infinite ease;
+			
+			.cls-20, .cls-21 {
+				animation: shakeChestTopWires 1.2s infinite ease;
+			}
+		}
+		
+		.left_handle, .right_handle {
+			animation: shakeChestHandle 1.2s infinite ease;
+		}
+
+		.sparkles {
+			animation: shakeChestTop 1.2s infinite ease;
+		}
+		
+		.wires_bottom {
+			.cls-21, .cls-23 {
+				animation: shakeChestBottomWires 1.2s infinite ease;
+			}
+			
+			.cls-20 {
+				animation: shakeChestBottomWire 1.2s infinite ease;
+			}
+		}
+	}
+
+	&.open-chest {
+		.lock {
+			animation: openLock 1s ease forwards 2s;
+			
+			.cls-29, .cls-31, .lock-background {
+				transition: fill .5s ease 2s;
+			}
+
+			.cls-29 {
+				fill: green;
+			}
+
+			.cls-31 {
+				fill: darkgreen;
+			}
+			
+			.lock-background {
+				fill: limegreen;
+			}
+		}
+		
+		.top {
+			animation: openChestTop 3s ease forwards 2s;
+		}
+
+		.sparkles, .wires_bottom {
+			opacity: 0;
+			transition: .6s ease 3s;
+		}
+
+		.lock_line {
+			opacity: 1;
+			animation: lockLineAnimation 2s linear forwards;
+		}
+	}
+}
+
+.treasure-chest-world {
+	padding-bottom: 60%;
+
+	@include break(700) {
+		padding-bottom: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.treasure-chest-modal {
+	position: relative;
+
+	.treasure-chest--wrapper {
+		margin: 0 auto;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+	}
+
+	.treasure-chest-wrapper {
+		position: absolute;
+		z-index: 4;
+		bottom: 20%;
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		@include break(600) {
+			bottom: 16%;
+		}
+
+		.island-half--wrapper {
+			left: 50%;
+			bottom: 0 !important;
+			transform: translate(-50%, 15%);
+		}
+	}
+
+	.treasure-chest {
+		width: 400px;
+		height: 320px;
+
+		@include break(600) {
+			width: 300px;
+			height: 240px;
+		}
+	}
+
+	.island--wrapper {
+		&:nth-of-type(2) {
+			top: 55%;
+
+			@include break(600) {
+				top: 69%;
+			}
+		}
+
+		&:nth-of-type(3) {
+			top: 63%;
+
+			@include break(600) {
+				top: 72%;
+			}
+		}
+		
+		&:nth-of-type(4) {
+			top: 64%;
+			
+			@include break(600) {
+				top: 73%;
+			}
+		}
+	}
+
+	@include break(700) {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&--rewards {
+          flex-direction: column;
+		}
+	}
+
+  	&--rewards {
+		text-align: center;
+		padding: 40px 0;
+	}
+
+	.treasure-chest-reward {
+		font-family: $font_headings;
+		@include fontSize(25px);
+		margin: 5px 0 15px;
+	}
+}
+
+// Night style
+@include timeOfDay("night") {
+	.treasure-chest {
+		.cls-1 {
+			fill: darken(#3a2415, 15%);
+		}
+
+		.cls-2 {
+			fill: darken(#573e1c, 15%);
+		}
+
+		.cls-4 {
+			fill: darken(#875d26, 15%);
+		}
+
+		.cls-5 {
+			fill: darken(#3b2314, 15%);
+		}
+
+		.cls-6 {
+			fill: darken(#ffe309, 25%);
+		}
+
+		.cls-7 {
+			fill: darken(#f6bb49, 25%);
+		}
+
+		.cls-8 {
+			fill: darken(#ffd00a, 25%);
+		}
+
+		.cls-9 {
+			fill: darken(#5b3d1a, 15%);
+		}
+
+		.cls-10,
+		.cls-12 {
+			fill: darken(#60421b, 15%);
+		}
+
+		.cls-11,
+		.cls-18,
+		.cls-26,
+		.cls-28 {
+			fill: darken(#999, 15%);
+		}
+
+		.cls-13,
+		.cls-22 {
+			fill: darken(#422918, 15%);
+		}
+
+		.cls-14 {
+			fill: darken(#1d70b7, 15%);
+		}
+
+		.cls-15 {
+			fill: darken(#4bbced, 15%);
+		}
+
+		.cls-16 {
+			stroke: darken(#ffec00, 25%);
+		}
+
+		.cls-17 {
+			fill: darken(#a2d7e5, 15%);
+		}
+
+		.cls-19 {
+			fill: darken(#8f5e1d, 15%);
+		}
+
+		.cls-20 {
+			fill: darken(#009ee2, 15%);
+		}
+
+		.cls-21 {
+			fill: darken(#e5007e, 15%);
+		}
+
+		.cls-23 {
+			fill: darken(#ffec00, 25%);
+		}
+
+		.cls-24 {
+			fill: darken(#f8bf3e, 25%);
+		}
+
+		.cls-25 {
+			stroke: darken(#644119, 15%);
+		}
+
+		.cls-27 {
+			fill: darken(#fcea0d, 25%);
+		}
+
+		.cls-29 {
+			fill: darken(#214459, 15%);
+		}
+
+		.cls-30 {
+			stroke: darken(#422918, 15%);
+		}
+
+		.cls-31 {
+			fill: darken(#C5EFEF, 15%);
+		}
+
+		.cls-32 {
+			stroke: darken(#80cad5, 15%);
+		}
+
+		.cls-33 {
+			stroke: darken(#d1eaf6, 15%);
+		}
+
+		.cls-34 {
+			stroke: darken(#e5007e, 15%);
+		}
+	}
+}
+
+// KEYFRAMES
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+@keyframes shakeChestBottom {
+	0% { transform: translateY(0) rotate(0deg) }
+	15% { transform: translateY(-5px) rotate(-2deg) }
+	25% { transform: translateY(-10px) rotate(0deg) }
+	60% { transform: translateY(0) rotate(0deg) }
+}
+
+@keyframes shakeChestBottomWires {
+	0% { transform: rotate(0deg) }
+	15% { transform: rotate(0deg) }
+	25% { transform: rotate(-1.5deg) translateX(-5px) }
+	35% { transform: rotate(-2deg) translateX(-5px) }
+	60% { transform: rotate(0deg) }
+}
+
+@keyframes shakeChestBottomWire {
+	0% { transform: rotate(0deg) }
+	15% { transform: rotate(0deg) }
+	25% { transform: rotate(-1.5deg) translateX(-6px) }
+	35% { transform: rotate(-2deg) translateX(-10px) }
+	60% { transform: rotate(0deg) }
+}
+
+@keyframes shakeChestTop {
+	0% { transform: translateY(0) rotate(0deg) }
+	15% { transform: translateY(-10px) rotate(2deg) }
+	25% { transform: translateY(-20px) rotate(-2deg) }
+	35% { transform: translateY(-20px) rotate(2deg) }
+	60% { transform: translateY(0) rotate(0deg) }
+}
+
+@keyframes shakeChestTopWires {
+	0% { transform: rotate(0deg) }
+	15% { transform: rotate(1deg) translateY(-5px) }
+	25% { transform: rotate(-1deg) translateY(5px) }
+	35% { transform: rotate(1deg) translateY(-5px) }
+	60% { transform: rotate(0deg) }
+}
+
+
+@keyframes shakeChestHandle {
+	0% { transform: rotate(0deg) }
+	15% { transform: rotate(-5deg) }
+	25% { transform: rotate(5deg) }
+	35% { transform: rotate(-5deg) }
+	60% { transform: rotate(0deg) }
+}
+
+@keyframes openLock {
+	0% { transform: rotate(0deg) scale(1); opacity: 1 }
+	30% { transform: rotate(-8deg) scale(1); opacity: 1 }
+	45% { transform: rotate(-8deg) scale(1); opacity: 1 }
+	100% { transform: rotate(-8deg) scale(2); opacity: 0 }
+}
+
+@keyframes openChestTop {
+	0% { transform: translateY(0); opacity: 1; }
+	35% { transform: translateY(0); opacity: 1; }
+	45% { transform: translateY(-8%); opacity: 1; }
+	75% { transform: translateY(-20%); opacity: 0; }
+	100% { transform: translateY(-20%); opacity: 0; }
+}
+
+@keyframes lockLineAnimation {
+	0% { transform: translateY(0); }
+	30% { transform: translateY(16.5%); }
+	60% { transform: translateY(0); }
+	90% { transform: translateY(16.5%); opacity: 1 }
+	100% { transform: translateY(16.5%); opacity: 0 }
+}

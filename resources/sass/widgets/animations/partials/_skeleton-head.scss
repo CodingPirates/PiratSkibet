@@ -1,0 +1,88 @@
+$base_color: #FFF;
+$black_color: #231F20;
+$shadow_color: #DADADA;
+$wire_hole: #8C8E90;
+$yellow_wire: #FFF200;
+$blue_wire: #00AEEF;
+
+.skeleton-head {
+    &__dark {
+        fill: $black_color;
+    }
+
+    &__base {
+        fill: $base_color;
+    }
+
+    &__shadow {
+        fill: $shadow_color;
+    }
+
+    &__hole {
+        fill: $wire_hole;
+    }
+
+    &__yellow {
+        fill: $yellow_wire;
+    }
+
+    &__blue {
+        fill: $blue_wire;
+    }
+
+    &__eye {
+        transform-origin: 50% 40%;
+        animation: winkingEye 10s ease forwards infinite;
+        transition: height 4s ease 10s, y 4s ease 10s, fill $shutdown_transition_props !important;
+        
+        &:nth-last-of-type(1) {
+            animation-delay: 0.05s;
+        }
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+}
+
+@include timeOfDay("night") {
+    .skeleton-head {
+        &__dark {
+            fill: $black;
+        }
+
+        &__base {
+            fill: #555555;
+        }
+
+        &__shadow {
+            fill: #444444;
+        }
+
+        &__hole {
+            fill: darken($wire_hole, 30%);
+        }
+    
+        &__yellow {
+            fill: darken($yellow_wire, 30%);
+        }
+    
+        &__blue {
+            fill: darken($blue_wire, 30%);
+        }
+
+        &__eye {
+            animation: none;
+            height: 3px;
+            y: 61;
+        }
+    }
+}
+
+@keyframes winkingEye {
+    0% { transform: scaleY(1); }
+    91% { transform: scaleY(1); }
+    93% { transform: scaleY(0.1); }
+    95% { transform: scaleY(1); }
+    100% { transform: scaleY(1); }
+}

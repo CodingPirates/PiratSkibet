@@ -1,0 +1,65 @@
+.courses-cover-world-wrap {
+    position: relative;
+
+    .water-line--wrapper {
+        transform: translateY(61%);
+    }
+}
+
+.course-cover-world {
+    position: relative;
+    height: 0;
+    padding-bottom: 25%;
+    overflow: hidden;
+
+    @include break(1500) {
+        padding-bottom: 30%;
+    }
+
+    @include break(1100) {
+        padding-bottom: 50%;
+    }
+
+    @include break(700) {
+        padding-bottom: 70%;
+    }
+
+    .text-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        display: flex;
+        align-items: center;
+        z-index: 3;
+
+        @include break(900) {
+            height: 80%;
+        }
+
+        @include break(700) {
+            height: 75%;
+        }
+
+        h1 {
+            max-width: 500px;
+            @include setFontSize(60px, 50px, 30px);
+            line-height: 1.2;
+
+            @include break(580) {
+                max-width: 360px;
+            }
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .course-cover-world {
+        .text-wrap {
+            h1 {
+                color: $c_yellow;
+            }
+        }
+    }
+}

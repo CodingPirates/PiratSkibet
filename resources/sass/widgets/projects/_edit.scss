@@ -1,0 +1,154 @@
+.has-many-field-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    @include break(450) {
+        display: block;
+    }
+
+    .all, .selected {
+        width: 48%;
+        margin: -3px -6px;
+
+        @include break(450) {
+            margin: 0;
+            width: 100%;
+        }
+
+        > div {
+            display: inline-block;
+            margin: 3px 6px;
+        }
+
+        > .title {
+            margin: 3px 6px;
+        }
+
+        .title, .title span {
+            color: $c_pink;
+            font-family: $font_headings;
+            @include fontSize(16px);
+        }
+
+        .display-field {
+            @extend .thread-message__badge;
+            background: $c_yellow;
+            color: $c_pink;
+            cursor: pointer;
+        }
+    }
+
+    .selected {
+        @include break(450) {
+            margin-top: 24px;
+        }
+
+        .display-field:after {
+            content: " \2715";
+        }
+    }
+}
+
+.project-edit {
+
+    .fieldset-inner {
+        margin: -15px;
+
+        .form-element {
+            margin-bottom: 30px;
+        }
+    }
+
+    &.project-header {
+        margin-top: 120px;
+
+        @include break(900) {
+            margin-top: 110px;
+        }
+
+        @include break(600) {
+            margin-top: 80px;
+        }
+
+        .button {
+            display: inline-flex;
+        }
+
+        .section-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    &.project-content {
+        margin-top: 20px;
+    }
+
+    &.project-save {
+        @include break(800) {
+            width: 100%;
+            margin-top: 16px;
+        }
+
+        .buttons-wrap {
+            margin: -5px -10px;
+            display: flex;
+            flex-wrap: wrap;
+
+            .button {
+                margin: 5px 10px;
+            }
+        }
+    }
+
+    .file-fields-small {
+        .filepond--drop-label {
+            @include fontSize(14px);
+        }
+
+        .filepond--label-action {
+            display: block;
+            @include fontSize(14px);
+        }
+    }
+
+    .edit-team-wrap {
+        .has-many-field-wrap {
+            flex-direction: column;
+            margin-top: 0;
+        }
+
+        .all, .selected {
+            width: 100%;
+        }
+
+        .selected {
+            margin-top: 30px;
+        }
+
+        .quill {
+            padding: 0;
+            min-height: auto;
+
+            .ql-editor {
+                min-height: auto;
+                padding: 10px;
+
+                p {
+                    margin-bottom: 0 !important;
+                    line-height: 1;
+                }
+            }
+        }
+
+        .custom-table__list > .form-element > label {
+            display: none;
+        }
+    }
+
+    ~ .project-edit.project-save {
+        width: 100%;
+    }
+}

@@ -1,0 +1,43 @@
+@mixin breakpoint($type) {
+    @if $type == mobile {
+        @media screen and (max-width: 580px) {
+            @content;
+        }
+    }
+    @else if $type == mobilelandscape {
+        @media screen and (max-width: 760px) {
+            @content;
+        }
+    }
+    @else if $type == tablet {
+        @media screen and (max-width: 960px) {
+            @content;
+        }
+    }
+    @else if $type == tabletlandscape {
+        @media screen and (max-width: 1160px) {
+            @content;
+        }
+    }
+    @else if $type == laptop {
+        @media screen and (max-width: 1280px) {
+            @content;
+        }
+    }
+    @else if $type == retina {
+        @media screen and (min-width: 1920px) {
+            @content;
+        }
+    }
+    @else {
+        @media screen and ($type) {
+            @content;
+        }
+    }
+}
+
+@mixin break($breakpoint) {
+    @media only screen and (max-width: $breakpoint + px) {
+        @content;
+    }
+}

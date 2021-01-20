@@ -1,0 +1,113 @@
+.course {
+    $self: &;
+    text-decoration: none;
+    color: $fc_prim;
+    display: block;
+    max-width: 800px;
+    z-index: 10;
+    position: relative;
+
+    @include break(1350) {
+        max-width: 700px;
+    }
+
+    @include break(1280) {
+        max-width: 600px;
+    }
+
+    &__content {
+        padding: 20px 20px 10px;
+        position: relative;
+        z-index: 4;
+    }
+    
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+            @include fontSize(24px);
+        }
+
+        @include break(600) {
+            display: block;
+
+            .button {
+                margin-top: 16px;
+            }
+        }
+    }
+
+    &__description {
+        margin: 0;
+    }
+
+}
+
+.single-course-wrap {
+    .underwater-world {
+        position: fixed;
+        z-index: 0;
+    }
+
+    .section-wrap,
+    ~ .complete-step {
+        position: relative;
+        z-index: 2;
+    }
+
+    ~ .complete-step {
+        padding-bottom: 100px;
+    }
+
+    &__title {
+        padding-top: 100px;
+
+        @include break(900) {
+            padding-top: 60px;
+        }
+    }
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.single-course {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+
+    &__content {
+        padding: 30px;
+
+        p {
+            margin: 0;
+            margin-bottom: 1rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .paper {
+        margin-bottom: 60px;
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+    }
+
+    .video-wrapper {
+        margin-bottom: 90px;
+
+        h1, h2, h3 {
+            margin-bottom: 30px;
+        }
+    }
+}

@@ -1,0 +1,125 @@
+$topbar_height: 34px;
+$topbar_line-height: $topbar_height;
+$topbar_height--mobile: 60px;
+$topbar_line-height--mobile: 80px;
+
+.notifications {
+    position: absolute;
+    top: 120px;
+    right: 0;
+    width: 400px;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: $shadow;
+    transform: translateY(-30px);
+    transition: transform .15s ease-in-out .15s,opacity .15s ease-in-out .15s,visibility 1s linear,-webkit-transform .15s ease-in-out .15s;
+
+    &--open {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0px);
+    }
+
+    &__topbar {
+        display: flex;
+        justify-content: space-between;
+        user-select: none;
+        padding: 0 15px;
+        background: $c_pink;
+        color: $white;
+        height: $topbar_height;
+        line-height: $topbar_line-height;
+        font-family: $font_headings;
+
+        @include break(500) {
+            height: $topbar_height--mobile;
+            line-height: $topbar_line-height--mobile;
+            padding: 0 5%;
+        }
+    }
+
+    &__list {
+        padding: 0;
+        list-style: none;
+        background: $white;
+        box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+        max-height: calc(100vh - 170px);
+        height: 300px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+
+        @include break(500) {
+            max-height: 100%;
+            height: calc(100vh - #{$topbar_height--mobile} - #{$navigation_height-mobile});
+        }
+
+        button {
+            display: block;
+            appearance: none;
+            border: none;
+            text-align: center;
+            font-size: 14px;
+            width: 100%;
+            padding: 10px 0;
+            height: auto;
+            background: $c_yellow;
+            color: $c_pink;
+            outline: none;
+            cursor: pointer;
+
+            span {
+                font-family: $font_headings;
+            }
+
+            .filter-load-more--label {
+                &:after {
+                    content: ' ';
+                }
+            }
+        }
+    }
+
+    &__close {
+        display: block;
+        width: 32px;
+        padding: 10px 0 10px 10px;
+        height: 34px;
+        cursor: pointer;
+        fill: $white;
+
+        @include break(500) {
+            height: 40px;
+            padding: 12px 0 12px 12px;
+            margin-top: 20px;
+        }
+    }
+
+    @include break(500) {
+        position: fixed;
+        top: $navigation_height-mobile;
+        width: 100%;
+    }
+
+    .notification a {
+        text-decoration: none;
+    }
+}
+
+.navigation--scrolled {
+    .notifications {
+        top: 90px;
+
+        @include break(500) {
+            top: $navigation_height-mobile;
+        }
+
+        &__list {
+            max-height: calc(100vh - 140px);
+
+            @include break(500) {
+                max-height: 100%;
+            }
+        }
+    }
+}

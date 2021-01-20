@@ -1,0 +1,65 @@
+$icon_color: $c_pink;
+$icon_easing: ease-in-out;
+$icon_easing_duration: 200ms;
+
+#navigation-toggle {
+    height: 40px;
+    padding: 12px 0px 10px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: none;
+
+    @include break($navigation_break-small) {
+        display: block;
+    }
+
+    div,
+    div:after,
+    div:before {
+        width: 30px;
+        height: 4px;
+    }
+
+    div {
+        position: relative;
+        transform: translateY(7px);
+        background: $icon_color;
+        transition: all 0ms $icon_easing_duration;
+
+        &:after,
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            background: $icon_color;
+        }
+
+        &:before {
+            bottom: 8px;
+            transition: bottom $icon_easing_duration $icon_easing_duration $icon_easing, transform $icon_easing_duration $icon_easing;
+        }
+
+        &:after {
+            top: 8px;
+            transition: top $icon_easing_duration $icon_easing_duration $icon_easing, transform $icon_easing_duration $icon_easing;
+        }
+    }
+
+    &.open {
+        div {
+            background: rgba(255, 255, 255, 0); 
+
+            &:after {
+                top: 0;
+                transform: rotate(45deg);
+                transition: top $icon_easing_duration $icon_easing, transform $icon_easing_duration $icon_easing_duration $icon_easing;
+            }
+
+            &:before {
+                bottom: 0;
+                transform: rotate(-45deg);
+                transition: bottom $icon_easing_duration $icon_easing, transform $icon_easing_duration $icon_easing_duration $icon_easing;
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+body {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@import 'variables/all';
+@import 'mixins/all';
+@import 'modules/all';
+@import 'partials/all';
+@import 'widgets/all';
+
+.navbar-laravel {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}

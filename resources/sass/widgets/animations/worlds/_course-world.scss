@@ -1,0 +1,15 @@
+.course-world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    .water {
+        &:before,
+        &:after {
+            animation-duration: 9s;
+        }
+    }
+}

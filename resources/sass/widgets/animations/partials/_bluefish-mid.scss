@@ -1,0 +1,53 @@
+.bluefish-mid {
+    $self: &;
+
+    .cls-1 { fill: #d1eeff; }
+    .cls-2 { fill: #80d0ff; }
+    .cls-3 { fill: #2b7bfa; }
+    .cls-4 { fill: #609bff; }
+    .cls-5 { fill: #384188; }
+    .cls-6 { fill: #17793e; }
+    .cls-7 { fill: #fff; }
+    .cls-8 { fill: #8e1a04; }
+
+    &--shadow {
+        opacity: 0.2;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+        
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .bluefish-mid {
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5,
+        .cls-6,
+        .cls-7,
+        .cls-8 {
+            opacity: 0.2;
+        }
+    }
+}

@@ -1,0 +1,1 @@
+require('@morningtrain/react-polyfill')

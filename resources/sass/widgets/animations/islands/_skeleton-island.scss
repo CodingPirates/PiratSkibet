@@ -1,0 +1,90 @@
+$black_color: #231F20;
+
+.skeleton-island {
+    &__dark {
+        fill: $black_color;
+    }
+
+    &--appear,
+    &--appear-done {
+        position: absolute;
+    }
+
+    .skeleton-head--appear,
+    .skeleton-head--appear-done,
+    .island {
+        position: relative;
+    }
+
+    .island--appear,
+    .island--appear-done {
+        position: relative;
+        margin-top: -12%;
+    }
+
+    .island__element {
+        color: $white;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        @include fontSize(22px);
+        padding: 15%;
+
+        @include break(2000) {
+            @include fontSize(18px);
+            padding: 13%;
+        }
+
+        @include break(1920) {
+            @include fontSize(16px);
+            padding: 13%;
+        }
+
+        @include break(1700) {
+            font-size: 0.95vw;
+            padding: 12%;
+        }
+
+        @include break(1000) {
+            padding: 10%;
+        }
+
+        .chat-heading, .chat-title {
+            color: $white;
+        }
+
+        .chat-heading {
+            margin: 0;
+            font-family: $font_headings;
+            @include fontSize(14px);
+
+            @include break(2000) {
+                @include fontSize(12px);
+            }
+
+            @include break(1920) {
+                font-size: 0.7vw;
+                letter-spacing: -0.05vw;
+            }
+
+            @include break(1700) {
+                font-size: 0.78vw;
+            }
+        }
+
+        .chat-title {
+            text-decoration: none;
+            font-family: $font_primary;
+
+            &.active {
+                color: $white;
+            }
+
+            &:hover {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css?family=Bungee:400,400i,700");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700");
+
+* {
+    font-family: $font_primary;
+    line-height: $lh_p;
+}
+
+html,
+body {
+	font-family: $font_primary;
+	font-size: $fs_prim;
+    line-height: $lh_p;
+	color: $fc_prim;
+	text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+    font-family: $font_headings;
+    line-height: $lh_headings;
+	font-weight: $fw_regular;
+	letter-spacing: 0.02rem;
+	margin-bottom: 0px;
+}
+
+h1 {
+	@include setFontSize($fs_h1, $fs_h1-medium, $fs_h1-small);
+}
+
+h2 {
+	@include setFontSize($fs_h2, $fs_h2-medium, $fs_h2-small);
+}
+
+h3 {
+	@include setFontSize($fs_h3, $fs_h3-medium, $fs_h3-small);
+}
+
+h4 {
+	@include setFontSize($fs_h4, $fs_h4-medium, $fs_h4-small);
+}
+
+h5 {
+	@include setFontSize($fs_h5, $fs_h5-medium, $fs_h5-small);
+}
+
+h6 {
+	@include setFontSize($fs_h6, $fs_h6-medium, $fs_h6-small);
+}
+
+p {
+	margin-top: 0px;
+	line-height: 1.8;
+	letter-spacing: 0.02rem;
+
+	li {
+		padding: 8px 0px;
+		line-height: 1.3;
+	}
+
+}

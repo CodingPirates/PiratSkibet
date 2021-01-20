@@ -1,0 +1,94 @@
+.profile-modal {
+    height: calc(90vh - 130px - #{$modal_header_height});
+    position: relative;
+
+    @include break(700) {
+        height: calc(100vh - #{$modal_header_height});
+    }
+
+    @include break(600) {
+        height: calc(100vh - #{$modal_header_height--mobile});
+    }
+
+    &__world-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .avatar-wrapper {
+            position: absolute;
+            z-index: 5;
+            right: 5%;
+            bottom: 20%;
+            width: 40%;
+
+            @include break(700) {
+                position: relative;
+                right: auto;
+                bottom: auto;
+                margin: 0 auto;
+                top: 2%;
+            }
+        }
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 5%;
+        transform: translateY(-50%);
+        width: 45%;
+        max-height: 90%;
+        z-index: 5;
+        padding: 30px;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+        background: $white;
+
+        @include break(700) {
+            position: relative;
+            top: auto;
+            transform: none;
+            width: 90%;
+            bottom: 0%;
+        }
+    }
+
+    &__username {
+        display: none;
+    }
+
+    &__content {
+        @include break(700) {
+            display: flex;
+            flex-direction: column;
+            height: 95%;
+        }
+    }
+
+    .avatar-editor-world {
+        overflow: hidden;
+    }
+
+    .section-wrap {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .island-half--wrapper {
+        @include break(700) {
+            display: none;
+        }
+    }
+}
+
+.register-form {
+    label p {
+        color: #333;
+        margin: 0 0 30px 15px;
+        font-size: 15px;
+        font-size: 0.9375rem;
+    }
+}

@@ -1,0 +1,15 @@
+.pink-circuit {
+    .st0{fill:#EC008C;}
+    .st1{fill:#FFF200;}
+    
+    &--wrapper {
+        position: absolute;
+    }
+}
+
+@include timeOfDay("night") {
+    .pink-circuit {
+        .st0{ fill: darken(#EC008C, 30%); }
+        .st1{ fill: darken(#FFF200, 30%); }
+    }
+}

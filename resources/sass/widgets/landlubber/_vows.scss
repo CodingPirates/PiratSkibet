@@ -1,0 +1,29 @@
+.vows-wrapper {
+    .form-wrap {
+        .form-element {
+            margin: 0;
+            margin-bottom: 8px;
+        }
+    }
+
+    label {
+        p {
+            color: $fc_prim;
+            margin-bottom: 30px;
+            @include fontSize(15px);
+
+        }
+
+        &:last-child p {
+            margin-bottom: 0;
+        }
+    }
+
+    .checkbox-wrap {
+        margin-right: 8px;
+    }
+
+    input[type="checkbox"] {
+        top: 2px;
+    }
+}

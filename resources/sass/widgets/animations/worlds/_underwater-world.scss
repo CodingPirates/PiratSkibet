@@ -1,0 +1,60 @@
+.underwater-world {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    &--surface {
+        background: $c_water_surface;
+    }
+    
+    &--middle {
+        background: $c_water_middle;
+    }
+    
+    &--deep {
+        background: $c_water_deep;
+    }
+
+    &--floor {
+        background: #004A53;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40%;
+            background: rgba($black, 0.2);
+        }
+    }
+}
+
+.sea-floor-wrap {
+    position: relative;
+    height: 0;
+    padding-bottom: 25%;
+}
+
+@include timeOfDay("night") {
+    .underwater-world {
+        &--surface {
+            background: #001a23;
+        }
+        
+        &--middle {
+            background: #001319;
+        }
+        
+        &--deep {
+            background: #00141b;
+        }
+    
+        &--floor {
+            background: #001519;
+        }
+    }
+}

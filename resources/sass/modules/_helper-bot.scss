@@ -1,0 +1,107 @@
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-30px); }
+    20% { opacity: 0; transform: translateY(-30px); }
+    50% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+@keyframes rotateHelperBot {
+    0% { transform: rotate(5deg); }
+    20% { transform: rotate(5deg); }
+    80% { transform: rotate(-5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+.helper-bot {
+    width: 120px;
+    height: auto;
+    z-index: 5;
+    cursor: pointer;
+
+    &--fixed {
+        position: fixed;
+        left: 15px;
+        bottom: 15px;
+    }
+
+    &--absolute {
+        position: absolute;
+    }
+
+    &--right {
+        right: 5px;
+    }
+
+    &--left {
+        left: 5px;
+    }
+
+    &--top {
+        top: 5px;
+    }
+
+    &--bottom {
+        bottom: 5px;
+    }
+
+    &__svg {
+        display: block;
+        width: 100%;
+        transform-origin: bottom center;
+        transform: rotate(5deg);
+        animation: rotateHelperBot 3s ease-in-out infinite alternate;
+
+        .cls-1{fill:#3d616f;}
+        .cls-1,.cls-15,.cls-2,.cls-3,.cls-5,.cls-6,.cls-7,.cls-8{fill-rule:evenodd;}
+        .cls-2{fill:#4a7f93;}
+        .cls-3,.cls-4{fill:#5492a9;}
+        .cls-12,.cls-5{fill:#ababab;}
+        .cls-6{fill:#9a9a9a;}
+        .cls-7{fill:#181818;}
+        .cls-8,.cls-9{fill:#282828;}
+        .cls-10,.cls-11{fill:#f20d0d;}
+        .cls-11{fill-opacity:0.15;}
+        .cls-13{isolation:isolate;}
+        .cls-14{fill:red;}
+
+        .cls-15{
+            fill:#1fff00;
+            animation: fadeInDown 3s ease infinite forwards;
+            opacity: 0;
+
+            &--1 {
+                animation-delay: 0.2s;
+            }
+
+            &--2 {
+                animation-delay: 0.5s;
+            }
+
+            &--3 {
+                animation-delay: 0.8s;
+            }
+        }
+    }
+
+    @include break(1280) {
+        width: 100px;
+    }
+
+    @include break(580) {
+        width: 90px;
+        position: fixed;
+        left: 15px;
+        bottom: 15px;
+        right: auto;
+        top: auto;
+        transform: none !important;
+    }
+}
+
+.helper-bot-video {
+    @media (max-height: 800px) and (min-width: 700px) {
+        margin: 0 auto;
+        max-width: 80vh;
+    }
+}

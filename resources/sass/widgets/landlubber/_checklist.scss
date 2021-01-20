@@ -1,0 +1,47 @@
+.checklist-wrapper {
+    .checklist-item {
+        margin-bottom: 15px;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+
+    &__completed {
+        text-decoration: line-through;
+    }
+
+    &--field {
+        margin-top: 17px;
+
+        @include break(600) {
+            margin-top: 18px;
+            @include fontSize(14px);
+        }
+
+        @include break(500) {
+            margin-top: 10px;
+        }
+
+        svg {
+            @include break(600) {
+                width: 22px;
+                height: 22px;
+            }
+        }
+    }
+}

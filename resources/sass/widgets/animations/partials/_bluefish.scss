@@ -1,0 +1,58 @@
+.bluefish {
+    $self: &;
+
+    .cls-1 { fill:#feffc4; }
+    .cls-2 { fill:#51749c; }
+    .cls-3 { fill:#abc094; }
+    .cls-4 { fill:#122670; }
+    .cls-5 { fill:#e2bb00; }
+    .cls-6 { fill:#bc7200; }
+    .cls-7 { fill:#ffffff; }
+
+    .cls-7,
+    .cls-8 { 
+        stroke:#000;
+        stroke-miterlimit:10;
+        stroke-width:3px;
+    }
+
+    &--shadow {
+        opacity: 0.2;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+        
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .bluefish {
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5,
+        .cls-6,
+        .cls-7 {
+            opacity: 0.2;
+        }
+    }
+}

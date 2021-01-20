@@ -1,0 +1,34 @@
+.modal {
+    .accepted-post {
+        margin-left: -10px;
+
+        @include break(600) {
+            margin-left: 0;
+        }
+
+        .paper {
+            padding: 0;
+
+            &__content {
+                padding-top: 0;
+            }
+
+            &__edges {
+                &:before,
+                &:after {
+                    display: none;
+                }
+            }
+        }
+
+        .thread-message.embed {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            margin-left: auto;
+            margin-right: 0;
+            margin-bottom: 0;
+        }
+    }
+}

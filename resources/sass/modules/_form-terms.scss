@@ -1,0 +1,35 @@
+.terms-conditions {
+    width: 100%;
+
+    > label {
+        > p {
+            margin: 10px 0 35px;
+            color: $fc_prim;
+        }
+
+        &:last-of-type {
+            > p {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .form-element {
+        width: 100% !important;
+        margin: 0 !important;
+        position: relative;
+
+        label {
+            margin: 0;
+            padding-left: 28px;
+            cursor: pointer;
+            @include fontSize(15px);
+        }
+    }
+
+    .checkbox-wrapper {
+        position: absolute;
+        top: 1px;
+        left: 0;
+    }
+}

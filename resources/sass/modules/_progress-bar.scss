@@ -1,0 +1,70 @@
+$progress_border_width: 4px;
+$progress_bar_height: 50px;
+
+.mtt-progressbar {
+    $self: &;
+    height: $progress_bar_height;
+    background: $c_grey;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__progress {
+        background: $c_pink;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        overflow: hidden;
+        transition: .2s ease;
+        max-width: 100%;
+    }
+
+    &__percentage {
+        font-family: $font_headings;
+        color: $c_pink;
+        @include fontSize(25px);
+        padding: 0 50px;
+
+        &--inverted {
+            color: $c_yellow;
+            height: $progress_bar_height;
+            line-height: $progress_bar_height;
+            text-align: right;
+            width: 1061px;
+        }
+    }
+
+    &__wrap {
+        &--boxed {
+            background: $c_grey;
+            width: calc(100% - #{$progress_border_width * 2});
+            padding: #{$progress_border_width / 2};
+            margin-left: $progress_border_width;
+    
+            border-image-source: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="UTF-8" ?><svg version="1.1" width="5" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(60,60,60)" /></svg>');
+            border-image-slice: 2;
+            border-image-outset: 4;
+            border-image-width: 4;
+            border-image-repeat: stretch;
+            border-style: solid;
+            border-width: #{$progress_border_width / 2};
+
+    
+            #{$self} {
+                height: 40px;
+            }
+
+            #{$self}__percentage {
+                @include fontSize(26px);
+                padding: 0 20px;
+    
+                &--inverted {
+                    height: 40px;
+                    line-height: 40px;
+                }
+            }
+        }
+    }
+}

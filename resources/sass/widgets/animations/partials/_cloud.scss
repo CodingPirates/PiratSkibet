@@ -1,0 +1,43 @@
+.cloud {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+	box-shadow: 0px -0px 10000px transparent; // Chrome overflow fix
+
+    clipPath use {
+		overflow: visible;
+	}
+
+    &__fill {
+        clip-path: url(#cloudPath2);
+        fill: #FFFFFF;
+    }
+
+    &__shadow {
+        fill: #DEDFE0;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+    
+    &--enter-done {
+        transform: translate3d(125vw, 0, 0);
+        -moz-transform: translate3d(125vw, 0, 0);
+        transition: transform linear;
+        -moz-transition: transform linear;
+        z-index: 1;
+    }
+}
+
+@include timeOfDay("night") {
+    .cloud {
+        &__fill {
+            fill: darken(#1f3d4d, 10%);
+        }
+
+        &__shadow {
+            fill: darken(#1f3d4d, 15%);
+        }
+    }
+}

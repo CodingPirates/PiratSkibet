@@ -1,0 +1,19 @@
+.window {    
+    &__fill {
+        fill: $c_yellow;
+    }
+
+    &__light {
+        fill: rgba($c_yellow, 0);
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+}
+
+@include timeOfDay('night') {
+    .window__light {
+        fill: rgba($c_yellow, 1);
+    }
+}

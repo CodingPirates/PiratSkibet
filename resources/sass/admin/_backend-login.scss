@@ -1,0 +1,95 @@
+.backend-login-widget {
+  background: #f6f8fa;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  @media (max-height: 510px) {
+    align-items: flex-start;
+    padding: 50px 0;
+    bottom: auto;
+  }
+
+  &__inner {
+    width: 500px;
+    max-width: 90%;
+  }
+
+
+  &__header {
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    background: $white;
+    padding: 60px;
+    box-shadow: $shadow;
+
+    @include break(600) {
+      padding: 40px;
+    }
+
+    @include break(400) {
+      padding: 30px;
+    }
+
+    .fieldset .form-content .fieldset-inner {
+      margin: 0;
+    }
+
+    .fieldset .fieldset-inner .fieldset-inner-content {
+      display: block;
+    }
+
+    .fieldset .fieldset-inner .fieldset-inner-content.two-cols > .form-element {
+      width: 100%;
+      margin: 0;
+      margin-bottom: 25px;
+
+      @include break(600) {
+        margin-bottom: 15px;
+      }
+    }
+    
+    .modal-footer-left {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+
+      @include break(600) {
+        margin-bottom: 15px;
+      }
+
+      @include break(400) {
+        display: block;
+      }
+    }
+
+    .forgot-password-link {
+      margin-right: 0;
+
+      @include break(400) {
+        margin-top: 10px;
+      }
+    }
+
+    .modal-footer-right {
+      input[type="submit"] {
+        margin-left: auto;
+      }
+    }
+
+    .modal-footer.login {
+      padding: 0;
+      height: auto;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.checkmark {
+    $self: &;
+
+    &__border {
+        fill: #333;
+    }
+
+    &__background {
+        fill: $c_success;
+    }
+
+    &__highlight {
+        fill: lighten($c_success, 25%);
+    }
+
+    &__check {
+        fill: $white;
+    }
+
+    &--disabled {
+        #{ $self }__background {
+            fill: $c-border-light;
+        }
+
+        #{ $self }__highlight {
+            fill: lighten($c-border-light, 10%);
+        }
+    }
+}

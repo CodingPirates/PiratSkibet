@@ -1,0 +1,15 @@
+.main-island {
+    &--appear,
+    &--appear-done {
+        position: absolute;
+    }
+
+    .island--wrapper {
+        position: relative;
+    }
+
+    .flag--wrapper {
+        position: relative;
+        margin-bottom: -2.5%;
+    }
+}

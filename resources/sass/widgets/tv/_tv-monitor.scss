@@ -1,0 +1,64 @@
+.monitor-svg {
+    .cls-1 {
+        fill: #cecece;
+    }
+
+    .cls-2 {
+        fill: #bfbfbf;
+    }
+
+    .cls-3 {
+        fill: #dedede;
+    }
+
+    .cls-4 {
+        fill: #f4f4f4;
+    }
+
+    .cls-5 {
+        fill: #6d6d6d;
+    }
+
+    .cls-6,
+    .cls-8 {
+        fill: #fff;
+    }
+
+    .cls-6 {
+        opacity: 0.08;
+    }
+
+    .cls-7 {
+        fill: #b3b3b3;
+    }
+
+    .cls-8 {
+        opacity: 0.62;
+    }
+
+    .twitch-embed-container,
+    iframe {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.tv-monitor {
+    position: relative;
+
+    .iframe-wrapper {
+        position: absolute;
+        top: 14%;
+        bottom: 27%;
+        right: 10%;
+        left: 10%;
+
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}

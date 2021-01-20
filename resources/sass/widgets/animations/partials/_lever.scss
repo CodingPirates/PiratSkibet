@@ -1,0 +1,21 @@
+.lever {
+    .st0{fill:#EC008C;}
+	.st1{fill:#FFF200;}
+	.st2{opacity:0.18;clip-path:url(#leverPath2);fill:#666666;}
+	.st3{fill:#F285B5;}
+    .st4{fill:#DD83AE;}
+
+    clipPath use {
+        overflow: visible;
+    }
+}
+
+@include timeOfDay("night") {
+    .lever {
+        .st0{ fill: darken(#EC008C, 30%); }
+        .st1{ fill: darken(#FFF200, 30%); }
+        .st2{ fill: darken(#666666, 30%); }
+        .st3{ fill: darken(#F285B5, 40%); }
+        .st4{ fill: darken(#DD83AE, 40%); }
+    }
+}

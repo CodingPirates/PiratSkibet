@@ -1,0 +1,6 @@
+export * from '@morningtrain/react-fields'
+export { Injected as Files } from '@morningtrain/react-fields-files'
+export { Injected as Editor } from 'support/fields/custom/Editor'
+export { Injected as Comment } from 'support/fields/custom/Comment'
+export { Injected as AvatarItem } from 'support/fields/custom/AvatarItem'
+export { Injected as MemberManager } from 'support/fields/custom/MemberManager'

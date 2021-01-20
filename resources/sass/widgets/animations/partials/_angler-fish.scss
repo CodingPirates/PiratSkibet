@@ -1,0 +1,57 @@
+.angler-fish {
+    $self: &;
+
+    .cls-1 { fill: #78523b; }
+    .cls-2 { fill: #aa6a50; }
+    .cls-3 { fill: #a97f6a; }
+    .cls-4 { fill: #ffd766; }
+    .cls-5 { fill: #3e201c; }
+    .cls-6 { fill: #4b6744; }
+    .cls-7 { fill: #ffffff; }
+    .cls-8 { fill: #9a8374; }
+    .cls-9 { fill: #cfbfac; }
+    .cls-10 { fill: #b29f98; }
+
+    &--shadow {
+        opacity: 0.2;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .angler-fish {
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5,
+        .cls-6,
+        .cls-7,
+        .cls-8,
+        .cls-9,
+        .cls-10 {
+            opacity: 0.2;
+        }
+    }
+}

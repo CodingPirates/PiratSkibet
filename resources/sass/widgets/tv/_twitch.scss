@@ -1,0 +1,30 @@
+.coding-pirates-tv {
+    h1 {
+        margin: 0;
+    }
+
+    .section-content {
+        text-align: center;
+        margin-top: 60px;
+    }
+}
+
+.twitch-vod-section {
+    .section-content {
+        margin: 60px 0;
+        text-align: center;
+
+        h2, h3, h4 {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .coding-pirates-tv,
+    .twitch-vod-section {
+        h1, h2, h3, h4 {
+            color: $c_yellow;
+        }
+    }
+}

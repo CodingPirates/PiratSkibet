@@ -1,0 +1,26 @@
+.news-section {
+    padding: 50px 0 100px;
+
+    @include break(900) {
+        padding: 50px 0;
+    }
+
+    &__wrap {
+        display: flex;
+
+        @include break(900) {
+            flex-direction: column;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+        flex-shrink: 0;
+
+        @include break(900) {
+            width: 100%;
+        }
+    }
+}

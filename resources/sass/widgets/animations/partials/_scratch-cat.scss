@@ -1,0 +1,10 @@
+.scratch-cat {
+    display: block;
+    transform: rotateY(180deg) rotate(-9deg);
+    width: 100%;
+    height: auto;
+
+    &--wrapper {
+        position: absolute;
+    }
+}

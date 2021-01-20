@@ -1,0 +1,65 @@
+.animation-world {
+    position: relative;
+    height: 0;
+    padding-bottom: 50%;
+    overflow: hidden;
+    backface-visibility: hidden;
+    perspective: 1000px;
+    // will-change: transform, opacity;
+    transform: translate3d(0,0,0);
+
+    &.main-world {
+        margin-top: -100px;
+        z-index: 1000;
+
+        @include break(900) {
+            margin-top: -50px;
+        }
+
+        @include break(700) {
+            margin-top: -20px;
+        }
+    }
+
+    path, polygon, rect, circle {
+        transition: $shutdown_transition;
+    }
+}
+
+.wrapper-for-world-with-scrollable-content {
+
+    .world-wrapper {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+
+        .world-overlay{
+            opacity: 0.4;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            background: #8d8d8d;
+            z-index: 4;
+        }
+
+    }
+
+    .content-inside-world {
+        position: relative;
+        z-index: 4;
+    }
+
+    &.dark {
+        color: #efefef;
+
+        h1, h2, h3, h4, h5, h6, .heading {
+            color: #FFF200;
+        }
+
+    }
+
+}

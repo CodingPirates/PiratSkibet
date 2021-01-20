@@ -1,0 +1,29 @@
+@import "worlds/all";
+@import "partials/all";
+@import "islands/all";
+
+.drum-set {
+    position: absolute;
+    top: 2%;
+    width: 18%;
+    left: 30%;
+    transform: rotate(-4deg);
+    z-index: 5;
+
+    svg {
+        .cls-1{fill:#2f2f2f;}.cls-2{fill:#00b994;}.cls-3{fill:#fff;}.cls-4{fill:#131313;}.cls-5{fill:#3c3838;}.cls-6{fill:#f50303;stroke:#800505;stroke-width:0.6px;}.cls-7{fill:#ab0909;stroke:#bf0f0f;stroke-width:0.3px;}.cls-8{fill:#a34600;}.cls-9{fill:#913c02;}.cls-10{fill:#8c3900;}.cls-11{fill:#e5e5e5;}.cls-12{fill:#231f20;}.cls-13{fill:#ec008c;}.cls-13,.cls-15,.cls-16,.cls-17,.cls-19,.cls-23,.cls-26,.cls-27,.cls-29{stroke:#333;}.cls-13,.cls-15,.cls-16,.cls-17,.cls-19,.cls-23,.cls-24,.cls-25,.cls-26,.cls-27,.cls-29{stroke-linecap:round;stroke-linejoin:round;}.cls-13,.cls-14,.cls-16,.cls-17,.cls-27,.cls-29{stroke-width:8px;}.cls-14,.cls-16,.cls-18,.cls-22,.cls-24,.cls-25,.cls-28{fill:none;}.cls-14{stroke:#d10789;}.cls-14,.cls-18,.cls-22{stroke-miterlimit:10;}.cls-15,.cls-17{fill:#eefaf9;}.cls-15,.cls-19,.cls-23,.cls-26{stroke-width:6px;}.cls-18,.cls-22{stroke:#bcece8;}.cls-18,.cls-24,.cls-25{stroke-width:4px;}.cls-19{fill:#5c5c5c;}.cls-20{fill:#333;}.cls-21{fill:#bcece8;}.cls-22{stroke-width:2px;}.cls-23{fill:#fde74c;}.cls-24{stroke:#fef5b7;}.cls-25{stroke:#bead39;opacity:0.3;isolation:isolate;}.cls-26,.cls-27{fill:#f8fdfd;}.cls-29{fill:#fdfffc;}
+    }
+}
+
+.guitar-man {
+    position: absolute;
+    top: 4%;
+    width: 17%;
+    left: 53%;
+    transform: rotate(2deg);
+    z-index: 5;
+
+    svg {
+        .cls-1{fill:#2f2f2f;}.cls-2{fill:#85a0ab;}.cls-3{fill:#fff;}.cls-4{fill:#131313;}.cls-5{fill:#3c3838;}.cls-6{fill:#f50303;stroke:#800505;stroke-width:0.6px;}.cls-7{fill:#ab0909;stroke:#bf0f0f;stroke-width:0.3px;}.cls-8{fill:#a34600;}.cls-9{fill:#913c02;}.cls-10{fill:#8c3900;}.cls-11{fill:#e5e5e5;}.cls-12{fill:#231f20;}.cls-13{fill:#57c5d0;}.cls-14{fill:#7f95ad;}.cls-15{fill:#fffbd5;}.cls-16{fill:#aac6d3;}.cls-17{fill:#47555e;}.cls-18,.cls-19{fill:#d2aa65;}.cls-19{fill-rule:evenodd;}.cls-20{fill:none;stroke:#ece4bd;stroke-miterlimit:10;}
+    }
+}

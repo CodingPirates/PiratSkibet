@@ -1,0 +1,369 @@
+.project-view {
+    margin: 120px auto;
+
+    @include break(600) {
+        margin: 90px auto;
+    }
+
+    .project-header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 30px;
+        
+        @include break(600) {
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .section-content {
+            width: 100%;
+        }
+
+        .button-wrap {
+            display: flex;
+            margin: 25px -5px 85px;
+
+            .button {
+                margin: 5px;
+            }
+        }
+
+        .reaction {
+            margin-right: 15px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .project-title-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+            max-width: 900px;
+        }
+
+        .context-menu {
+            height: 100%;
+            position: relative;
+            top: 10px;
+        }
+    }
+
+    .project-banner {
+        margin: 0 0 20px 0;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+
+    .project-images {
+        width: 100%;
+        padding: 0px 40px;
+
+        .slick-slide {
+
+            div:focus {
+                outline: none;
+            }
+
+            img {
+                max-width: 100%;
+                margin: 10px;
+                max-width: calc(100% - 20px);
+                max-height: 100%;
+                width: auto !important;
+            }
+        }
+
+        .slick-initialized .slick-slide {
+            display: flex;
+            justify-content: center;
+        }
+
+        .slick-track {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            max-height: 100%;
+        }
+
+        .preview-images-slider {
+
+            .slick-slide {
+                img {
+                    max-height: 250px;
+                }
+            }
+
+            .slick-list {
+                height: 300px;
+            }
+        }
+
+        .navigation-images-slider {
+            .slick-list {
+                height: 100px;
+            }
+
+            .slick-slide {
+                cursor: pointer;
+                width: 100px;
+                height: 100px;
+                border: 2px solid #e9e9e9;
+                border-right: none;
+                position: relative;
+
+                &:last-child {
+                    border-right: 2px solid #e9e9e9;
+                }
+
+                &.slick-current {
+                    border: 2px solid #737373;
+                }
+
+                img {
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    margin: 0;
+                }
+            }
+            
+        }
+
+    }
+
+    .project-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include break(1050) {
+            flex-direction: column;
+        }
+
+        & > .section-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+
+            @include break(1050) {
+                flex-direction: column;
+            }
+        }
+
+        .project-inner-content {
+            &:first-child {
+                width: calc(65% - 10px);
+            }
+
+            &:last-child {
+                width: calc(35% - 10px);
+            }
+
+            @include break(1050) {
+                &:first-child,
+                &:last-child {
+                    width: 100%;
+                }
+            }
+        }
+
+        .custom-table {
+            margin: 0 0 20px 0;
+
+            .custom-table__list {
+                padding: 30px;
+                display: flex;
+                flex-direction: column;
+
+                @include break(600) {
+                    padding: 15px;
+                }
+
+                .custom-table-row {
+                    border-bottom: none;
+                    justify-content: start;
+                    align-items: center;
+                    
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    
+                }
+
+                .team-row {
+                    padding: 0;
+                    margin-bottom: 20px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+                .file-row {
+                    padding: 0;
+                    margin-bottom: 20px;
+                    text-decoration: none;
+                    color: initial;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .file-name {
+                        font-weight: bold;
+                    }
+
+                    .file-meta-values {
+
+                    }
+
+                }
+
+                .form-element {
+                    margin: 0;
+                    margin-bottom: 30px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            .custom-table__title {
+                @include setFontSize(22px, 20px, 18px);
+            }
+
+            .custom-table__titlebar {
+                padding: 12px 30px 10px;
+                
+                @include break(600) {
+                    padding: 12px 15px 10px;
+                }
+            }
+
+            .thread-message__badges {
+                margin-bottom: -5px;
+            }
+
+            .thread-message__badge--yellow {
+                color: $c_pink;
+            }
+
+            .thread-message__user-wrap {
+                margin-bottom: 10px;
+                position: relative;
+
+                &:first-child {
+                    margin-top: -10px;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+
+            .thread-message__user {
+                display: flex;
+                width: 100%;
+                align-items: center;
+
+                @include break(600) {
+                    width: 100%;
+                    min-height: auto;
+                    margin-bottom: 0;
+                    padding-bottom: 0;
+                    border-bottom: none;
+                }
+            }
+
+            .thread-message__user-status {
+                margin-top: 5px;
+            }
+
+            .thread-message__avatar {
+                margin: -5px 0 0;
+                width: 70px;
+                flex-shrink: 0;
+            }
+
+            .thread-message__username {
+                text-align: left;
+                margin-left: 10px;
+                position: relative;
+                top: 7px;
+
+                p {
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+
+    .forum-title-wrap {
+        h2 {
+            margin: 90px 0 30px;
+
+            @include break(900) {
+                margin: 60px 0 30px;
+            }
+        }
+    }
+}
+
+.user-removable {
+    width: 100%;
+    display: flex !important;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+
+    > div {
+        flex-grow: 1;
+    }
+
+    button {
+        flex-shrink: 0;
+        width: 30px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        appearance: none;
+        background: none;
+        outline: none;
+        border: none;
+        padding: 0 0 0 0;
+        position: relative;
+        top: 8px;
+        cursor: pointer;
+        
+        svg  {
+            width: 15px;
+            height: 15px;
+            fill: $c_pink;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .project-view {
+        .project-title-wrap,
+        .forum-title-wrap {
+            color: $c_yellow;
+        }
+    }
+}

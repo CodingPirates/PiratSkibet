@@ -1,0 +1,4 @@
+$shutdown_transition_duration: 30s;
+$shutdown_transition_timing: ease;
+$shutdown_transition_props: $shutdown_transition_duration $shutdown_transition_timing;
+$shutdown_transition: fill $shutdown_transition_props;

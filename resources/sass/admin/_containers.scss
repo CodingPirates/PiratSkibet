@@ -1,0 +1,105 @@
+.admin-dashboard {
+    height: 100vh;
+    display: flex;
+
+    &__wrap {
+        height: 100%;
+        display: flex;
+        width: 100%;
+    }
+
+    &__content {
+        flex-wrap: wrap;
+        flex-grow: 1;
+        padding: 120px $admin_dashboard_padding 60px;
+        overflow: auto;
+        background: #F6F8FA;
+
+        > form {
+            padding: 40px;
+            background: $white;
+            box-shadow: $admin_content_shadow;
+
+            @include break(1600) {
+                padding: 30px;
+            }
+
+            .fieldset {
+
+                .form-actions {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    width: 100%;
+                    margin-top: 50px;
+
+                    a {
+                        margin-right: 15px;
+                    }
+                }
+            }
+
+            button {
+                @extend .button;
+                @include button($c_pink, $c_yellow, 2%, 2%);
+                margin-top: 15px;
+            }
+
+            .repeater-field-wrapper {
+
+                .repeater-field-wrapper-header {
+                    .repeater-field-wrapper-header-actions {
+                        button {
+                            margin-top: 0px;
+                        }
+                    }
+                }
+
+            }
+
+        }
+
+        .section-wrap {
+            width: 100%;
+            max-width: initial;
+        }
+
+        > .button {
+            display: inline-block;
+        }
+    }
+
+}
+
+.section-wrap {
+    margin: 30px 0px 30px;
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1, h2, h3, h4, h5 {
+            margin: 0px;
+        }
+    }
+
+    &.boxed {
+        background: $white;
+        box-shadow: $admin_content_shadow;
+
+        .section-content {
+            padding: 40px;
+        }
+
+        .section-header {
+            background: #e5e5e5;
+            padding: 15px 20px;
+        }
+
+    }
+
+    .index-table-layout {
+        margin-top: 10px;
+    }
+}

@@ -1,0 +1,43 @@
+.admin-dashboard {
+    .form-element {
+        input[type="text"],
+        input[type="search"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        textarea,
+        select {
+            border-image: none;
+            border-color: darken($c-border-light, 10%);
+            border-radius: 0;
+            background: $white;
+            margin: 0;
+            width: 100%;
+
+            &:focus {
+                border-color: $c_blue;
+            }
+
+            &:disabled {
+                cursor: not-allowed;
+                opacity: .5;
+            }
+        }
+
+        &.has-error {
+            input[type="text"],
+            input[type="search"],
+            input[type="email"],
+            input[type="password"],
+            input[type="number"],
+            textarea {
+                border-color: $c_error;
+            }
+        }
+
+    }
+
+    .quill {
+        border: 2px solid darken($c-border-light, 10%);
+    }
+}
