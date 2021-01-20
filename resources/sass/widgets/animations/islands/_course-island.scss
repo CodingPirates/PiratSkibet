@@ -1,0 +1,20 @@
+.course-island {
+    display: block;
+
+    &--wrapper {
+        position: absolute;
+
+        .island-body {
+            animation: floatCourseIsland 6s ease-in-out infinite alternate;
+        }
+    }
+
+    .island-above--wrapper {
+        position: relative;
+    }
+}
+
+@keyframes floatCourseIsland {
+	from { transform: translate3d(0, 0, 0); }
+	to { transform: translate3d(0, 4%, 0); }
+}

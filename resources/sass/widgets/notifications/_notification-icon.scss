@@ -1,0 +1,64 @@
+.notification-icon {
+    $self: &;
+    position: relative;
+    padding: 10px 0;
+    cursor: pointer;
+
+    &--unread {
+        #{ $self }__bell {
+            .fill {
+                &--white {
+                    fill: #FFFFFF;
+                }
+    
+                &--light {
+                    fill: #FFDE46;
+                }
+    
+                &--dark {
+                    fill: #FFAE37;
+                }
+            }
+        }
+
+        #{ $self }__count {
+            display: block;
+        }
+    }
+
+    &__bell {
+        width: 26px;
+        display: block;
+    
+        .fill {
+            &--white {
+                fill: transparent;
+            }
+    
+            &--light {
+                fill: transparent;
+            }
+    
+            &--dark {
+                fill: transparent;
+            }
+        }
+    }
+
+    &__count {
+        display: none;
+        position: absolute;
+        background: $c_pink;
+        color: $c_yellow;
+        font-weight: $fw_bold;
+        @include fontSize(14px);
+        width: 20px;
+        height: 20px;
+        border-radius: 20px;
+        text-align: center;
+        line-height: 20px;
+        right: -6px;
+        top: 2px;
+        user-select: none;
+    }
+}

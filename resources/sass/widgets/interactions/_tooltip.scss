@@ -1,0 +1,97 @@
+.tooltip {
+    $self: &;
+    position: relative;
+
+    &__text {
+        position: absolute;
+        padding: 8px;
+        background: $c_pink;
+        color: $c_yellow;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity .3s ease, visibility .3s ease;
+        transition-delay: .2s;
+        min-width: 100px;
+        text-align: center;
+
+        &:after {
+            content: attr(data-tooltip);
+            position: relative;
+            z-index: 2;
+            @include fontSize(13px);
+        }
+        
+        &:before {
+            content: '';
+            position: absolute;
+            z-index: 1;
+            width: 8px;
+            height: 8px;
+            background: $c_pink;
+        }
+    }
+
+    &--top {
+        #{ $self }__text {
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, calc(-100% - 8px));
+
+            &:before {
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 50%) rotate(45deg);
+            }
+        }
+    }
+
+    &--bottom {
+        #{ $self }__text {
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, calc(100% + 8px));
+
+            &:before {
+                top: 0;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+    }
+
+    &--left {
+        #{ $self }__text {
+            top: 50%;
+            left: 0;
+            transform: translate(calc(-100% - 8px), -50%);
+
+            &:before {
+                top: 50%;
+                right: 0;
+                transform: translate(50%, -50%) rotate(45deg);
+            }
+        }
+    }
+
+    &--right {
+        #{ $self }__text {
+            top: 50%;
+            right: 0;
+            transform: translate(calc(100% + 8px), -50%);
+
+            &:before {
+                top: 50%;
+                left: 0;
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+        }
+    }
+
+    &--active {
+        #{ $self }__text {
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0s;
+        }
+    }
+}

@@ -1,0 +1,172 @@
+@mixin button($color: #EC008C, $bgColor: #FFF200, $hoverPercentage: 2%, $activePercentage: 2%) {
+    color: $color;
+    background: $bgColor;
+
+    &:hover {
+        color: lighten($color, $hoverPercentage);
+        background: lighten($bgColor, $hoverPercentage);
+        transform: translate(0, -1px);
+        text-decoration: none;
+    }
+
+    &:active {
+        color: darken($color, $activePercentage);
+        background: darken($bgColor, $activePercentage);
+        transform: translate(0, 1px);
+    }
+}
+
+@mixin buttonArrows($color: #FFFFFF, $self) {
+    $arrow_fill: str-slice('#{$color}', 2);
+
+    &#{ $self }--arrow-left {
+        &:before {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400.7 233.74'%3E%3Cdefs%3E%3Cstyle%3E.arrow-fill%7Bfill:%23#{$arrow_fill};%7D%3C/style%3E%3C/defs%3E%3Cpolygon class='arrow-fill' points='0 100.17 33.39 100.17 33.39 66.78 66.78 66.78 66.78 33.39 100.17 33.39 100.17 0 166.96 0 166.96 66.78 400.7 66.78 400.7 166.96 166.96 166.96 166.96 233.74 100.17 233.74 100.17 200.35 66.78 200.35 66.78 166.96 33.39 166.96 33.39 133.57 0 133.57 0 100.17'/%3E%3Cpolygon points='166.96 66.78 166.96 33.39 166.96 21.39 166.96 0 100.17 0 100.17 33.39 133.56 33.39 133.56 66.78 133.56 100.17 367.31 100.17 367.31 133.57 133.56 133.57 133.56 166.96 133.56 200.35 100.17 200.35 100.17 233.74 166.96 233.74 166.96 200.35 166.96 166.96 400.7 166.96 400.7 136.56 400.7 133.57 400.7 100.17 400.7 66.78 166.96 66.78'/%3E%3Crect x='33.39' y='133.57' width='33.39' height='33.39'/%3E%3Crect x='66.78' y='33.39' width='33.39' height='33.39'/%3E%3Crect x='33.39' y='66.78' width='33.39' height='33.39'/%3E%3Crect y='100.17' width='33.39' height='33.39'/%3E%3Crect x='66.78' y='166.96' width='33.39' height='33.39'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+            &:before {
+                transform: translate3d(-5px, 0, 0);
+            }
+        }
+    }
+
+    &#{ $self }--arrow-right {
+        &:after {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400.7 233.74'%3E%3Cdefs%3E%3Cstyle%3E.arrow-fill%7Bfill:%23#{$arrow_fill};%7D%3C/style%3E%3C/defs%3E%3Cpolygon class='arrow-fill' points='400.7 133.57 367.31 133.57 367.31 166.96 333.91 166.96 333.91 200.35 300.52 200.35 300.52 233.74 233.74 233.74 233.74 166.96 0 166.96 0 66.78 233.74 66.78 233.74 0 300.52 0 300.52 33.39 333.91 33.39 333.91 66.78 367.31 66.78 367.31 100.17 400.7 100.17 400.7 133.57'/%3E%3Cpolygon points='233.74 166.96 233.74 200.35 233.74 212.35 233.74 233.74 300.52 233.74 300.52 200.35 267.13 200.35 267.13 166.96 267.13 133.57 33.39 133.57 33.39 100.17 267.13 100.17 267.13 66.78 267.13 33.39 300.52 33.39 300.52 0 233.74 0 233.74 33.39 233.74 66.78 0 66.78 0 97.17 0 100.17 0 133.57 0 166.96 233.74 166.96'/%3E%3Crect x='333.91' y='66.78' width='33.39' height='33.39'/%3E%3Crect x='300.52' y='166.96' width='33.39' height='33.39'/%3E%3Crect x='333.91' y='133.57' width='33.39' height='33.39'/%3E%3Crect x='367.31' y='100.18' width='33.39' height='33.39'/%3E%3Crect x='300.52' y='33.39' width='33.39' height='33.39'/%3E%3C/svg%3E");
+        }
+
+        &:hover {
+            &:after {
+                transform: translate3d(5px, 0, 0);
+            }
+        }
+    }
+
+    &#{ $self }--cross {
+        &:after {
+            background-image: url('../icons/close.svg');
+        }
+
+        &:hover {
+            &:after {
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.button {
+    $self: &;
+    @include setFontSize(20px, 18px, 16px);
+    font-family: $font_headings;
+    font-weight: $fw_regular;
+    border-radius: $br;
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    transition: transform .3s ease, background .3s ease, color .3s ease;
+    padding: 16px 25px 15px;
+    line-height: 1;
+    outline: 0;
+    text-decoration: none;
+    display: inline-block;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calculateRem(16px+20px+15px);
+    white-space: nowrap;
+
+    &--yellow {
+        @include button($c_pink, $c_yellow, 2%, 2%);
+        @include buttonArrows($c_pink, $self);
+    }
+
+    &--pink {
+        @include button($c_yellow, $c_pink, 2%, 2%);
+        @include buttonArrows($c_yellow, $self);
+    }
+
+    &--blue {
+        @include button($c_yellow, $c_blue, 2%, 2%);
+        @include buttonArrows($c_yellow, $self);
+    }
+
+    &--white {
+        @include button($c_pink, $white, 0%, 0%);
+        @include buttonArrows($c_pink, $self);
+        border: 1px solid #c2c2c2;
+    }
+
+    &--grey {
+        @include button(darken($c_grey, 80%), $c_grey, 0%, 0%);
+        @include buttonArrows(darken($c_grey, 70%), $self);
+        border: 1px solid #c2c2c2;
+    }
+
+    &--disabled {
+        @include button(darken($c_grey, 25%), $c_grey, 0%, 0%);
+        @include buttonArrows(darken($c_grey, 25%), $self);
+        transform: none !important;
+        cursor: not-allowed;
+    }
+
+    &--static {
+        transform: none !important;
+    }
+
+    &--arrow-left:before,
+    &--arrow-right:after,
+    &--cross:after {
+        content: '';
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 30px;
+        height: 20px;
+        flex-shrink: 0;
+        position: relative;
+        top: -1px;
+        transition: transform .3s ease;
+    }
+
+    &--arrow-left:before {
+        margin-right: 10px;
+    }
+
+    &--arrow-right:after,
+    &--cross:after {
+        margin-left: 10px;
+    }
+
+    &.small {
+        @include setFontSize(16px, 14px, 12px);
+        padding: 10px 15px 10px;
+        height: calculateRem(10px+20px+10px);
+    }
+
+}
+
+input[type="submit"] {
+    @include button($c_yellow, $c_pink, 2%, 2%);
+    @extend .button;
+}
+
+.buttons-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px -10px;
+
+    .button {
+        margin: 5px 10px;
+    }
+
+    @include break(600) {
+        margin: -5px;
+    
+        .button {
+            margin: 5px;
+        }
+    }
+}

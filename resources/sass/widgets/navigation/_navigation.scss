@@ -1,0 +1,225 @@
+.navigation {
+    $self: &;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    height: $navigation_height;
+
+    .section-wrap {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        height: 100%;
+        padding-left: 140px;
+
+        @include break(600) {
+            padding-left: 90px;
+        }
+    }
+
+    &__logo {
+        display: block;
+        width: $logo_height;
+        height: $logo_height;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        /*transition: height .3s ease, width .3s ease;*/
+    }
+
+    &__item-wrap-outer {
+        display: flex;
+    }
+
+    &__item-wrap {
+        display: flex;
+    }
+
+    &__items-wrap {
+    }
+
+    &__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+
+        &--notifications {
+            display: none;
+        }
+
+        &--buttons {
+            margin-left: 10px;
+
+            @include break(1280) {
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__item {
+        margin-left: 20px;
+
+        .button {
+            height: 100%;
+        }
+
+        &--has-badge {
+            a {
+                position: relative;
+            }
+
+            .thread-message__badge {
+                position: absolute;
+                top: -10px;
+                right: -7px;
+            }
+
+            .blinking-dot {
+                width: 10px;
+                margin-right: 4px;
+                vertical-align: text-top;
+                animation: blinker 1s cubic-bezier(0.5, 0, 1, 1) infinite alternate;
+            }
+
+            @keyframes blinker {
+                from { opacity: 1; }
+                to { opacity: 0; }
+            }
+        }
+    }
+
+    &__link {
+        color: $fc_prim;
+        text-decoration: none;
+        display: block;
+        @include fontSize(16px);
+        line-height: 1;
+        padding: 15px 10px;
+
+        @include break(1280) {
+            @include fontSize(15px);
+            padding: 15px 5px;
+        }
+
+        &.active {
+            color: $c_pink;
+        }
+
+        &:hover {
+            color: $c_pink;
+            text-decoration: none;
+        }
+    }
+
+    &__hidden-desktop {
+        display: none;
+    }
+
+    &__user {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        cursor: pointer;
+
+        &__username {
+            font-weight: $fw_bold;
+            max-width: 230px;
+            padding-top: 20px;
+            @include fontSize(18px);
+            @include ellipsis();
+        }
+
+        .avatar-wrapper {
+            height: 50px;
+            width: 50px;
+            margin-right: -20px;
+            margin-top: -20px;
+            border-radius: 5px;
+            flex-shrink: 0;
+            overflow: hidden;
+
+            @include break($navigation_break-small) {
+                margin-right: 0;
+            }
+
+            @include break(500) {
+                margin-right: 0;
+            }
+
+            svg {
+                display: block;
+                transform: translateY(23%) scale(1.36);
+            }
+        }
+
+        &:hover {
+            #{ $self }__user__username {
+                color: $c_pink;
+            }
+        }
+    }
+
+    &__mobile-menu {
+        @include break(1380) {
+            #{ $self }__item {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    &.navigation-spacing {
+        position: relative;
+        background: $sky;
+        z-index: 0;
+        transition: background $shutdown_transition_props;
+    }
+
+    .nav-banner {
+        width: 100%;
+        background-color: #EFEFEF;
+        font-family: $font_primary;
+        text-align: right;
+        padding: 8px 0;
+        color: $fc_prim;
+
+        &--landlubber {
+            cursor: pointer;
+        }
+
+        &--meeting {
+          background-color: rgba(255, 0, 95, 0.75);
+          color: $white;
+          width: fit-content;
+          padding: 8px 20px;
+          right: 0;
+          position: absolute;
+
+          &__active {
+              cursor: pointer;
+          }
+
+          .section-wrap {
+            padding: 0;
+            margin: 0;
+            display: inline;
+          }
+        }
+
+        &__cta {
+            text-decoration: underline;
+            font-weight: $fw_bold;
+            margin-left: 16px;
+            display: inline-block;
+
+            @include break(600) {
+                margin-left: 8px;
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-weight: 400;
+  font-size: 1.3rem;
+  font-family: "Bungee", cursive;
+  align-items: center;
+
+  &.spaced {
+    margin: 20px 0px;
+  }
+
+  &.red {
+    background: #df4141;
+    color: white;
+  }
+
+  &.green {
+    background: #4e9546;
+    color: white;
+  }
+
+  &.blue {
+    background: #2b7bb6;
+    color: white;
+  }
+
+  &.yellow {
+    background: #d3be1e;
+    color: white;
+  }
+
+}

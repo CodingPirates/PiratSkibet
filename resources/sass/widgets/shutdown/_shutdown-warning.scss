@@ -1,0 +1,16 @@
+.shutdown-warning-banner {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: #EC008C;
+  background: #FFF200;
+  font-weight: bold;
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  z-index: 100000;
+}

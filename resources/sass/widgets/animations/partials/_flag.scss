@@ -1,0 +1,17 @@
+.flag {
+    .st0{fill:#231F20;}
+    .st1{fill:#FFFFFF;}
+    .st2{fill:#FFF200;}
+    .st3{fill:#616264;}
+    .st4{fill:#4D4D4F;}
+}
+
+@include timeOfDay("night") {
+    .flag {
+        .st0{ fill: darken(#231F20, 30%); }
+        .st1{ fill: darken(#FFFFFF, 30%); }
+        .st2{ fill: darken(#FFF200, 30%); }
+        .st3{ fill: darken(#616264, 30%); }
+        .st4{ fill: darken(#4D4D4F, 30%); }
+    }
+}

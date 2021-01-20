@@ -1,0 +1,89 @@
+.animation-group {
+    $self: &;
+
+    &--wrapper {
+        position: absolute;
+        display: flex;
+        margin: -20px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+
+        .bubble--wrapper,
+        .bluefish--wrapper,
+        .bluefish-mid--wrapper,
+        .clownfish--wrapper {
+            transition: none;
+            margin: 20px;
+            position: relative;
+            transform: none;
+            opacity: 1;
+
+            &:nth-of-type(even) {
+                .bluefish,
+                .bluefish-mid,
+                .clownfish {
+                    animation: fishFloat 10s ease infinite forwards reverse;
+                }
+            }
+        }
+
+        .bubble, 
+        .bluefish, 
+        .bluefish-mid, 
+        .clownfish {
+            animation: fishFloat 10s ease infinite forwards;
+        }
+    }
+
+    &--up {
+        margin: -5px;
+        min-width: 60px;
+        opacity: 0;
+
+        .bubble--wrapper {
+            margin: 5px;
+        }
+
+        &#{ $self }--enter-done {
+            animation: bubbleFloat 5s ease forwards;
+        }
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+
+        .bluefish--wrapper,
+        .bluefish-mid--wrapper,
+        .clownfish--wrapper {
+            transform: rotateY(180deg);
+        }
+        
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@keyframes fishFloat {
+    0% { transform: translate3d(0, 0, 0); }
+    55% { transform: translate3d(-100%, 100%, 0); }
+    100% { transform: translate3d(0, 0, 0); }
+}
+
+@keyframes bubbleFloat {
+    0% { opacity: 0; transform: translate3d(0, 0, 0); }
+    20% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; transform: translate3d(0, -100%, 0); }
+}

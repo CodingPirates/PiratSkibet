@@ -1,0 +1,50 @@
+.contact-form-wrap {
+    padding: 60px 0;
+
+    @include break(600) {
+        padding: 30px 0;
+    }
+
+    form {
+        background: $white;
+        box-shadow: $shadow;
+        padding: 30px;
+
+        @include break(600) {
+            padding: 20px 30px;
+        }
+    }
+
+    a {
+        font-family: $font_primary;
+    }
+
+    .flex-item {
+        h2, h3, h4 {
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        &:first-child {
+            @include break(600) {
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .form-submit-wrap,
+    .recaptcha-info {
+        margin: 15px;
+
+        @include break(600) {
+            margin: 10px 0;
+        }
+    }
+
+    .fieldset .fieldset-inner .fieldset-inner-content.two-cols > .form-element {
+        @include break(600) {
+            width: 100%;
+            margin: 10px 0;
+        }
+    }
+}

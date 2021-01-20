@@ -1,0 +1,91 @@
+.upgrade-world {
+	padding-bottom: 60%;
+
+	@include break(700) {
+		padding-bottom: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.upgrade-modal {
+	position: relative;
+
+	.upgrade--wrapper {
+		margin: 0 auto;
+		position: relative;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 2;
+	}
+
+	.upgrade-wrapper {
+		position: absolute;
+		z-index: 4;
+		bottom: 20%;
+		left: 50%;
+		transform: translate(-50%, 0);
+
+		@include break(600) {
+			bottom: 16%;
+		}
+
+		.island-half--wrapper {
+			left: 50%;
+			bottom: 0 !important;
+			transform: translate(-50%, 15%);
+		}
+	}
+
+	#avatar {
+        position: relative;
+        z-index: 5;
+
+        svg {
+            width: 350px;
+
+            @include break(600) {
+                width: 280px;
+            }
+        }
+	}
+
+	.island--wrapper {
+		&:nth-of-type(2) {
+			top: 55%;
+
+			@include break(600) {
+				top: 69%;
+			}
+		}
+
+		&:nth-of-type(3) {
+			top: 63%;
+
+			@include break(600) {
+				top: 72%;
+			}
+		}
+		
+		&:nth-of-type(4) {
+			top: 64%;
+			
+			@include break(600) {
+				top: 73%;
+			}
+		}
+	}
+
+	@include break(700) {
+		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}

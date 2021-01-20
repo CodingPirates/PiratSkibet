@@ -1,0 +1,25 @@
+.forum-create-thread {
+    .custom-table-row > form .form-element {
+        margin-bottom: 0;
+    }
+
+    .full-width {
+        width: 100% !important;
+    }
+
+    .full-width.fieldset-inner-content {
+        > .fieldset > .fieldset-inner {
+            margin: -15px;
+        }
+
+        .full-width.fieldset-inner-content {
+            .form-element {
+                margin: 15px;
+            }
+        }
+    }
+
+    .quill {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,47 @@
+.clownfish {
+    $self: &;
+
+    .cls-1 { fill: #ff4a01; }
+    .cls-2 { fill: #ffffff; }
+    .cls-3 { fill: #eaeaea; }
+    .cls-4 { fill: #e0370d; }
+    .cls-5 { fill: #ff7353; }
+
+    &--shadow {
+        opacity: 0.2;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+        
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .clownfish {
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5 {
+            opacity: 0.2;
+        }
+    }
+}

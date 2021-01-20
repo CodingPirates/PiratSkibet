@@ -1,0 +1,63 @@
+.admin-dashboard {
+    .avatar_item_field_editor {
+        margin: -15px;
+    }
+    
+    .avatar_item_field_editor,
+    .avatar_item_field_avatar_preview {
+        padding: 30px;
+        background: lighten($c_grey, 11%);
+    }
+
+    .avatar_item_field_editor_preview {
+        margin: 15px;
+        flex-grow: 0;
+
+        svg {
+            background: $white;
+            margin: 0;
+            border-color: $c_grey;
+        }
+    }
+
+    .avatar_item_field_editor_input {
+        margin: 15px;
+
+        > .form-element {
+            margin: 0;
+    
+            label {
+                display: none;
+            }
+        }
+    }
+
+    .avatar_item_field_avatar_preview {
+        align-items: center;
+        border-top: 1px solid $c_grey;
+
+        .avatar-wrap {
+            padding-bottom: 0;
+            height: 450px;
+            width: auto;
+            flex-grow: 1;
+            margin-left: 30px;
+
+            @include break(1200) {
+                height: 350px;
+            }
+        }
+
+        .avatar-editor__options {
+            border: 1px solid $c_grey;
+
+            > .form-element {
+                margin: 0;
+            }
+
+            @include break(1200) {
+                width: 55%;
+            }
+        }
+    }
+}

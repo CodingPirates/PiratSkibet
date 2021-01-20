@@ -1,0 +1,13 @@
+.glare {
+    position: absolute;
+
+    path {
+        fill: #FFF;
+    }
+}
+
+@include timeOfDay("night") {
+    .glare path {
+        fill: #666666;
+    }
+}

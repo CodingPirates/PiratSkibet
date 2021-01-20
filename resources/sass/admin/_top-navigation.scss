@@ -1,0 +1,50 @@
+.top-navigation {
+    background: $c_dark_grey;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: $admin_top-nav_height;
+    width: calc(100% - #{ $admin_side-nav_width });
+    z-index: 10;
+    padding: 0 $admin_dashboard_padding;
+
+    .button {
+        padding: 10px 15px 10px;
+        @include fontSize(16px);
+    }
+
+    &__item-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__items {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: $admin_top-nav_height;
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        margin-left: 25px;
+    }
+
+    &__title {
+        color: $c_yellow;
+        font-family: $font_headings;
+        @include setFontSize(20px, 18px, 16px);
+    }
+
+    .notifications {
+        top: 80px;
+        right: 20px;
+    }
+
+    .user-dropdown-menu {
+        top: 80px;
+        right: 20px;
+    }
+}

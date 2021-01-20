@@ -1,0 +1,14 @@
+.moderation-case--case-actions {
+    display: flex;
+    justify-content: flex-end;
+
+    .button {
+        margin-left: 10px;
+
+        &:first-child {
+            margin-left: 0px;
+        }
+
+    }
+
+}

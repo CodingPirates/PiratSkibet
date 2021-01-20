@@ -1,0 +1,12 @@
+a {
+    font-family: $font_headings;
+    text-decoration: none;
+    color: $c_pink;
+    line-height: 1;
+    font-weight: normal;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+    
+}

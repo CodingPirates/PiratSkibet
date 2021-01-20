@@ -1,0 +1,14 @@
+.glitch {
+    .glitchable {
+        filter: url(#glitchFilter);
+    }
+
+    svg {
+        overflow: visible;
+	    box-shadow: 0px -0px 10000px transparent; // Chrome overflow fix
+    }
+}
+
+.glitch-filter {
+    display: none;
+}

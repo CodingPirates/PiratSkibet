@@ -1,0 +1,231 @@
+.projects-overview {
+    .section-wrap {
+        padding: 90px 0 60px;
+
+        @include break(900) {
+            padding-top: 60px;
+        }
+
+        &.project-header {
+            padding-bottom: 0;
+            padding-top: 90px;
+
+            @include break(600) {
+                padding-top: 60px;
+            }
+        }
+    }
+}
+
+.projects-overview {
+    .project-header {
+        .projects-title-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            max-width: 600px;
+            margin: 0;
+            margin-top: 20px;
+            font-weight: $fw_semi;
+            @include setFontSize(17px, 17px, 16px);
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+
+        a {
+            @include setFontSize(16px, 16px, 15px);
+        }
+
+        .button-wrap {
+            display: flex;
+            margin-top: 50px;
+
+            .button {
+                margin: 5px;
+            }
+        }
+    }
+
+    .projects-content {
+
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            background-color: $c_pink;
+            padding: 15px 30px;
+            width: 100%;
+            margin-bottom: 30px;
+
+            @include break(900) {
+                margin-bottom: 5px;
+            }
+
+            @include break(700) {
+                flex-wrap: wrap;
+                padding: 15px;
+            }
+
+            &__filters {
+                display: flex;
+                align-items: center;
+
+                &--inputs {
+                    @include break(700) {
+                        order: 2;
+                        width: 100%;
+                        justify-content: space-between;
+                        margin-top: 10px;
+                        flex-wrap: wrap;
+                    }
+                }
+            }
+
+            .subtitle {
+                flex: 1;
+            }
+
+            .form-element {
+                margin: 0;
+            }
+
+            .select-wrap {
+                margin-right: 20px;
+                background-color: $white;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M6,0l6,7H0Z' transform='translate(12 7) rotate(180)' fill='%23adadad'/%3E%3C/svg%3E%0A");
+                background-position: center right 10px;
+                background-repeat: no-repeat;
+                background-size: 12px;
+
+                label {
+                    display: none;
+                }
+
+                select {
+                    padding: 0 40px 0 10px;
+                    border: none;
+                    outline: none;
+                    height: 28px;
+                    background: transparent;
+                    @include fontSize(14px);
+                }
+            }
+
+            .search-wrap {
+                margin: 0 20px;
+
+                label {
+                    margin: 0;
+                }
+
+                input {
+                    border: none;
+                    height: 28px;
+                    padding: 0 10px;
+                    @include fontSize(16px);
+                }
+            }
+
+            .select-wrap,
+            .search-wrap {
+                @include break(700) {
+                    margin: 0;
+                    width: calc(50% - 10px);
+                }
+
+                @include break(360) {
+                    width: 100%;
+                }
+            }
+
+            .select-wrap {
+                @include break(360) {
+                    margin-top: 10px;
+                }
+            }
+        }
+
+        .projects-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+
+            &--open {
+                .projects-container-inner {
+                    transform: translate3d(270px, 0, 0)
+                }
+
+                .projects-categories {
+                    transform: translate3d(270px, 0, 0);
+                }
+            }
+
+            .projects-container-inner {
+                flex-grow: 1;
+                min-width: 0;
+                transition: transform .4s ease;
+            }
+        }
+    }
+
+    .view-toggle {
+        color: $c_yellow;
+        opacity: .5;
+        height: 24px;
+        margin-left: 20px;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &--active {
+            cursor: initial;
+            opacity: 1;
+        }
+
+        svg {
+            fill: $c_yellow;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    .subtitle {
+        color: $c_yellow;
+        font-family: $font_headings;
+        @include setFontSize(24px, 22px, 20px);
+    }
+}
+
+.download-files {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    &:before {
+        content: '';
+        background-image: url('data:image/svg+xml;utf8;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBhdGggc3R5bGU9ImZpbGw6I0ZGRjIwMCIgZD0iTTM4Mi41NiwyMzMuMzc2QzM3OS45NjgsMjI3LjY0OCwzNzQuMjcyLDIyNCwzNjgsMjI0aC02NFYxNmMwLTguODMyLTcuMTY4LTE2LTE2LTE2aC02NGMtOC44MzIsMC0xNiw3LjE2OC0xNiwxNnYyMDhoLTY0Yy02LjI3MiwwLTExLjk2OCwzLjY4LTE0LjU2LDkuMzc2Yy0yLjYyNCw1LjcyOC0xLjYsMTIuNDE2LDIuNTI4LDE3LjE1MmwxMTIsMTI4YzMuMDQsMy40ODgsNy40MjQsNS40NzIsMTIuMDMyLDUuNDcyYzQuNjA4LDAsOC45OTItMi4wMTYsMTIuMDMyLTUuNDcybDExMi0xMjhDMzg0LjE5MiwyNDUuODI0LDM4NS4xNTIsMjM5LjEwNCwzODIuNTYsMjMzLjM3NnoiLz48cGF0aCBzdHlsZT0iZmlsbDojRkZGMjAwIiBkPSJNNDMyLDM1MnY5Nkg4MHYtOTZIMTZ2MTI4YzAsMTcuNjk2LDE0LjMzNiwzMiwzMiwzMmg0MTZjMTcuNjk2LDAsMzItMTQuMzA0LDMyLTMyVjM1Mkg0MzJ6Ii8+PC9zdmc+');
+        width: 17px;
+        height: 17px;
+        display: block;
+        margin-right: 8px;
+    }
+}
+@include timeOfDay("night") {
+    .projects-overview .project-header {
+        h1, p {
+            color: $c_yellow;
+        }
+    }
+}

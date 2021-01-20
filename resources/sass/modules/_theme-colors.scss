@@ -1,0 +1,51 @@
+.bg {
+    &--yellow {
+        background: $c_yellow;
+
+        p {
+            color: darken($c_pink, 35%);
+        }
+    }
+    
+    &--pink {
+        background: $c_pink;
+        
+        p {
+            color: #FFF;
+        }
+    }
+
+    &--blue {
+        background: $c_blue;
+
+        p {
+            color: #FFF;
+        }
+    }
+
+    &--grey {
+        background: $c_grey;
+
+        p {
+            color: darken($c_pink, 38%);
+        }
+    }
+}
+
+.text {
+    &--yellow {
+        color: $c_yellow;
+    }
+
+    &--pink {
+        color: $c_pink;
+    }
+
+    &--blue {
+        color: $c_blue;
+    }
+
+    &--black {
+        color: $black;
+    }
+}

@@ -1,0 +1,46 @@
+@include timeOfDay("night") {
+    .navigation {
+        &__link {
+            color: $c_yellow;
+
+            &:hover {
+                color: $c_pink;
+            }
+        }
+
+        &.navigation-spacing {
+            background: #162934;
+        }
+
+        &--scrolled {
+            .navigation__link,
+            .navigation__user__username {
+                color: $fc_prim;
+
+                &:hover {
+                    color: $c_pink;
+                }
+            }
+        }
+
+        @include break($navigation_break-small) {
+            .navigation__link {
+                color: $fc_prim;
+
+                &:hover {
+                    color: $c_pink;
+                }
+            }
+        }
+
+        @include break(500) {
+            .navigation__user__username {
+                color: $fc_prim;
+
+                &:hover {
+                    color: $c_pink;
+                }
+            }
+        }
+    }
+}

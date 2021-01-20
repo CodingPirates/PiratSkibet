@@ -1,0 +1,79 @@
+.animation-world {
+    &.text-header-world {
+        padding-bottom: 0;
+        height: 400px;
+
+        @include break(1280) {
+            height: 350px;
+        }
+
+        @include break(600) {
+            height: 240px;
+        }
+
+        .text-header-section {
+            height: 265px;
+            display: flex;
+            align-items: center;
+            z-index: 10;
+
+            @include break(1280) {
+                height: 234px;
+            }
+
+            @include break(900) {
+                top: 20px;
+            }
+
+            @include break(600) {
+                height: 170px;
+            }
+
+            &__title {
+                margin: 0;
+            }
+
+            .buttons-wrap {
+                margin-top: 15px;
+            }
+        }
+
+        .island-half--wrapper svg {
+            fill: $c_blue;
+        }
+    }
+
+    .water--wrapper {
+        @include break(600) {
+            height: 32% !important;
+        }
+
+        @include break(400) {
+            height: 32% !important;
+        }
+    }
+
+    .island-half--wrapper {
+        @include break(600) {
+            bottom: 20% !important;
+        }
+    }
+
+    .water-line--wrapper {
+        @include break(900) {
+            bottom: -22px !important;
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .animation-world.text-header-world {
+        .text-header-section__title {
+            color: $c_yellow;
+        }
+
+        .island-half--wrapper svg {
+            fill: darken($c_blue, 40%);
+        }
+    }
+}

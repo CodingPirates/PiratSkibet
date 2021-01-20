@@ -1,0 +1,76 @@
+.course-steps {
+    background: $sky;
+    padding: 100px 0;
+
+    .underwater-world {
+        position: fixed;
+        z-index: 1;
+    }
+
+    > .section-wrap {
+        position: relative;
+        z-index: 2;
+    }
+
+    .course {
+        margin-bottom: 100px;
+    }
+
+    &__intro {
+        max-width: 700px;
+        position: relative;
+    }
+
+    &__title {
+        max-width: 1000px;
+
+        h1 {
+            color: $c_yellow;
+            @include setFontSize(60px, 50px, 40px);
+            margin: 0;
+        }
+    }
+
+    &__description {
+        color: $white;
+        @include setFontSize(20px, 18px, 16px);
+        margin-top: 30px;
+        max-width: 650px;
+    }
+
+    &__progress {
+        max-width: 550px;
+    }
+
+    &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 55px -5px 95px;
+
+        .button {
+            margin: 5px;
+
+            &:nth-child(4) {
+                order: 4;
+            }
+            &:first-child:nth-last-child(4) {
+                order: 3;
+            }
+            &:nth-child(3):nth-last-child(2) {
+              margin-right: 30%;
+
+                @include break(1185) {
+                    margin-right: 15%;
+                }
+
+                @include break(985) {
+                    margin-right: 5px;
+                }
+
+                @include break(830) {
+                    margin-right: 30%;
+                }
+            }
+        }
+    }
+}

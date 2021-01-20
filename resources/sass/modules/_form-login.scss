@@ -1,0 +1,52 @@
+$modal_footer_height--login: 120px;
+
+.modal-footer {
+    &.login {
+        .forgot-password-link {
+            margin-right: 20px;
+        }
+
+        .modal-footer-left {
+            justify-content: space-between;
+
+            > .form-element {
+                margin: 0;
+            }
+        }
+
+        @include break(500) {
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 15px 5%;
+            height: $modal_footer_height--login;
+
+            .modal-footer-left {
+                flex-grow: 0;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+
+            .modal-footer-right {
+                width: 100%;
+                justify-content: flex-end;
+            }
+
+            .forgot-password-link {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.modal-container {
+    .modal {
+        .modal-content {
+            .form-content.login {
+                @include break(500) {
+                    max-height: calc(100vh - 181px);
+                }
+            }
+        }
+    }
+}

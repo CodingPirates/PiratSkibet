@@ -1,0 +1,104 @@
+.forum-world {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.forum {
+    padding: 90px 0;
+
+    @include break(900) {
+        padding-bottom: 60px;
+    }
+
+    @include break(600) {
+        padding-top: 60px;
+    }
+}
+
+.thread {
+    > form {
+        .fieldset .fieldset-inner .fieldset-inner-content {
+            margin: -15px;
+            width: auto;
+        }
+
+        input[type="submit"] {
+            margin: 15px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.thread-title {
+    margin-bottom: 30px;
+
+    @include break(900) {
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        margin: 0;
+        max-width: 900px;
+    }
+
+    .thread-message__badges {
+        margin-top: 30px;
+        margin-bottom: 60px;
+
+        @include break(600) {
+            margin-bottom: 30px;
+        }
+    }
+
+    ~ .breadcrumbs {
+        margin-bottom: 30px;
+    }
+}
+
+.thread-not-logged-in {
+    p {
+        color: #111;
+        margin: 60px 0 30px;
+        text-align: center;
+
+        @include break(600) {
+            margin: 30px 0 15px;
+        }
+    }
+
+    .buttons-wrap {
+        justify-content: center;
+    }
+}
+
+.custom-table {
+    .thread-not-logged-in {
+        padding: 0 12px;
+    }
+}
+
+@include timeOfDay("night") {
+    .thread-title {
+        h1 {
+            color: $c_yellow;
+        }
+    }
+
+    .thread-not-logged-in {
+        p {
+            color: $c_yellow;
+        }
+    }
+}
+
+.send-message-button {
+    background-image: url("data:image/svg+xml,%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='535.5px' height='535.5px' viewBox='0 0 535.5 535.5' xml:space='preserve' style='fill:%23FFF200'%3E%3Cpolygon points='0,497.25 535.5,267.75 0,38.25 0,216.75 382.5,267.75 0,318.75'/%3E%3C/svg%3E") !important;
+    background-position: center right 20px !important;
+    background-repeat: no-repeat !important;
+    background-size: 19px !important;
+    padding-right: 50px !important;
+}

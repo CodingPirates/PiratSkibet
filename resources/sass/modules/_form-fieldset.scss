@@ -1,0 +1,126 @@
+
+
+.form-element {
+    margin: 15px;
+}
+
+.fieldset {
+    margin: 0px !important;
+
+    .fieldset-inner {
+        .fieldset-inner-content {
+            display: flex;
+            flex-wrap: wrap;
+
+            &.two-cols,
+            &.three-cols,
+            &.four-cols {
+                > .form-element {
+                    margin: 15px;
+                }
+            }
+
+            &.full-width {
+                & > .form-element {
+                    width: calc(100% - 30px);
+                    flex-grow: 1;
+                }
+            }
+
+            &.two-cols {
+                & > .form-element {
+                    width: calc(50% - 30px);
+                    flex-grow: 1;
+                }
+            }
+            
+            &.three-cols {
+                & > .form-element {
+                    width: calc(33.333333% - 30px);
+                    flex-grow: 1;
+                }
+            }
+            
+            &.four-cols {
+                & > .form-element {
+                    width: calc(25% - 30px);
+                    flex-grow: 1;
+                }
+            }
+        }
+    }
+
+    .full-width {
+        width: 100%;
+
+        .form-content {
+            width: 100%;
+        }
+    }
+
+    .form-content {
+        .fieldset-inner {
+            margin: -10px;
+        }
+    }
+}
+
+.form-content {
+    &.edit-post {
+        .form-element {
+            width: 100% !important;
+        }
+
+        .fieldset-inner-content .fieldset-inner > .full-width.form-wrap.fieldset-inner-content {
+            margin: -15px;
+        }
+
+        form > .fieldset > .fieldset-inner > .fieldset-inner-content {
+            height: auto !important;
+        }
+
+        input[type="submit"] {
+            margin: 5px 15px 15px;
+
+            @include break(600) {
+                margin: 0;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+.form-content-backend {
+    padding: 50px;
+    width: 100%;
+
+    @include break(600) {
+        padding: 30px 5%;
+    }
+
+    .form-elements-wrap {
+        margin: -15px;
+
+        .form-element {
+            margin: 15px;
+
+            @include break(600) {
+                margin: 10px 0;
+            }
+        }
+
+        input[type="submit"] {
+            margin: 15px;
+            margin-top: 30px;
+
+            @include break(600) {
+                margin: 10px 0;
+                margin-top: 20px;
+            }
+        }
+
+        @include break(600) {
+            margin: -10px 0;
+        }
+    }
+}

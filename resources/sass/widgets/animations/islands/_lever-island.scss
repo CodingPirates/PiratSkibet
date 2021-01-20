@@ -1,0 +1,18 @@
+.lever-island {
+    &--appear,
+    &--appear-done {
+        position: absolute;
+    }
+
+    .island--appear,
+    .island--appear-done {
+        position: relative;
+    }
+
+    .lever--appear,
+    .lever--appear-done {
+        position: relative;
+        left: 33%;
+        margin-bottom: -15%;
+    }
+}

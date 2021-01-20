@@ -1,0 +1,30 @@
+.events-section {
+    padding: 100px 0;
+
+    @include break(900) {
+        padding: 50px 0;
+    }
+
+    &__wrap {
+        display: flex;
+
+        @include break(900) {
+            flex-direction: column;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    .title-bar {
+
+        h2 {
+            flex: 1;
+        }
+
+    }
+}

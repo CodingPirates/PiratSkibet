@@ -1,0 +1,61 @@
+.shark {
+    $self: &;
+
+    .cls-1 {
+        fill: #6996bb;
+    }
+
+    .cls-2 {
+        fill: #b0bfcd;
+    }
+
+    .cls-3 {
+        fill: #e9ebeb;
+    }
+
+    .cls-4 {
+        fill: #5c72a3;
+    }
+
+    .cls-5 {
+        fill: #77becf;
+    }
+
+    &--shadow {
+        opacity: 0.2;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .shark {
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5 {
+            opacity: 0.2;
+        }
+    }
+}

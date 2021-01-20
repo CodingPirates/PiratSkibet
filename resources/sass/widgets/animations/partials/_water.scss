@@ -1,0 +1,100 @@
+$water_main: #00aeef;
+$water_light: #6dcff6;
+$water_lightest: #abe1fa;
+
+$water_main-night: #0f1c23;
+$water_light-night: #162934;
+$water_lightest-night: #203d4e;
+
+.water {
+    $self: &;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: $water_main;
+    transition: background $shutdown_transition_props;
+    -moz-transition: background $shutdown_transition_props;
+
+    &--wrapper {
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+    }
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        width: 100%;
+        animation: waves 6s ease-in infinite alternate;
+        -moz-animation: waves 6s ease-in infinite alternate;
+        transition: background $shutdown_transition_props;
+        -moz-transition: background $shutdown_transition_props;
+    }
+
+    &--default {
+        #{ $self } {
+            &:before,
+            &:after {
+                height: 30%;
+            }
+    
+            &:before {
+                top: 0;
+                background: $water_lightest;
+            }
+    
+            &:after {
+                top: 25%;
+                background: $water_light;
+                animation-delay: 1.3s;
+            }
+        }
+    }
+
+    &--small {
+        bottom: 0;
+
+        #{ $self } {
+            background: $water_light;
+
+            &:before {
+                top: 0;
+                height: 40%;
+                background: $water_lightest;
+            }
+    
+            &:after {
+                height: 60%;
+                bottom: 0;
+                background: $water_light;
+                animation-delay: 1.3s;
+            }
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .water {
+        background: $water_main-night;
+
+        &:before {
+            background: $water_lightest-night;
+        }
+
+        &:after {
+            background: $water_light-night;
+        }
+    }
+}
+
+@keyframes waves {
+    from { transform: translate(0, 0) rotate(0.01deg); }
+    to { transform: translate(0, -10%) rotate(0.01deg); }
+}
+
+@-moz-keyframes waves {
+    from { transform: translate(0, 0) rotate(0.01deg); }
+    to { transform: translate(0, -10%) rotate(0.01deg); }
+}

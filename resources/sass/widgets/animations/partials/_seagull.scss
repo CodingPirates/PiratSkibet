@@ -1,0 +1,64 @@
+.seagull {
+    $self: &;
+
+    .st0{fill:#FFFFFF;}
+    .st1{fill:#FFF200;}
+    .st2{fill:#231F20;}
+
+    .wing-up {
+        opacity: 0;
+        animation: wingUp 0.7s linear 0s infinite;
+        animation-timing-function: steps(1);
+    }
+
+    .wing-down {
+        opacity: 0;
+        animation: wingDown 0.7s linear 0s infinite;
+        animation-timing-function: steps(1);
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            -moz-transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+            -moz-transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+        
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            -moz-transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+            -moz-transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .seagull {
+        .st0{ fill:darken(#FFFFFF, 40%); }
+        .st1{ fill:darken(#FFF200, 40%); }
+    }
+}
+
+@keyframes wingUp {
+    0%      { opacity: 0; }
+    50%     { opacity: 1; }
+    100%     { opacity: 0; }
+}
+
+@keyframes wingDown {
+    0%      { opacity: 1; }
+    50%     { opacity: 0; }
+    100%     { opacity: 1; }
+}

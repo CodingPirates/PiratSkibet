@@ -1,0 +1,20 @@
+.course-wrap {
+    $self: &;
+    position: relative;
+
+    @for $i from 0 through 2 {
+        &--#{ $i } {
+            padding: 80px 0;
+
+            ~ #{ $self }--#{ $i } {
+                padding-top: 0;
+                margin-top: -40px;
+            }
+
+        }
+    }
+
+    &--active {
+        z-index: 2;
+    }
+}

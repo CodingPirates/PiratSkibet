@@ -1,0 +1,134 @@
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 100%;
+
+    * {
+        user-select: none;
+    }
+
+    .pagination-item {
+        padding: 15px 20px;
+        font-size: 15px;
+        letter-spacing: -.4px;
+        border-radius: $br;
+        border: $border;
+        transition: opacity, color, background, $prim-trans;
+        margin-right: 10px;
+        cursor: pointer;
+        outline: none;
+        background: $white;
+
+        &:last-child {
+            margin-right: 0px;
+        }
+
+        &:hover {
+            opacity: .85;
+            background: $c-prim;
+            color: $white;
+        }
+
+        &.seperator {
+            border: none;
+            padding: 15px 5px;
+            letter-spacing: 2px;
+            color: $c-text-select;
+
+            &:hover {
+                opacity: .85;
+            }
+        }
+
+        &.next, &.prev {
+            margin-right: 0px;
+
+            &:hover {
+                color: grey;
+            }
+
+            &.active {
+                &:hover {
+                    background: $c-prim;
+                    color: $white !important;
+                }
+            }
+
+            img {
+                width: 7px;
+                height: 12px;
+                transition: $prim-trans;
+            }
+        }
+
+        &.active {
+            border: 1px solid $c-prim;
+            background: $c-prim;
+            color: $white;
+        }
+
+        &.seperator {
+            background: none;
+
+            &:hover {
+                cursor: default;
+                opacity: 1;
+                background: none;
+                color: $black;
+            }
+        }
+    }
+}
+
+.large-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .pagination-item {
+        background: $white;
+        border-top: $border;
+        border-bottom: $border;
+        border-left: $border;
+        padding: 15px 30px;
+        opacity: .5;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: $prim-trans;
+
+        &:hover {
+            opacity: .8;
+            cursor: pointer;
+        }
+
+        &.active {
+            opacity: 1;
+        }
+
+        &:first-child {
+            border-radius: $br 0px 0px $br;
+        }
+        &:last-child {
+            border-radius: 0px $br $br 0px;
+            border-right: $border;
+        }
+
+        .title {
+            font-weight: $fw-semi;
+            font-size: 16px;
+            letter-spacing: -.2px;
+        }
+
+        p {
+            color: $c-text;
+            opacity: .3;
+            letter-spacing: -.2px;
+            font-size: 14px;
+            font-weight: $fw-semi;
+        }
+    }
+}

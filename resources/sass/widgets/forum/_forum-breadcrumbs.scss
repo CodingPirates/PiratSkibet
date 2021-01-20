@@ -1,0 +1,68 @@
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -3px -5px;
+
+    .breadcrumb-link {
+        font-family: $font_primary;
+        text-decoration: none;
+        color: $fc_prim;
+        background: #EFEFEF;
+        padding: 8px 12px;
+        font-weight: bold;
+        margin: 3px 5px;
+        @include fontSize(14px);
+
+        &:last-of-type {
+            background-color: $c_yellow;
+            margin-right: 0;
+            font-weight: $fw_bold;
+            color: $c_pink;
+
+            &:after {
+                display: none;
+            }
+        }
+
+        &:hover {
+            color: $c_pink;
+        }
+    }
+
+    .breadcrumb-guide {
+        font-weight: bold;
+        padding: 8px 0;
+        margin: 3px 5px -5px;
+        width: 100%;
+        @include fontSize(14px);
+    }
+
+}
+
+@include timeOfDay("night") {
+    .breadcrumbs {
+        .breadcrumb-link {
+            color: black;
+
+            &:last-of-type {
+                color: $c_pink;
+
+                &:after {
+                    display: none;
+                }
+            }
+
+            &:hover {
+                color: $c_pink;
+            }
+
+            &:after {
+                color: $c_yellow;
+            }
+        }
+
+        .breadcrumb-guide {
+            color: white;
+        }
+    }
+}

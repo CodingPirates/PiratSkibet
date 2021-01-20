@@ -1,0 +1,73 @@
+.organization-logo-row {
+    padding: 100px 0;
+
+    @include break(900) {
+        padding: 50px 0;
+    }
+
+    &__grid {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin: -30px;
+
+        @include break(1000) {
+            margin: -20px;
+        }
+
+        @include break(600) {
+            margin: -10px;
+        }
+    }
+
+    .organization-logo{
+        &__item {
+            margin: 30px;
+            width: calc(25% - 60px);
+            
+            @include break(1000) {
+                margin: 20px;
+                width: calc(33.333333% - 40px);
+            }
+
+            @include break(600) {
+                margin: 10px;
+                width: calc(50% - 20px);
+            }
+        }
+    }
+
+    &--1,
+    &--3 {
+        .organization-logo {
+            &__item {
+                width: calc(33.333333% - 60px);
+
+                @include break(1000) {
+                    width: calc(33.333333% - 40px);
+                }
+
+                @include break(600) {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+
+    &--2 {
+        .organization-logo {
+            &__item {
+                width: calc(50% - 60px);
+                
+                @include break(1000) {
+                    width: calc(50% - 60px);
+                }
+
+                @include break(600) {
+                    width: calc(50% - 20px);
+                }
+            }
+        }
+    }
+}

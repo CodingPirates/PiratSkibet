@@ -1,0 +1,77 @@
+.profile-world {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-header-world {
+    position: relative;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    padding-bottom: 35%;
+    margin-top: -$navigation_height;
+    padding-top: $navigation_height;
+
+    @include break(1150) {
+        padding-bottom: 45%;
+    }
+    
+    @include break($navigation_break-small) {
+        margin-top: -$navigation_height-scrolled;
+        padding-top: $logo_height-scrolled;
+    }
+
+    @include break(700) {
+        padding-bottom: 50%;
+    }
+    
+    @include break(600) {
+        margin-top: -$navigation_height-mobile;
+        padding-top: $logo_height-mobile;
+        padding-bottom: 70%;
+    }
+
+    > .island-half--wrapper {
+        &:nth-of-type(2) {
+            top: 52%;
+        }
+
+        &:nth-of-type(3) {
+            top: 61%;
+        }
+
+        &:nth-of-type(4) {
+            top: 62%;
+        }
+
+        @include break(700) {
+            &:nth-of-type(2) {
+                top: 58%;
+            }
+
+            &:nth-of-type(3),
+            &:nth-of-type(4) {
+                top: 63%;
+            }
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .profile-header-world {
+        .island-half--wrapper path {
+            fill: darken(#00aeef, 40%);
+        }
+
+        .avatar-wrap {
+            .island-half--wrapper path {
+                fill: darken(#1f9dce, 27%);
+            }
+        }
+    }
+}

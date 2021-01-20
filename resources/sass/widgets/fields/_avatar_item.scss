@@ -1,0 +1,62 @@
+.avatar_item_field {
+
+    .avatar_item_field_editor {
+        display: flex;
+        flex-direction: row;
+
+        .avatar_item_field_editor_input {
+            flex-basis: 60%;
+            flex-grow: 1;
+
+            textarea {
+                min-height: 400px;
+            }
+
+        }
+
+    }
+
+    .avatar_item_field_avatar_preview {
+        display: flex;
+
+        .avatar-editor__options {
+
+            .avatar-item-options {
+
+            }
+
+        }
+
+        .avatar-wrap {
+
+        }
+
+    }
+
+}
+
+.avatar_item_field_editor_preview {
+    flex-grow: 1;
+
+    svg {
+        height: 200px;
+        width: 200px;
+        border: 1px solid grey;
+        margin: 30px;
+    }
+
+    &.tiny {
+        svg {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+    }
+
+    &.noborder {
+        svg {
+            border: none;
+        }
+    }
+
+}

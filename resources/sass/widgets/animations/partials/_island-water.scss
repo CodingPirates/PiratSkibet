@@ -1,0 +1,55 @@
+.island-water--wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .island-water-wrap {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &.top {
+            z-index: 10;
+        }
+    }
+
+    .island-water {
+        fill: #FFFFFF;
+
+        &.animate {
+            animation: scaleCourseIslandWater 6s ease-in-out infinite alternate;
+            transform-origin: center;
+
+			&.transparent {
+				animation-name: scaleCourseIslandWaterTr;
+				animation-delay: 1s;
+			}
+        }
+    
+        &.transparent {
+            opacity: 0.3;
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .island-water--wrapper {
+        .island-water {
+            fill: #223640;
+        }
+    }
+}
+
+@keyframes scaleCourseIslandWater {
+	from { transform: scale(1); }
+	to { transform: scale(1.06); }
+}
+
+@keyframes scaleCourseIslandWaterTr {
+	from { transform: scale(1); }
+	to { transform: scale(1.07); }
+}

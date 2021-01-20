@@ -1,0 +1,260 @@
+.profile-page {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 90px;
+
+    @include break(900) {
+        padding-bottom: 60px;
+    }
+
+    h2, h3 {
+        margin: 0 0 30px;
+        color: $c_yellow;
+        
+        @include break(900) {
+            margin: 0 0 20px;
+        }
+    }
+
+    .section-wrap {
+        margin: 40px auto;
+    }
+
+    .profile-title-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 5;
+
+        .profile-title {
+            margin: 0;
+            margin-top: 8%;
+            width: 60%;
+
+            @include break(700) {
+                width: 100%;
+                max-width: 400px;
+            }
+
+            @include break(400) {
+                @include fontSize(26px);
+            }
+        }
+    }
+
+    .profile-info-section {
+        z-index: 5;
+        margin: 90px auto;
+            
+        @include break(900) {
+            margin: 60px auto;
+        }
+
+        .paper__content {
+            > div {
+                padding: 30px 15px;
+                position: relative;
+                z-index: 2;
+
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .profile-avatar {
+        width: 25%;
+        position: absolute;
+        bottom: 10%;
+        right: 17%;
+
+        @include break(1300) {
+            right: 15%;
+            width: 30%;
+        }
+
+        .avatar-wrap {
+            position: relative;
+        }
+
+        .avatar-wrapper {
+            z-index: 4;
+            position: relative;
+        }
+    }
+
+    .profile-projects-section {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 90px;
+
+        @include break(900) {
+            margin-bottom: 60px;
+        }
+
+        .profile-projects {
+            .project {
+                @include break(1100) {
+                    width: calc(33.333% - 20px);
+                }
+
+                @include break(800) {
+                    width: calc(50% - 20px);
+                }
+            }
+
+            .pagination {
+                margin-left: 15px;
+                margin-right: 15px;
+
+                @include break(1100) {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+
+    .profile-rewards-section {
+        .user-title {
+            &.selected {
+                color: $c_pink;
+            }
+        }
+
+        .treasure-chest {
+            width: 20%;
+
+            @include break(750) {
+                width: 25%;
+            }
+
+            @include break(600) {
+                width: 33.333%;
+            }
+
+            @include break(450) {
+                width: 50%;
+            }
+        }
+
+        .reward-avatar-item-wrap {
+            width: 50%;
+            display: block;
+
+            &:nth-child(odd) {
+                padding: 30px 30px 30px 0;
+                border-right: 1px solid $c-border-light;
+                border-bottom: 1px solid $c-border-light;
+            }
+            
+            &:nth-child(even) {
+                padding: 30px 0 30px 30px;
+                border-bottom: 1px solid $c-border-light;
+            }
+
+            &:first-child,
+            &:nth-child(2) {
+                padding-top: 0;
+            }
+
+            &:last-child,
+            &:nth-last-child(2) {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+            @include break(700) {
+                width: 100%;
+                padding: 30px 0 !important;
+
+                &:first-child {
+                    padding-top: 0 !important;
+                }
+
+                &:last-child {
+                    padding-bottom: 0 !important;
+                }
+
+                &:nth-child(odd) {
+                    border-right: none;
+                }
+
+                &:nth-child(2) {
+                    border-bottom: 1px solid $c-border-light;
+                }
+            }
+
+            &__items {
+                display: flex;
+                flex-wrap: wrap;
+                margin: -5px;
+                margin-top: 15px;
+            }
+
+            .avatar-item {
+                margin: 5px;
+                border: 1px solid $c-border-light;
+                position: relative;
+                width: 100px;
+                height: 100px;
+
+                svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            > div:first-child {
+                width: 100%;
+            }
+
+            h4, h5 {
+                margin: 0 0 12px;
+            }
+        }
+
+        .tabbed-content-wrap {
+            min-height: 88px;
+        }
+
+        .reward-recieved {
+            display: block;
+            margin-bottom: 4px;
+            font-style: italic;
+        }
+
+        .user-title {
+            margin: 5px;
+        }
+    }
+
+    .tabbed-content-wrap {
+        background: $white;
+        padding: 30px;
+        display: flex;
+        flex-wrap: wrap;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .edit-avatar-tabs {
+        overflow: auto;
+    }
+}
+
+@include timeOfDay('night') {
+    .profile-page .profile-title-section .profile-title {
+        color: $c_yellow;
+    }
+
+    .context-menu .context-menu-icon rect {
+        fill: $c_yellow;
+    }
+}

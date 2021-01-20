@@ -1,0 +1,128 @@
+.television {
+	$self: &;
+	overflow: visible;
+	box-shadow: 0px -0px 100px transparent; // Chrome overflow fix
+	/*-webkit-transform-style: preserve-3d;*/
+
+	.st1{fill:#FFFFFF;}
+	.st2{fill:#bdbdbd;}
+	.st3{fill:#dedede;}
+	.st4{opacity:0.81;fill:#FFFFFF;}
+	.st5{fill:/*#ABE1FA*/#353301;}
+	.st6{opacity:0.62;fill:#00AEEF;}
+	.st7{opacity:0.62;fill:#FFFFFF;}
+	.st8{opacity:0.43;fill:#FFFFFF;}
+	.st9{opacity:0.85;fill:#FFFFFF;}
+	.st10{opacity:0.18;fill:#666666;}
+
+	.st5--light {
+		fill: rgba(#cbedfd, 0);
+	}
+
+	&__water {
+		fill:#FFFFFF;
+		transform-origin: center;
+
+		&--tr {
+			opacity: .47;
+		}
+	}
+
+	&--wrapper {
+        position: absolute;
+    }
+
+	&--enter-done {
+		#{ $self }__body {
+			animation: floatTelevision 5s ease-in-out infinite alternate;
+			-moz-animation: floatTelevision 5s ease-in-out infinite alternate;
+		}
+
+		#{ $self }__wire {
+			animation: floatTelevision 5s ease-in-out infinite alternate;
+			-moz-animation: floatTelevision 5s ease-in-out infinite alternate;
+			animation-delay: 2s;
+			-moz-animation-delay: 2s;
+		}
+
+		#{ $self }__water {
+			animation: scaleTvWater 5s ease-in-out infinite alternate;
+			-moz-animation: scaleTvWater 5s ease-in-out infinite alternate;
+			animation-delay: 1s;
+			-moz-animation-delay: 1s;
+
+			&--tr {
+				animation: scaleTvWaterTr 5s ease-in-out infinite alternate;
+				-moz-animation: scaleTvWaterTr 5s ease-in-out infinite alternate;
+				animation-delay: 2s;
+				-moz-animation-delay: 2s;
+			}
+		}
+	}
+
+	&.live {
+		.st5 {
+			transition: fill 300ms ease;
+			fill: #00a6ff;
+		}
+
+		&:hover {
+			.st5 {
+				transition: fill 300ms ease;
+				fill: #76e2ff;
+			}
+		}
+
+	}
+}
+
+@include timeOfDay("night") {
+	.television {
+		.st1{ fill: darken(#FFFFFF, 50%); }
+		.st2{ fill: darken(#bdbdbd, 50%); }
+		.st3{ fill: darken(#dedede, 50%); }
+		.st4{ fill: darken(#FFFFFF, 50%); }
+		.st5{ fill: #00bbff; }
+		.st6{ fill: darken(#00AEEF, 60%); }
+		.st7{ fill: darken(#FFFFFF, 50%); }
+		.st10{ fill: darken(#666666, 50%); }
+
+		.st5--light {
+			fill: rgba(#cbedfd, 1);
+		}
+
+		&__water {
+			fill: #223640;
+		}
+	}
+}
+
+@keyframes floatTelevision {
+	from { transform: translate(0, 0) rotate(0.01deg); }
+	to { transform: translate(1%, 4%) rotate(0.01deg); }
+}
+
+@keyframes scaleTvWater {
+	from { transform: scale(1) rotate(0.01deg); }
+	to { transform: scale(1.055) rotate(0.01deg); }
+}
+
+@keyframes scaleTvWaterTr {
+	from { transform: scale(1) rotate(0.01deg); }
+	to { transform: scale(1.15) rotate(0.01deg); }
+}
+
+@-moz-keyframes floatTelevision {
+	from { transform: translate(0, 0) rotate(0.01deg); }
+	to { transform: translate(1%, 4%) rotate(0.01deg); }
+}
+
+@-moz-keyframes scaleTvWater {
+	from { transform: scale(1) rotate(0.01deg); }
+	to { transform: scale(1.055) rotate(0.01deg); }
+}
+
+@-moz-keyframes scaleTvWaterTr {
+	from { transform: scale(1) rotate(0.01deg); }
+	to { transform: scale(1.15) rotate(0.01deg); }
+}

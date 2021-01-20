@@ -1,0 +1,15 @@
+@mixin timeOfDay($timeOfDay) {
+
+  @if $timeOfDay == night {
+    .time-of-day.night {
+      @content;
+    }
+  }
+
+  @if $timeOfDay == day {
+    .time-of-day.day {
+      @content;
+    }
+  }
+
+}

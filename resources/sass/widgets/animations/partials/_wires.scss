@@ -1,0 +1,15 @@
+.wires {
+    path {
+        fill: #231F20;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+}
+
+@include timeOfDay("night") {
+    .wires path {
+        fill: $black;
+    }
+}

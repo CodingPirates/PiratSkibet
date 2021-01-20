@@ -1,0 +1,30 @@
+.sea-mine {
+    &--wrapper {
+        position: absolute;
+        z-index: 2;
+    }
+
+    .cls-0 {
+        fill: #191919;
+    }
+
+    .cls-1 {
+        fill: #333333;
+    }
+    
+    .cls-2 {
+        fill: #474747;
+    }
+}
+
+@include timeOfDay("night") {
+    .sea-mine {
+        .cls-1 {
+            fill: #252525;
+        }
+    
+        .cls-2 {
+            fill: #292929;
+        }
+    }
+}

@@ -1,0 +1,73 @@
+.island {
+    &--wrapper {
+        position: absolute;
+    }
+
+    &__element {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 100%;
+        transition: background $shutdown_transition_props;
+    }
+
+    &--blue {
+        background: #00AEEF;
+    }
+
+    &--pink {
+        background: $c_pink;
+    }
+
+    &--yellow {
+        background: $c_yellow;
+    }
+
+    &--black {
+        background: #231F20;
+    }
+
+    &--pink-shadow {
+        background: $c_pink;
+    }
+
+    &--yellow-shadow {
+        background: linear-gradient(to right, $c_yellow 50%, #E3D911 50%);
+    }
+
+    &--shadow {
+        overflow: hidden;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            background: rgba($black, 0.1);
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .island {
+        &--blue {
+            background: darken(#00AEEF, 40%);
+        }
+
+        &--pink {
+            background: darken($c_pink, 30%);
+        }
+    
+        &--yellow {
+            background: darken($c_yellow, 30%);
+        }
+    
+        &--black {
+            background: #101010;
+        }
+    }
+}

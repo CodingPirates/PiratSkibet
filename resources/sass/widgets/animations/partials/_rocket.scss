@@ -1,0 +1,40 @@
+.rocket {
+    .st0{fill:#231F20;}
+	.st1{fill:#FFF200;}
+	.st2{opacity:0.18;clip-path:url(#rocketPath2);fill:#666666;}
+	.st3{opacity:0.6;fill:#5C5E60;}
+	.st4{fill:#FFF799;}
+	.st5{fill:#00AEEF;}
+	.st6{fill:#FFFFFF;}
+
+	.st5--light {
+		fill: rgba(#6ad6ff, 0);
+	}
+
+	.window-glare {
+		fill: $white;
+	}
+    
+    &--wrapper {
+        position: absolute;
+    }
+
+    clipPath use {
+		overflow: visible;
+	}
+}
+
+@include timeOfDay("night") {
+	.rocket {
+		.st0{ fill: $black; }
+		.st1{ fill: darken(#FFF200, 30%); }
+		.st2{ fill: darken(#666666, 30%); }
+		.st3{ fill: darken(#5C5E60, 30%); }
+		.st4{ fill: darken(#FFF799, 55%); }
+		.st6{ fill: darken(#FFFFFF, 60%); }
+
+		.st5--light {
+			fill: rgba(#6ad6ff, 1);
+		}
+	}
+}

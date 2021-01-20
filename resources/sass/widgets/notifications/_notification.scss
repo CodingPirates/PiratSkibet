@@ -1,0 +1,30 @@
+.notification {
+    padding: 10px 15px;
+    border-bottom: 1px solid #dddfe2;
+    @include fontSize(14px);
+
+    @include break(500) {
+        padding: 10px 5%;
+    }
+
+    &__title {
+        font-weight: $fw_bold;
+        color: $fc_prim;
+    }
+
+    &__msg {
+        color: lighten($fc_prim, 10%);
+    }
+
+    &__link {
+        color: $c_pink;
+        font-weight: $fw_bold;
+        margin-top: 5px;
+        display: inline-block;
+        text-decoration: none;
+    }
+
+    &--unread {
+        background: rgba($c_blue, 0.1);
+    }
+}

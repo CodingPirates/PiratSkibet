@@ -1,0 +1,59 @@
+.thread-message__badges {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -5px;
+    margin-bottom: 10px;
+
+    .thread-message__badge {
+        margin: 5px;
+    }
+
+    &--empty {
+        display: none;
+    }
+}
+
+.thread-message__badge {
+    display: inline-block;
+    padding: 3px 10px;
+    text-transform: uppercase;
+    border-radius: 5px;
+    @include fontSize(11px);
+    letter-spacing: 0.03rem;
+    font-weight: $fw_bold;
+    color: $black;
+
+    &--original, &--pink {
+        background: $c_pink;
+        color: $white;
+    }
+
+    &--moderated, &--blue {
+        background: $c_blue;
+        color: $white;
+    }
+
+    &--deleted, &--red {
+        background: $c_error;
+        color: $white;
+    }
+
+    &--accepted, &--green {
+        background: $c_success;
+    }
+
+    &--popular, &--yellow {
+        background: $c_yellow;
+    }
+
+    &--grey {
+        background: $c_grey;
+    }
+
+    a {
+        color: currentColor;
+        text-decoration: none;
+        font-family: $font_primary;
+        font-weight: $fw_bold;
+    }
+}

@@ -1,0 +1,155 @@
+.projects-content {
+    .projects-categories {
+        width: 260px;
+        flex-shrink: 0;
+        margin-right: 30px;
+        transition: transform .4s ease;
+
+        @include break(900) {
+            width: 240px;
+            margin-left: -270px;
+        }
+
+        .custom-table {
+            margin: 0 0 20px;
+
+            .form-element {
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: flex-end;
+                align-items: center;
+                margin: 0;
+
+                label,
+                label span {
+                    font-family: $font_primary;
+                    color: $fc_prim;
+                }
+
+                label {
+                    margin: 0;
+                    padding: 5px 20px 5px 6px;
+                    flex-grow: 1;
+                    cursor: pointer;
+                    @include ellipsis();
+                }
+
+                input[type="checkbox"] {
+                    padding: 16px 22px;
+                    top: -6px;
+                    left: -20px;
+                }
+            }
+        }
+
+        .custom-table__titlebar {
+            padding: 0px 20px;
+            height: 38px;
+            align-items: center;
+
+            .custom-table__title {
+                @include setFontSize(18px, 18px, 16px);
+                line-height: 1;
+            }
+        }
+
+        .custom-table-row__title {
+            padding-left: 16px;
+            border-left: 4px solid transparent;
+            margin: 1px 0;
+            overflow: hidden;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &:hover {
+                border-color: $c_blue;
+                background: linear-gradient(to right, rgba($c_blue, 0.15) 0%, rgb($c_blue, 0) 85%);
+            }
+
+            &--selected {
+                border-color: $c_pink !important;
+                background: linear-gradient(to right, rgba($c_pink, 0.15) 0%, rgb($c_pink, 0) 85%) !important;
+
+                .form-element {
+                    label,
+                    label span {
+                        color: $c_pink;
+                    }
+                }
+            }
+        }
+
+        .checkbox-wrap input[type=checkbox]:checked:focus + .checkbox-appearance:before {
+            color: $c_pink;
+            box-shadow: 2px 2px, 4px 2px, 6px 2px, 8px 2px, 10px 2px, 12px 2px, 14px 2px, 18px 2px $c_pink, 20px 2px $c_pink, 2px 4px, 16px 4px $c_pink, 18px 4px $c_pink, 20px 4px $c_pink, 2px 6px $c_pink, 14px 6px $c_pink, 16px 6px $c_pink, 2px 8px $c_pink, 4px 8px $c_pink, 12px 8px $c_pink, 14px 8px $c_pink, 2px 10px, 4px 10px $c_pink, 6px 10px $c_pink, 10px 10px $c_pink, 12px 10px $c_pink, 16px 10px, 2px 12px, 6px 12px $c_pink, 8px 12px $c_pink, 10px 12px $c_pink, 16px 12px, 2px 14px, 8px 14px $c_pink, 16px 14px, 2px 16px, 4px 16px, 6px 16px, 8px 16px, 10px 16px, 12px 16px, 14px 16px, 16px 16px;
+        }
+
+        .checkbox-wrap input[type=checkbox]:checked + .checkbox-appearance:before {
+            color: $c_pink;
+        }
+    }
+
+    .projects-container-inner .category-tags .thread-message__badge--yellow {
+        color: $c_pink;
+        cursor: pointer;
+
+        &::after {
+            content: " ✕";
+        }
+    }
+
+    .thread-message__badges {
+        margin-bottom: 25px;
+
+        @include break(1100) {
+            margin-bottom: 15px;
+        }
+    }
+
+    .toggle-filter-sidebar {
+        display: none;
+        appearance: none;
+        padding: 10px 0;
+        background: none;
+        border: none;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 5px;
+        outline: none;
+        color: $fc_prim;
+        font-weight: $fw_bold;
+        @include fontSize(14px);
+
+        svg {
+            transform: rotate(180deg);
+            width: 20px;
+            height: 15px;
+            display: block;
+            margin-right: 8px;
+        }
+
+        &--open {
+            svg {
+                transform: rotate(0deg);
+            }
+        }
+
+        @include break(900) {
+            display: flex;
+        }
+    }
+}
+
+@include timeOfDay("night") {
+    .projects-content {
+        .toggle-filter-sidebar {
+            color: $c_yellow;
+        }
+    }
+}

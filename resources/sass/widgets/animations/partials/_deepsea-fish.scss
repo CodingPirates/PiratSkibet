@@ -1,0 +1,49 @@
+.deepsea-fish {
+    $self: &;
+
+    .cls-1 { fill: #a4b0ba; }
+    .cls-2 { fill: #788995; }
+    .cls-3 { fill: #10254c; }
+    .cls-4 { fill: #425a6b; }
+    .cls-5 { fill: #ffffff; }
+    .cls-6 { fill: #4b6744; }
+
+    &--shadow {
+        opacity: 0.2;
+    }
+
+    &--wrapper {
+        position: absolute;
+    }
+
+    &--left {
+        &#{ $self }--enter-done {
+            transform: translate3d(-125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+
+    &--right {
+        #{ $self } {
+            transform: rotateY(180deg);
+        }
+
+        &#{ $self }--enter-done {
+            transform: translate3d(125vw, 0, 0);
+            transition: transform linear;
+        }
+    }
+}
+
+@include timeOfDay('night') {
+    .deepsea-fish {
+        .cls-1,
+        .cls-2,
+        .cls-3,
+        .cls-4,
+        .cls-5,
+        .cls-6 {
+            opacity: 0.2;
+        }
+    }
+}
