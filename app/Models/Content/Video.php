@@ -14,6 +14,11 @@ class Video extends Model
         'is_highlighted' => 'boolean',
     ];
 
+    protected $appends = [
+        'link',
+        'embed_link',
+    ];
+
     private static function extractVideoId(string $id): string
     {
         // Only type === YouTube
