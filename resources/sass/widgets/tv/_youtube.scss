@@ -1,3 +1,14 @@
+.youtube-video-section {
+  .section-content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .youtube-video {
+      width: 33.33%;
+    }
+  }
+}
+
 .youtube-player {
   position: relative;
   padding-bottom: 56.25%;
