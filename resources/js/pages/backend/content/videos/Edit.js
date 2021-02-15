@@ -34,7 +34,9 @@ class Edit extends CrudPage {
                     <Fields.Input name={'video_id'} label={'Video ID'} required={true} />
                     <Fields.Checkbox name={'is_highlighted'} label={'Er videoen Highlighted?'} required={true} />
                     <Fields.Case name={'embed_id'} exists={true}>
-                      <Displays.YoutubeVideo name={'embed_id'}/>
+                      <div style={{width: '50%'}}>
+                        <Displays.YoutubeVideo name={'embed_id'}/>
+                      </div>
                     </Fields.Case>
                 </Fieldset>
               <br/>
