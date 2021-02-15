@@ -5,6 +5,7 @@ import Section from 'layouts/Section'
 import { Collection } from '@morningtrain/react-resources'
 import * as Filters from 'support/filters'
 import VideoGridLoop from 'widgets/tv/VideoGridLoop'
+import WhenCollection from 'support/conditionals/WhenCollection'
 
 export default class VideoGrid extends Widget {
 
@@ -13,33 +14,36 @@ export default class VideoGrid extends Widget {
       <Section>
         <Paper size={'small'}>
 
-          <Section className='youtube-video-section'
-                   header={<h2>Nyeste Videoer</h2>}>
-            <Collection resourceName='content.videos'
-                        operationContext={'newest'}>
-              <Filters.Static constraint='$per_page' value={3}/>
-              <VideoGridLoop/>
-            </Collection>
-          </Section>
+          <Collection resourceName='content.videos' operationContext={'newest'}>
+            <WhenCollection>
+              <Section className='youtube-video-section'
+                       header={<h2>Nyeste Videoer</h2>}>
+                <Filters.Static constraint='$per_page' value={3}/>
+                <VideoGridLoop/>
+              </Section>
+            </WhenCollection>
+          </Collection>
 
-          <Section className='youtube-video-section'
-                   header={<h2>Highlighted</h2>}>
-            <Collection resourceName='content.videos'
-                        operationContext={'highlighted'}>
-              <Filters.Static constraint='highlighted' value={true}/>
-              <Filters.Static constraint='$per_page' value={3}/>
-              <VideoGridLoop/>
-            </Collection>
-          </Section>
+          <Collection resourceName='content.videos'
+                      operationContext={'highlighted'}>
+            <WhenCollection>
+              <Section className='youtube-video-section'
+                       header={<h2>Highlighted</h2>}>
+                <Filters.Static constraint='highlighted' value={true}/>
+                <Filters.Static constraint='$per_page' value={3}/>
+                <VideoGridLoop/>
+              </Section>
+            </WhenCollection>
+          </Collection>
 
-          <Section className='youtube-video-section'
-                   header={<h2>Alle videoer</h2>}>
-            <Collection resourceName='content.videos' operationContext={'all'}>
+          <Collection resourceName='content.videos' operationContext={'all'}>
+            <Section className='youtube-video-section'
+                     header={<h2>Alle videoer</h2>}>
               <Filters.Static constraint='$per_page' value={3}/>
               <VideoGridLoop/>
               <Filters.Pagination/>
-            </Collection>
-          </Section>
+            </Section>
+          </Collection>
 
         </Paper>
       </Section>
