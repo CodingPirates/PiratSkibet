@@ -1,8 +1,8 @@
 import CrudPage from "@morningtrain/react-crud/CrudPage";
 import {inject} from "@morningtrain/react-decorators";
-import {router} from "@morningtrain/helpers";
 import EditForm from "@morningtrain/react-crud/layouts/read/EditForm";
 import * as Fields from "support/fields";
+import * as Displays from "support/displays";
 import Link from "widgets/navigation/Link";
 import {Fieldset} from "layouts";
 
@@ -33,7 +33,11 @@ class Edit extends CrudPage {
                 <Fieldset cols={2}>
                     <Fields.Input name={'video_id'} label={'Video ID'} required={true} />
                     <Fields.Checkbox name={'is_highlighted'} label={'Er videoen Highlighted?'} required={true} />
+                    <Fields.Case name={'embed_link'} exists={true}>
+                      <Displays.YoutubeVideo name={'embed_link'}/>
+                    </Fields.Case>
                 </Fieldset>
+              <br/>
             </React.Fragment>
         );
     }

@@ -30,9 +30,10 @@ class Index extends CrudPage {
   get columns () {
     return (
       <React.Fragment>
+        <Columns.Link name={'link'} />
         <Columns.Text name={'video_id'} />
         <Columns.Boolean name={'is_highlighted'}
-                         label={'Er videoen Highlighted?'}
+                         label={'Highlighted'}
                          trueText={'Ja'} falseText={'Nej'}/>
         <Columns.DateTime name={'created_at'} label={'Oprettelsestidspunkt'}/>
       </React.Fragment>
