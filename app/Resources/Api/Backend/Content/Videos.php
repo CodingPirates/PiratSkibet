@@ -6,6 +6,7 @@ namespace App\Resources\Api\Backend\Content;
 use App\Models\Content\Video as Model;
 use App\Support\Enums\Boolean;
 use MorningTrain\Laravel\Fields\Fields\Field;
+use MorningTrain\Laravel\Filters\Filters\Order;
 use MorningTrain\Laravel\Filters\Filters\Pagination;
 use MorningTrain\Laravel\Filters\Filters\SelectFilter;
 use MorningTrain\Laravel\Resources\Support\Contracts\CrudResource;
@@ -33,6 +34,13 @@ class Videos extends CrudResource
                         Boolean::NO  => 'Vis ikke Highlighted',
                     ]
                 ),
+
+            Order::create()->only(
+                [
+                    'is_highlighted',
+                    'created_at',
+                ]
+            ),
 
             Pagination::create(),
         ];
