@@ -33,8 +33,8 @@ class Edit extends CrudPage {
                 <Fieldset cols={2}>
                     <Fields.Input name={'video_id'} label={'Video ID'} required={true} />
                     <Fields.Checkbox name={'is_highlighted'} label={'Er videoen Highlighted?'} required={true} />
-                    <Fields.Case name={'embed_link'} exists={true}>
-                      <Displays.YoutubeVideo name={'embed_link'}/>
+                    <Fields.Case name={'embed_id'} exists={true}>
+                      <Displays.YoutubeVideo name={'embed_id'}/>
                     </Fields.Case>
                 </Fieldset>
               <br/>

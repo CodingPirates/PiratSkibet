@@ -17,7 +17,7 @@ class Video extends Model
 
     protected $appends = [
         'link',
-        'embed_link',
+        'embed_id',
     ];
 
     /////////////////////////////
@@ -33,17 +33,10 @@ class Video extends Model
     /// Getters
     /////////////////////////////
 
-    public function getEmbedLinkAttribute(): string
+    public function getEmbedIdAttribute(): string
     {
         // Only type === YouTube
-        $videoId = static::extractVideoId($this->video_id);
-        $options = http_build_query(
-            [
-                'enablejsapi' => 1,
-            ]
-        );
-
-        return "https://www.youtube.com/embed/{$videoId}?{$options}";
+        return static::extractVideoId($this->video_id);
     }
 
     public function getLinkAttribute(): string
