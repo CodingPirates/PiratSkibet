@@ -40,7 +40,7 @@ class Videos extends CrudResource
                     'is_highlighted',
                     'created_at',
                 ]
-            ),
+            )->defaultValue(['created_at' => 'desc']),
 
             Pagination::create(),
         ];
