@@ -50,6 +50,7 @@ return [
         ],
         'content' => [
             \App\Resources\Api\Content\Posts::class,
+            \App\Resources\Api\Content\Videos::class,
         ],
 
         'backend' => [
