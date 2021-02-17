@@ -83,6 +83,10 @@ app.setReactComponents('backend', {
       Index: require('pages/backend/content/twitch_channels/Index').default,
       Edit: require('pages/backend/content/twitch_channels/Edit').default
     },
+    Videos: {
+      Index: require('pages/backend/content/videos/Index').default,
+      Edit: require('pages/backend/content/videos/Edit').default
+    },
     Meetings: {
       Index: require('pages/backend/content/meetings/Index').default,
       Edit: require('pages/backend/content/meetings/Edit').default

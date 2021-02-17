@@ -5,6 +5,7 @@ import TwitchVOD from 'widgets/tv/TwitchVOD'
 import Section from 'layouts/Section'
 import ForumWorld from 'widgets/animations/worlds/ForumWorld'
 import VideoBot from 'widgets/video-bot/VideoBot'
+import VideoGrid from 'widgets/tv/VideoGrid'
 
 export default class Index extends React.Component {
   render () {
@@ -16,6 +17,7 @@ export default class Index extends React.Component {
           <h1>Coding Pirates TV_</h1>
         </Section>
         <TwitchLiveStream />
+        <VideoGrid/>
         <TwitchVOD />
       </Page>
     )
