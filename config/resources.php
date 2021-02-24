@@ -83,6 +83,7 @@ return [
                 \App\Resources\Api\Backend\Content\Event::class,
                 \App\Resources\Api\Backend\Content\News::class,
                 \App\Resources\Api\Backend\Content\TwitchChannel::class,
+                \App\Resources\Api\Backend\Content\Livestreams::class,
                 \App\Resources\Api\Backend\Content\Videos::class,
                 \App\Resources\Api\Backend\Content\Meeting::class,
                 \App\Resources\Api\Backend\Content\Posts::class,
