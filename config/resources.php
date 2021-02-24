@@ -128,6 +128,7 @@ return [
             \App\Resources\Backend\Content\News::class,
             \App\Resources\Backend\Content\Events::class,
             \App\Resources\Backend\Content\TwitchChannels::class,
+            \App\Resources\Backend\Content\Livestreams::class,
             \App\Resources\Backend\Content\Videos::class,
             \App\Resources\Backend\Content\Meetings::class,
             \App\Resources\Backend\Content\Posts::class,

@@ -71,6 +71,7 @@ export default class BackendSideNavigation extends Widget {
             <MenuItem route='backend.content.news.index' />
             <MenuItem route='backend.content.events.index' />
             <MenuItem route='backend.content.twitch_channels.index' />
+            <MenuItem route='backend.content.livestreams.index' />
             <MenuItem route='backend.content.videos.index' />
             <MenuItem route='backend.content.meetings.index' />
             <MenuItem route='backend.content.posts.index' />
