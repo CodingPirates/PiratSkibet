@@ -14,6 +14,11 @@ class Livestream extends Model
         'is_live'  => 'boolean',
     ];
 
+    protected $appends = [
+        'link',
+        'embed_id',
+    ];
+
     protected static function boot()
     {
         parent::boot();
@@ -42,7 +47,7 @@ class Livestream extends Model
     public function getLinkAttribute(): string
     {
         if ($this->type === LivestreamTypes::YOUTUBE_CHANNEL) {
-            return static::getYoutubeChannelLink($this->livestream_id);
+            return static::getYoutubeChannelLink($this->livestream_id) . '/live';
         }
 
         // Only type === YouTube
