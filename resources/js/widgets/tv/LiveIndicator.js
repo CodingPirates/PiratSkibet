@@ -5,9 +5,10 @@ import Badge from 'widgets/forum/Badge'
 
 export default class LiveIndicator extends Widget {
   get isLive () {
-    const channels = Env.get('content.twitch.channels', [])
+    const twitch      = Env.get('content.twitch.channels', [])
+    const livestreams = Env.get('content.livestreams', [])
 
-    return channels?.[0]?.is_live
+    return twitch?.[0]?.is_live || livestreams?.[0]?.is_live
   }
 
   render () {
@@ -15,7 +16,8 @@ export default class LiveIndicator extends Widget {
 
     return (
       <Badge color='red'>
-        <img className='blinking-dot' src={router.url('icons/circle.svg')} alt='live indicator' />
+        <img className='blinking-dot' src={router.url('icons/circle.svg')}
+             alt='live indicator'/>
         LIVE
       </Badge>
     )
