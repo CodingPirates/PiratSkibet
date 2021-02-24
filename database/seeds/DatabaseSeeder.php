@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
                 EventSeeder::class,
                 DummyProjectSeeder::class,
                 VideoSeeder::class,
+                LivestreamSeeder::class,
             ]);
         }
 
