@@ -3,10 +3,10 @@
 namespace App\Support\Enums;
 
 
-use MorningTrain\Laravel\Support\Enum;
-
-class LivestreamTypes extends Enum
+class LivestreamTypes extends ExportableEnum
 {
+    public static $export = true;
+
     public const YOUTUBE         = 'youtube';
     public const YOUTUBE_CHANNEL = 'youtube_channel';
 }

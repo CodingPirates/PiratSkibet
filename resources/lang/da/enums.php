@@ -237,6 +237,11 @@ return [
         \App\Support\Enums\UserRoles::PIRATE => 'Pirat',
         \App\Support\Enums\UserRoles::MENTOR => 'Mentor',
         \App\Support\Enums\UserRoles::MODERATOR => 'Moderator',
-    ]
+    ],
+
+    'livestream_types' => [
+        \App\Support\Enums\LivestreamTypes::YOUTUBE         => 'Youtube',
+        \App\Support\Enums\LivestreamTypes::YOUTUBE_CHANNEL => 'Youtube Kanal',
+    ],
 
 ];
