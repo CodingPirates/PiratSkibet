@@ -40,7 +40,7 @@ class Edit extends CrudPage {
           <Fields.Case name={'embed_id'} exists={true}>
             <div style={{ width: '50%' }}>
               <Fields.Case name={'type'} when={'youtube_channel'}>
-                <Displays.YoutubeVideo name={'embed_id'} is_channel={true}/>
+                <Displays.YoutubeVideo name={'embed_id'} isChannel={true}/>
               </Fields.Case>
 
               <Fields.Case name={'type'} when={'youtube_channel'} not={true}>
