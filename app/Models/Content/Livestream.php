@@ -4,6 +4,7 @@ namespace App\Models\Content;
 
 use App\Support\Enums\LivestreamTypes;
 use App\Support\Traits\LinksToYoutube;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 class Livestream extends Model
@@ -28,6 +29,11 @@ class Livestream extends Model
                 static::query()->update(['is_live' => false]);
             }
         });
+    }
+
+    public function scopeLive(Builder $q, bool $live = true)
+    {
+        return $q->where('is_live', $live);
     }
 
     /////////////////////////////
