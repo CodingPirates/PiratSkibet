@@ -22,8 +22,7 @@ export default class Livestream extends Widget {
     }
 
     return (
-      <Section>
-        <h2>Vi streamer lige nu!_</h2>
+      <Section className={'tv-livestream'} header={(<h2>Vi streamer lige nu!_</h2>)}>
         <TVMonitor maxWidth='800px' center>
           <Case when={'youtube_channel'} case={livestream.type}>
             <YoutubeVideo videoId={livestream.embed_id} isChannel={true}/>
