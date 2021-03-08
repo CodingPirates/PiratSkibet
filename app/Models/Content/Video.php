@@ -3,13 +3,14 @@
 namespace App\Models\Content;
 
 use App\Support\Traits\Changeable;
+use App\Support\Traits\LinksToYoutube;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class Video extends Model
 {
     use Changeable;
+    use LinksToYoutube;
 
     protected $casts = [
         'is_highlighted' => 'boolean',
@@ -36,40 +37,13 @@ class Video extends Model
     public function getEmbedIdAttribute(): string
     {
         // Only type === YouTube
-        return static::extractVideoId($this->video_id);
+        return static::extractYoutubeVideoId($this->video_id);
     }
 
     public function getLinkAttribute(): string
     {
         // Only type === YouTube
-        $videoId = static::extractVideoId($this->video_id);
-
-        return "https://youtu.be/{$videoId}";
-    }
-
-
-    /////////////////////////////
-    /// Helpers
-    /////////////////////////////
-
-    private static function extractVideoId(string $id): string
-    {
-        // Only type === YouTube
-        $parts = parse_url($id);
-
-        if (isset($parts['query'])) {
-            parse_str($parts['query'], $query);
-
-            if (isset($query['v'])) {
-                return $query['v'];
-            }
-        }
-
-        if (isset($parts['path'])) {
-            return Str::afterLast($parts['path'], '/');
-        }
-
-        return $id;
+        return static::getYoutubeVideoLink($this->video_id);
     }
 
 }

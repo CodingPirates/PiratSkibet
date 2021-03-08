@@ -22,9 +22,12 @@ export default class TwitchLiveStream extends Widget {
     }
 
     return (
-      <Section>
-        <h2>Vi streamer lige nu!_</h2>
-        <h3>{this.channel.stream_title}</h3>
+      <Section className={'tv-livestream'} header={(
+        <React.Fragment>
+          <h2>Vi streamer lige nu!_</h2>
+          <h3>{this.channel.stream_title}</h3>
+        </React.Fragment>
+      )}>
         <TVMonitor maxWidth='800px' center>
           <Embed channel={this.channel.channel_name} chat={false} />
         </TVMonitor>

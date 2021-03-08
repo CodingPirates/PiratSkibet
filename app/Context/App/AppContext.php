@@ -3,6 +3,7 @@
 namespace App\Context\App;
 
 
+use App\Models\Content\Livestream;
 use App\Models\Content\Meeting;
 use App\Models\Content\TwitchChannel;
 use App\Models\User\User;
@@ -42,9 +43,10 @@ class AppContext
                 ],
                 'shutdown' => Shutdown::getEnv(),
                 'content' => [
-                    'twitch' => [
+                    'twitch'      => [
                         'channels' => TwitchChannel::get(),
                     ],
+                    'livestreams' => Livestream::live()->get(),
                     'meeting' => Meeting::export(),
                     'helper_bot' => [
                         'app.forum.overview'    => 'https://www.youtube.com/watch?v=3m1ZMHQ2ExM', // Piratsnak
