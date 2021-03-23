@@ -85,7 +85,7 @@ export default class ProjectsOverview extends Widget {
                         Hvis du vil lægge dit eget projekt op, så læs først <Link route={'app.pages.posts'} parameters={{path: 'projektregler'}} label={'projektreglerne'}/>.
                     </p>
                     <p>
-                        Hvis du er i tvivl, kan du altid spørge i <Link route={'app.forum.overview'} label={'Piratsnak'}/>.
+                        Hvis du er i tvivl, kan du altid spørge i <Link route={'app.pages.posts'} parameters={{path: 'piratsnak'}} label={'Piratsnak'}/>.
                     </p>
 
                     <Auth.Can permission={'api.projects.project.create'}>
