@@ -62,6 +62,9 @@ class AppContext
                     'instagram' => [
                         'url' => config('services.instagram.url'),
                     ],
+                    'discord' => [
+                        'url' => config('services.discord.url'),
+                    ],
                 ]
             ];
         });

@@ -71,4 +71,8 @@ return [
         'url' => env('INSTAGRAM_LINK', null),
     ],
 
+    'discord' => [
+        'url' => env('DISCORD_LINK', null),
+    ],
+
 ];
