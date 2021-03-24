@@ -8,7 +8,7 @@ import Project from "widgets/projects/Project";
 import ViewToggle from "widgets/projects/ViewToggle";
 import Link from "widgets/navigation/Link";
 import * as Auth from "@morningtrain/react-auth";
-import * as Modals from "support/modals";
+import { Env } from '@morningtrain/helpers'
 import {inject} from "@morningtrain/react-decorators";
 import VideoBot from 'widgets/video-bot/VideoBot';
 
@@ -85,7 +85,7 @@ export default class ProjectsOverview extends Widget {
                         Hvis du vil lægge dit eget projekt op, så læs først <Link route={'app.pages.posts'} parameters={{path: 'projektregler'}} label={'projektreglerne'}/>.
                     </p>
                     <p>
-                        Hvis du er i tvivl, kan du altid spørge i <Link route={'app.pages.posts'} parameters={{path: 'piratsnak'}} label={'Piratsnak'}/>.
+                        Hvis du er i tvivl, kan du altid spørge i <a href={Env.get('services.discord.url', '#')} target='_blank'>Piratsnak</a>
                     </p>
 
                     <Auth.Can permission={'api.projects.project.create'}>
