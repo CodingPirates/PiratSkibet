@@ -72,7 +72,7 @@ export default class Navigation extends Widget {
                 <div className="navigation__items-wrap">
                     <ul className="navigation__items navigation__mobile-menu">
                         <li className="navigation__item">
-                            <Link className="navigation__link" route={'app.forum.overview'}>Piratsnak</Link>
+                            <Link className="navigation__link" route={'app.pages.posts'} parameters={{path: 'piratsnak'}}>Piratsnak</Link>
                         </li>
                         <li className="navigation__item">
                             <Link className="navigation__link" route={'app.projects.overview'}>Showcases</Link>

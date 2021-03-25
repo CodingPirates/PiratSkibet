@@ -5,6 +5,7 @@ import TextHeaderWorld from 'widgets/animations/worlds/TextHeaderWorld'
 import TextImage from 'layouts/TextImage'
 import router from '@morningtrain/helpers/src/router'
 import Link from 'widgets/navigation/Link'
+import { Env } from '@morningtrain/helpers'
 
 export default class UserIntroduction extends React.Component {
   render () {
@@ -35,7 +36,7 @@ export default class UserIntroduction extends React.Component {
               som er baseret på andres arbejde, er det god stil at kreditere dem, du er blevet inspireret af.
             </p>
             <p>
-              Du kan også hoppe ind i de forskellige chats i Piratsnak. Her kan du se, hvad andre arbejder på eller måske se, hvilke gode film der går i biografen for tiden.
+              Du kan også hoppe ind i <a href={Env.get('services.discord.url', '#')} target='_blank'>Piratsnak</a>. Her kan du se, hvad andre arbejder på eller måske se, hvilke gode film der går i biografen for tiden.
             </p>
             <p>
               Sidst men ikke mindst kan du tage forbi Kodehavet, hvor du kan lære nye teknologier.
@@ -71,7 +72,7 @@ export default class UserIntroduction extends React.Component {
             </p>
             <ul>
               <li>Du kan lave en kommentar og spørgsmål på projekter, der er lagt op på Piratskibet.</li>
-              <li>Du kan også oprette <Link route='app.forum.topic' label='din helt egen chat' parameters={{ topic: 9, topic_slug: 'sporgsmal_til_teknologi' }} />, hvor du kan stille spørgsmål om tekniske udfordringer eller andet, som du har brug for at vide. </li>
+              <li>Du kan også spørge på <a href={Env.get('services.discord.url', '#')} target='_blank'>Piratsnak</a>, hvor du kan stille spørgsmål om tekniske udfordringer eller andet, som du har brug for at vide. </li>
               <li>Hvis du går til Coding Pirates, kan du også spørge om hjælp til din lokale klubaften.</li>
             </ul>
             <p>
