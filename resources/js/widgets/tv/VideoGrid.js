@@ -14,16 +14,6 @@ export default class VideoGrid extends Widget {
       <Section>
         <Paper size={'small'}>
 
-          <Collection resourceName='content.videos' operationContext={'newest'}>
-            <WhenCollection>
-              <Section className='youtube-video-section'
-                       header={<h2>Nyeste Videoer</h2>}>
-                <Filters.Static constraint='$per_page' value={3}/>
-                <VideoGridLoop/>
-              </Section>
-            </WhenCollection>
-          </Collection>
-
           <Collection resourceName='content.videos'
                       operationContext={'highlighted'}>
             <WhenCollection>
@@ -39,7 +29,7 @@ export default class VideoGrid extends Widget {
           <Collection resourceName='content.videos' operationContext={'all'}>
             <Section className='youtube-video-section'
                      header={<h2>Alle videoer</h2>}>
-              <Filters.Static constraint='$per_page' value={3}/>
+              <Filters.Static constraint='$per_page' value={6}/>
               <VideoGridLoop/>
               <Filters.Pagination/>
             </Section>
