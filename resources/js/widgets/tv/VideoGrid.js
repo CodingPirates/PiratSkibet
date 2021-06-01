@@ -29,18 +29,32 @@ export default class VideoGrid extends Widget {
             </WhenCollection>
           </Collection>
 
-          <Collection resourceName='content.videos' operationContext='all'>
+        </Paper>
+
+        <Collection resourceName='content.videos' operationContext='all'>
+          <div className='projects-overview'>
+            <div className='projects-content'>
+              <div className='filter-bar filter-bar--no-bottom'>
+                <span className='subtitle'>showcase</span>
+                <div className='filter-bar__filters filter-bar__filters--inputs' />
+              </div>
+            </div>
+          </div>
+
+          <Paper size='small' top={false}>
             <Section
               className='youtube-video-section'
               header={<h2>Alle videoer</h2>}
             >
+
               <Filters.Static constraint='$per_page' value={6} />
               <VideoGridLoop />
               <Filters.Pagination />
             </Section>
-          </Collection>
 
-        </Paper>
+          </Paper>
+        </Collection>
+
       </Section>
     )
   }
