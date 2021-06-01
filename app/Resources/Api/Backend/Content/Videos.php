@@ -8,6 +8,7 @@ use App\Support\Enums\Boolean;
 use MorningTrain\Laravel\Fields\Fields\Field;
 use MorningTrain\Laravel\Filters\Filters\Order;
 use MorningTrain\Laravel\Filters\Filters\Pagination;
+use MorningTrain\Laravel\Filters\Filters\Search;
 use MorningTrain\Laravel\Filters\Filters\SelectFilter;
 use MorningTrain\Laravel\Resources\Support\Contracts\CrudResource;
 
@@ -39,10 +40,16 @@ class Videos extends CrudResource
 
             Order::create()->only(
                 [
+                    'title',
                     'is_highlighted',
                     'created_at',
                 ]
             )->defaultValue(['created_at' => 'desc']),
+
+            Search::create()->search([
+                'title',
+                'description'
+            ]),
 
             Pagination::create(),
         ];
