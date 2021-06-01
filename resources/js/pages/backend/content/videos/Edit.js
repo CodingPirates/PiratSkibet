@@ -46,6 +46,10 @@ class Edit extends CrudPage {
               <Displays.YoutubeVideo name='embed_id' />
             </div>
           </Fields.Case>
+
+          <Fields.HasMany resourceName={'backend.projects.category'} name={'categories'} label={'Kategorier'} optionsKey={'name'} >
+            <Fields.Hidden name={'id'} prefixName={false} />
+          </Fields.HasMany>
         </Fieldset>
         <br />
       </>
