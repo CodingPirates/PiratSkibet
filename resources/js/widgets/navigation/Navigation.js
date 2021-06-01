@@ -87,7 +87,7 @@ export default class Navigation extends Widget {
                             </Link>
                         </li>
                         <li className="navigation__item">
-                            <Link className="navigation__link" route={'app.pages.about'}>Om Piratskibet</Link>
+                            <Link className="navigation__link" route={'app.pages.about'}>Om</Link>
                         </li>
                         <li className="navigation__hidden-desktop">
                             <ul className="navigation__items">
