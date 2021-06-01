@@ -39,6 +39,9 @@ class Category extends CrudResource
             Filter::create()->when('children', function (Builder $q) {
                 $q->parent(false);
             }),
+            Filter::create()->when('parents', function (Builder $q) {
+                $q->parent(true);
+            }),
         ];
     }
 }
