@@ -2,10 +2,12 @@
 
 namespace App\Models\Content;
 
+use App\Models\Projects\Category;
 use App\Support\Traits\Changeable;
 use App\Support\Traits\LinksToYoutube;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Video extends Model
 {
@@ -20,6 +22,20 @@ class Video extends Model
         'link',
         'embed_id',
     ];
+
+    /////////////////////////////
+    /// Relations
+    /////////////////////////////
+
+    public function categories(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Category::class,
+            'project_category_video',
+            'video_id',
+            'project_category_id'
+        );
+    }
 
     /////////////////////////////
     /// Scopes
