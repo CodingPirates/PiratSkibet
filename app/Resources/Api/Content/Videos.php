@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 use MorningTrain\Laravel\Filters\Filters\Filter;
 use MorningTrain\Laravel\Filters\Filters\Order;
 use MorningTrain\Laravel\Filters\Filters\Pagination;
+use MorningTrain\Laravel\Filters\Filters\Search;
 use MorningTrain\Laravel\Resources\Operations\Crud\Index;
 use MorningTrain\Laravel\Resources\Support\Contracts\CrudResource;
 
@@ -33,6 +34,11 @@ class Videos extends CrudResource
             Order::create()
                 ->only(['created_at'])
                 ->defaultValue(['created_at' => 'DESC']),
+
+            Search::create()->search([
+                'title',
+                'description'
+            ]),
 
             Pagination::create()->shows(5),
         ];
