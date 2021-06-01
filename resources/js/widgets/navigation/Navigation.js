@@ -78,10 +78,10 @@ export default class Navigation extends Widget {
                             <Link className="navigation__link" route={'app.projects.overview'}>Showcases</Link>
                         </li>
                         <li className="navigation__item">
-                            <Link className="navigation__link" route={'app.courses.overview'}>Kodehavet</Link>
+                            <Link className="navigation__link" href={Env.get('services.codingpirates.guides_url', '#')}>Guides</Link>
                         </li>
                         <li className="navigation__item">
-                            <Link className="navigation__link" href={Env.get('services.codingpirates.guides_url', '#')}>Guides</Link>
+                            <Link className="navigation__link" route={'app.courses.overview'}>Kodehavet</Link>
                         </li>
                         <li className="navigation__item navigation__item--has-badge">
                             <Link className="navigation__link" route={'app.tv.index'}>
