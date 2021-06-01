@@ -82,7 +82,7 @@ export default class Navigation extends Widget {
                         </li>
                         <li className="navigation__item navigation__item--has-badge">
                             <Link className="navigation__link" route={'app.tv.index'}>
-                                Coding Pirates TV
+                                TV
                                 <LiveIndicator/>
                             </Link>
                         </li>
