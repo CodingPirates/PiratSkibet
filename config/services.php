@@ -75,4 +75,8 @@ return [
         'url' => env('DISCORD_LINK', null),
     ],
 
+    'codingpirates' => [
+        'guides_url' => env('GUIDES_LINK', null),
+    ],
+
 ];
