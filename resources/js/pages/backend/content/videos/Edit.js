@@ -34,7 +34,9 @@ class Edit extends CrudPage {
     return (
       <>
         <Fieldset cols={2}>
+          <Fields.Input name='title' label='Titel' required />
           <Fields.Input name='video_id' label='Video ID' required />
+          <Fields.TextArea name='description' label='Beskrivelse' required />
           <Fields.Checkbox
             name='is_highlighted' label='Er videoen Highlighted?'
             required

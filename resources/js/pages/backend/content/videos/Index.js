@@ -31,6 +31,7 @@ class Index extends CrudPage {
   get columns () {
     return (
       <>
+        <Columns.Text name='title' />
         <Columns.Link name='link' />
         <Columns.Text name='video_id' />
         <Columns.Boolean

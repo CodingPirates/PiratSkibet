@@ -18,6 +18,8 @@ class Videos extends CrudResource
     protected function getFields()
     {
         return [
+            Field::create('title')->validates('required|string|max:255'),
+            Field::create('description')->validates('required|string|max:21844'),
             Field::create('video_id')->validates('required|string|max:191'),
             Field::create('is_highlighted')->validates('required|boolean'),
         ];
