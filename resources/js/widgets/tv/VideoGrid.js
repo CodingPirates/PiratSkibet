@@ -8,30 +8,35 @@ import VideoGridLoop from 'widgets/tv/VideoGridLoop'
 import WhenCollection from 'support/conditionals/WhenCollection'
 
 export default class VideoGrid extends Widget {
-
   renderWidget () {
     return (
       <Section>
-        <Paper size={'small'}>
+        <Paper size='small'>
 
-          <Collection resourceName='content.videos'
-                      operationContext={'highlighted'}>
+          <Collection
+            resourceName='content.videos'
+            operationContext='highlighted'
+          >
             <WhenCollection>
-              <Section className='youtube-video-section'
-                       header={<h2>Highlighted</h2>}>
-                <Filters.Static constraint='highlighted' value={true}/>
-                <Filters.Static constraint='$per_page' value={3}/>
-                <VideoGridLoop/>
+              <Section
+                className='youtube-video-section'
+                header={<h2>Highlighted</h2>}
+              >
+                <Filters.Static constraint='highlighted' value />
+                <Filters.Static constraint='$per_page' value={3} />
+                <VideoGridLoop />
               </Section>
             </WhenCollection>
           </Collection>
 
-          <Collection resourceName='content.videos' operationContext={'all'}>
-            <Section className='youtube-video-section'
-                     header={<h2>Alle videoer</h2>}>
-              <Filters.Static constraint='$per_page' value={6}/>
-              <VideoGridLoop/>
-              <Filters.Pagination/>
+          <Collection resourceName='content.videos' operationContext='all'>
+            <Section
+              className='youtube-video-section'
+              header={<h2>Alle videoer</h2>}
+            >
+              <Filters.Static constraint='$per_page' value={6} />
+              <VideoGridLoop />
+              <Filters.Pagination />
             </Section>
           </Collection>
 
