@@ -46,6 +46,13 @@ class Video extends Model
         return $q->where('is_highlighted', $highlighted);
     }
 
+    public function scopeForCategory(Builder $q, int $category): void
+    {
+        $q->whereHas('categories', function (Builder $q) use ($category) {
+            return $q->where('id', $category);
+        });
+    }
+
     /////////////////////////////
     /// Getters
     /////////////////////////////

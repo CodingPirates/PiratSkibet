@@ -31,6 +31,10 @@ class Videos extends CrudResource
                 $q->highlighted(true);
             }),
 
+            Filter::create()->when('category', function (Builder $q, int $category) {
+                return $q->forCategory($category);
+            }),
+
             Order::create()
                 ->only(['created_at'])
                 ->defaultValue(['created_at' => 'DESC']),
