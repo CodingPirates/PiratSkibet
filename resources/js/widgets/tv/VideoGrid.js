@@ -40,6 +40,18 @@ export default class VideoGrid extends Widget {
                   <div className='search-wrap'>
                     <Filters.Search />
                   </div>
+                  <div className='select-wrap'>
+                    <Filters.ResourceFilter
+                      constraint='category'
+                      resourceName='projects.category'
+                      operationName='index'
+                      placeholder='Alle Kategorier'
+                      label='Filtrer efter Kategori'
+                      optionsKey='name'
+                    >
+                      <Filters.Static constraint='parents' value />
+                    </Filters.ResourceFilter>
+                  </div>
                 </div>
               </div>
             </div>
