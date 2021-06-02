@@ -18,7 +18,7 @@ class Videos extends CrudResource
 {
     protected $model = Model::class;
 
-    public function configureReadOperation(Read $operation)
+    public function configureReadOperation(Read $operation): void
     {
         $operation->view(['with' => ['categories']]);
     }
