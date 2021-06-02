@@ -35,7 +35,7 @@ export default class VideoGrid extends Widget {
           <div className='projects-overview'>
             <div className='projects-content'>
               <div className='filter-bar filter-bar--no-bottom'>
-                <span className='subtitle'>showcase</span>
+                <span className='subtitle'>videolager</span>
                 <div className='filter-bar__filters filter-bar__filters--inputs'>
                   <div className='search-wrap'>
                     <Filters.Search />
