@@ -1,20 +1,20 @@
-import React from "react";
-import Widget from "widgets/Widget";
-import Logo from "widgets/navigation/Logo";
-import NavigationBurger from "widgets/navigation/NavigationBurger";
-import NavigationScrollHandler from "helpers/NavigationScrollHandler";
-import Login from "widgets/auth/Login";
-import Register from "widgets/auth/Register";
-import * as Auth from "@morningtrain/react-auth";
-import User from "widgets/user/User";
-import {router} from "@morningtrain/helpers";
-import Link from "widgets/navigation/Link";
-import Section from "layouts/Section";
-import Notifications from "widgets/notifications/Notifications";
-import LandlubberBanner from "widgets/landlubber/LandlubberBanner";
-import {inject} from "@morningtrain/react-decorators";
-import LiveIndicator from 'widgets/tv/LiveIndicator';
-import MeetingBanner from 'widgets/jitsi/MeetingBanner';
+import React from 'react'
+import Widget from 'widgets/Widget'
+import Logo from 'widgets/navigation/Logo'
+import NavigationBurger from 'widgets/navigation/NavigationBurger'
+import NavigationScrollHandler from 'helpers/NavigationScrollHandler'
+import Login from 'widgets/auth/Login'
+import Register from 'widgets/auth/Register'
+import * as Auth from '@morningtrain/react-auth'
+import User from 'widgets/user/User'
+import { Env } from '@morningtrain/helpers'
+import Link from 'widgets/navigation/Link'
+import Section from 'layouts/Section'
+import Notifications from 'widgets/notifications/Notifications'
+import LandlubberBanner from 'widgets/landlubber/LandlubberBanner'
+import { inject } from '@morningtrain/react-decorators'
+import LiveIndicator from 'widgets/tv/LiveIndicator'
+import MeetingBanner from 'widgets/jitsi/MeetingBanner'
 
 @inject(["auth"])
 export default class Navigation extends Widget {
@@ -78,16 +78,19 @@ export default class Navigation extends Widget {
                             <Link className="navigation__link" route={'app.projects.overview'}>Showcases</Link>
                         </li>
                         <li className="navigation__item">
+                            <Link className="navigation__link" href={Env.get('services.codingpirates.guides_url', '#')}>Guides</Link>
+                        </li>
+                        <li className="navigation__item">
                             <Link className="navigation__link" route={'app.courses.overview'}>Kodehavet</Link>
                         </li>
                         <li className="navigation__item navigation__item--has-badge">
                             <Link className="navigation__link" route={'app.tv.index'}>
-                                Coding Pirates TV
+                                TV
                                 <LiveIndicator/>
                             </Link>
                         </li>
                         <li className="navigation__item">
-                            <Link className="navigation__link" route={'app.pages.about'}>Om Piratskibet</Link>
+                            <Link className="navigation__link" route={'app.pages.about'}>Om</Link>
                         </li>
                         <li className="navigation__hidden-desktop">
                             <ul className="navigation__items">

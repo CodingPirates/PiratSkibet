@@ -65,6 +65,7 @@ class AppContext
                     'discord' => [
                         'url' => config('services.discord.url'),
                     ],
+                    'codingpirates' => config('services.codingpirates'),
                 ]
             ];
         });
