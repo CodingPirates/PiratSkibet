@@ -74,6 +74,11 @@
                 padding: 15px;
             }
 
+            &--no-bottom {
+              margin-top: 30px;
+              margin-bottom: 0;
+            }
+
             &__filters {
                 display: flex;
                 align-items: center;

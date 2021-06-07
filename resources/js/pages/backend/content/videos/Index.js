@@ -8,7 +8,6 @@ import * as Actions from 'support/actions/backend'
 
 export default @inject(['router'])
 class Index extends CrudPage {
-
   get resourceName () {
     return 'backend.content.videos'
   }
@@ -19,33 +18,40 @@ class Index extends CrudPage {
 
   get actions () {
     return (
-      <div className="table-actions">
-        <Link route={'backend.content.videos.edit'} label={'Rediger'}
-              parameters={{ video: 'model:id' }}/>
-        <Actions.Delete/>
+      <div className='table-actions'>
+        <Link
+          route='backend.content.videos.edit' label='Rediger'
+          parameters={{ video: 'model:id' }}
+        />
+        <Actions.Delete />
       </div>
     )
   }
 
   get columns () {
     return (
-      <React.Fragment>
-        <Columns.Link name={'link'} />
-        <Columns.Text name={'video_id'} />
-        <Columns.Boolean name={'is_highlighted'}
-                         label={'Highlighted'}
-                         trueText={'Ja'} falseText={'Nej'}/>
-        <Columns.DateTime name={'created_at'} label={'Oprettelsestidspunkt'}/>
-      </React.Fragment>
+      <>
+        <Columns.Text name='title' />
+        <Columns.Link name='link' />
+        <Columns.Text name='video_id' />
+        <Columns.Boolean
+          name='is_highlighted'
+          label='Highlighted'
+          trueText='Ja' falseText='Nej'
+        />
+        <Columns.DateTime name='created_at' label='Oprettelsestidspunkt' />
+      </>
     )
   }
 
   renderBeforeCrud () {
     return (
-      <React.Fragment>
-        <Link route={'backend.content.videos.create'}
-              label={'Opret video'} className={'button button--yellow'}/>
-      </React.Fragment>
+      <>
+        <Link
+          route='backend.content.videos.create'
+          label='Opret video' className='button button--yellow'
+        />
+      </>
     )
   }
 }

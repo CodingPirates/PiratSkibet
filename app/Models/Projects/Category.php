@@ -3,9 +3,11 @@
 namespace App\Models\Projects;
 
 
+use App\Models\Content\Video;
 use App\Support\Traits\Changeable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Category extends Model
 {
@@ -31,6 +33,16 @@ class Category extends Model
     public function projects()
     {
         return $this->belongsToMany(Project::class, 'project_project_categories');
+    }
+
+    public function videos(): BelongsToMany
+    {
+        return $this->belongsToMany(
+            Video::class,
+            'project_category_video',
+            'project_category_id',
+            'video_id'
+        );
     }
 
     public function scopeParent(Builder $q, bool $parent = true)

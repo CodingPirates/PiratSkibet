@@ -8,10 +8,12 @@ use Faker\Generator as Faker;
 
 $factory->define(
     Video::class,
-    function (Faker $faker) {
+    function (Faker $faker): array {
         $date = $faker->dateTimeThisYear();
 
         return [
+            'title'          => $faker->words(random_int(1, 5), true),
+            'description'    => $faker->sentences(random_int(1, 5), true),
             'created_at'     => $date,
             'updated_at'     => $date,
             'video_type'     => VideoTypes::YOUTUBE,
