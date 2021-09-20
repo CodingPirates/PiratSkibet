@@ -17,11 +17,12 @@ class CreateResourceLinksTable extends Migration
             $table->bigIncrements('id');
             $table->string('url');
             $table->string('text');
-            $table->bigInteger('category_id')->unsigned();
+            $table->integer('position')->default(0);
+            $table->unsignedBigInteger('course_category_id');
             $table->timestamps();
 
-            $table->foreign('category_id')
-                ->references('id')->on('categories')
+            $table->foreign('course_category_id')
+                ->references('id')->on('course_categories')
                 ->onDelete('cascade');
         });
     }
