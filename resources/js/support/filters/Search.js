@@ -1,6 +1,7 @@
 import React from 'react';
 import Filter from "@morningtrain/react-filters/Filter";
 import Input from "@morningtrain/react-fields/simpletons/Input";
+import { Env } from '@morningtrain/helpers'
 
 export default class Search extends Filter {
 
@@ -9,6 +10,16 @@ export default class Search extends Filter {
             ...super.defaultProps,
             constraint: 'search'
         };
+    }
+
+    componentDidMount () {
+        const {
+            defaultValue,
+        } = this.props
+
+        if (defaultValue) {
+            this.onSearch(defaultValue)
+        }
     }
 
     /////////////////////////////////
