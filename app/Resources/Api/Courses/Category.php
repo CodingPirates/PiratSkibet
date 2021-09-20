@@ -51,6 +51,7 @@ class Category extends CrudResource
             Filter::create()->always(function (Builder $q) {
                 $q->withCount('completedCourses');
                 $q->withCount('courses');
+                $q->with('resourceLinks');
                 return $q->where('active', '=', true);
             }),
 
