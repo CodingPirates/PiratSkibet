@@ -3,9 +3,12 @@
 namespace App\Resources\Api\Backend\Courses;
 
 use App\Models\Course\CourseCategory as Model;
+use App\Support\Enums\BasicResourceTypes;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
+use MorningTrain\Laravel\Fields\Fields\EnumField;
 use MorningTrain\Laravel\Fields\Fields\Field;
+use MorningTrain\Laravel\Fields\Fields\RelationshipField;
 use MorningTrain\Laravel\Fields\Files\FilesField;
 use MorningTrain\Laravel\Filters\Filters\Filter;
 use MorningTrain\Laravel\Filters\Filters\Order;
@@ -32,6 +35,11 @@ class Category extends CrudResource
 
             FilesField::create('logo')->validates('file|image'),
             FilesField::create('thumbnail')->validates('file|image'),
+
+            RelationshipField::create('resource_links', true)->fields([
+                Field::create('text'),
+                Field::create('url'),
+            ])->removeMissing()->setOrderTo('position'),
         ];
     }
 
@@ -41,6 +49,7 @@ class Category extends CrudResource
             Filter::create()->always(function (Builder $q) {
                 $q->with('logo');
                 $q->with('thumbnail');
+                $q->with('resourceLinks');
             }),
         ]);
     }
