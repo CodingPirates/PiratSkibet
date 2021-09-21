@@ -55,7 +55,7 @@ class CourseCategory extends Model
 
     public function resourceLinks(): HasMany
     {
-        return $this->hasMany(ResourceLink::class);
+        return $this->hasMany(ResourceLink::class)->orderBy('position');
     }
 
 
