@@ -2,7 +2,7 @@
 
 namespace App\Models\Course;
 
-use App\ResourceLink;
+use App\Models\ResourceLink;
 use App\Support\Traits\Changeable;
 use App\Support\Traits\HasUserGeneratedContent;
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
