@@ -7,14 +7,12 @@ import World from 'widgets/animations/worlds/World'
 import Sky from 'widgets/animations/partials/Sky'
 import Water from 'widgets/animations/partials/Water'
 import ScratchIsland from 'widgets/animations/islands/ScratchIsland'
-import * as Displays from 'support/displays'
 import { Heading } from 'support/displays'
 import WebIsland from 'widgets/animations/islands/WebIsland'
 import ProcessingIsland from 'widgets/animations/islands/ProcessingIsland'
 import SonicIsland from 'widgets/animations/islands/SonicIsland'
 import Breadcrumbs from 'widgets/navigation/Breadcrumbs'
 import WhenModel from 'support/conditionals/WhenModel'
-import { Iterator } from '@morningtrain/react-resources'
 
 @inject(['model'])
 export default class CourseCoverWorld extends World {
@@ -53,15 +51,6 @@ export default class CourseCoverWorld extends World {
                     <Heading name={'title'} />
                     <WhenModel>
                         <Breadcrumbs resourceName={'courses.category'} constraints={{category_id: this.props.model.get('id')}} />
-                        <div style={{position: 'absolute', display: 'flex', bottom: '-58px'}}>
-                            <div className={'buttons-wrap'}>
-                                <Iterator collection={this.props.model.get('resource_links')}>
-                                    <Displays.Link name={'url'} className={'button button--pink small'}>
-                                        <Displays.Text name={'text'}/>
-                                    </Displays.Link>
-                                </Iterator>
-                            </div>
-                        </div>
                     </WhenModel>
                 </Section>
             </div>
