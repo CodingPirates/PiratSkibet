@@ -33,8 +33,8 @@ class Category extends CrudResource
     public function configureNewestOperation(Index $operation)
     {
         $operation->filters([
-            Filter::create()->always(function (Builder $q) {
-                $q->where('active', '=', true);
+            Filter::create()->always(function (Builder $query) {
+                $query->where('active', '=', true);
             }),
 
             Order::create()

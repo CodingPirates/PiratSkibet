@@ -46,10 +46,10 @@ class Category extends CrudResource
     public function configureReadOperation(Read $operation)
     {
         $operation->filters([
-            Filter::create()->always(function (Builder $q) {
-                $q->with('logo');
-                $q->with('thumbnail');
-                $q->with('resourceLinks');
+            Filter::create()->always(function (Builder $query) {
+                $query->with('logo');
+                $query->with('thumbnail');
+                $query->with('resourceLinks');
             }),
         ]);
     }
