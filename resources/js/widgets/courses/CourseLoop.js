@@ -4,10 +4,10 @@ import React from 'react'
 import Course from 'widgets/courses/Course'
 import { router } from '@morningtrain/helpers'
 import * as Filters from 'support/filters'
-import * as Auth from '@morningtrain/react-auth'
 import WaterLine from 'widgets/animations/partials/WaterLine'
 import CourseCoverWorld from 'widgets/animations/worlds/CourseCoverWorld'
 import SeaFloorWorld from 'widgets/animations/worlds/SeaFloorWorld'
+import CourseResources from './CourseResources'
 
 export default class CourseLoop extends Widget {
   constructor (props) {
@@ -22,13 +22,14 @@ export default class CourseLoop extends Widget {
     return (
       <div className='courses'>
 
-        <div className='courses-cover-world-wrap'>
-          <Model resourceName='courses.category'>
-            <Filters.Static constraint='slug' value={this.categorySlug} />
-            <CourseCoverWorld />
+          <Model resourceName="courses.category">
+              <div className="courses-cover-world-wrap">
+                  <Filters.Static constraint="slug" value={this.categorySlug}/>
+                  <CourseCoverWorld/>
+                  <WaterLine left="0" bottom="0" zIndex="5"/>
+              </div>
+              <CourseResources/>
           </Model>
-          <WaterLine left='0' bottom='0' zIndex='5' />
-        </div>
 
         <Collection resourceName='courses.courses'>
           <Filters.Static constraint='category_slug' value={this.categorySlug} />

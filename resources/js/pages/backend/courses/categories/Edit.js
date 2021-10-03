@@ -5,6 +5,10 @@ import EditForm from "@morningtrain/react-crud/layouts/read/EditForm";
 import * as Fields from "support/fields";
 import Link from "widgets/navigation/Link";
 import { Fieldset } from "layouts";
+import React from 'react'
+import Text from '../course_resources/Text'
+import Video from '../course_resources/Video'
+import Questionnaire from '../course_resources/Questionnaire'
 
 export default
 @inject(['router'])
@@ -48,6 +52,14 @@ class Edit extends CrudPage {
                     <Fields.Files name={'logo'} label={'Logo på skiltet'} maxFiles={1}/>
                     <Fields.Files name={'thumbnail'} label={'Billede'} maxFiles={1}/>
                 </Fieldset>
+
+                <Fields.Repeater name={'resource_links'}
+                                 addLabel={'Tilføj link'}
+                                 label={'Resource links'}>
+                    <Fields.Hidden name={'id'}/>
+                    <Fields.Input name={'text'}/>
+                    <Fields.Input name={'url'}/>
+                </Fields.Repeater>
 
             </React.Fragment>
         );
