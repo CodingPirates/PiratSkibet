@@ -8,7 +8,7 @@ import Project from "widgets/projects/Project";
 import ViewToggle from "widgets/projects/ViewToggle";
 import Link from "widgets/navigation/Link";
 import * as Auth from "@morningtrain/react-auth";
-import { Env } from '@morningtrain/helpers'
+import { Env, router } from '@morningtrain/helpers'
 import {inject} from "@morningtrain/react-decorators";
 import VideoBot from 'widgets/video-bot/VideoBot';
 
@@ -106,7 +106,7 @@ export default class ProjectsOverview extends Widget {
                             <span className={'subtitle'}>showcase</span>
                             <div className={'filter-bar__filters filter-bar__filters--inputs'}>
                                 <div className="search-wrap">
-                                    <Filters.Search/>
+                                    <Filters.Search defaultValue={router.parameter('search')}/>
                                 </div>
                                 <div className="select-wrap">
                                     <Filters.Enum constraint={'$order'} enum={'generic_order_type'} />
