@@ -109,8 +109,8 @@ return [
     */
 
     'shutdown' => [
-        'to' => env('SHUTDOWN_TO', 390), // 21:30
-        'from' => env('SHUTDOWN_FROM', 1290), // 6:30
+        'to' => env('SHUTDOWN_TO', 390), // 6:30
+        'from' => env('SHUTDOWN_FROM', 1380), // 23:00
         'permissions' => [
             'api.forum.*',
         ],

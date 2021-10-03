@@ -73,7 +73,7 @@ class Shutdown
     public function getFromInSeconds()
     {
         /// Default -> 21:30
-        return config('auth.shutdown.from', 1290) * 60;
+        return config('auth.shutdown.from', 1380) * 60;
     }
 
     public function getToInSeconds()
