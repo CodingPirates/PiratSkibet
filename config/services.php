@@ -71,4 +71,12 @@ return [
         'url' => env('INSTAGRAM_LINK', null),
     ],
 
+    'discord' => [
+        'url' => env('DISCORD_LINK', null),
+    ],
+
+    'codingpirates' => [
+        'guides_url' => env('GUIDES_LINK', null),
+    ],
+
 ];

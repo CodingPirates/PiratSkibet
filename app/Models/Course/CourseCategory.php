@@ -2,10 +2,12 @@
 
 namespace App\Models\Course;
 
+use App\Models\ResourceLink;
 use App\Support\Traits\Changeable;
 use App\Support\Traits\HasUserGeneratedContent;
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use MorningTrain\Laravel\Fields\Files\Models\File;
 
 class CourseCategory extends Model
@@ -49,6 +51,11 @@ class CourseCategory extends Model
     public function thumbnail()
     {
         return $this->belongsTo(File::class);
+    }
+
+    public function resourceLinks(): HasMany
+    {
+        return $this->hasMany(ResourceLink::class)->orderBy('position');
     }
 
 

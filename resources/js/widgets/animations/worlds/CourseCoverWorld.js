@@ -1,20 +1,18 @@
-import React from "react";
-import Section from "layouts/Section";
-import {inject} from "@morningtrain/react-decorators";
+import React from 'react'
+import Section from 'layouts/Section'
+import { inject } from '@morningtrain/react-decorators'
 
-import World from "widgets/animations/worlds/World";
+import World from 'widgets/animations/worlds/World'
 
-import Sky from "widgets/animations/partials/Sky";
-import Water from "widgets/animations/partials/Water";
-import ScratchIsland from "widgets/animations/islands/ScratchIsland";
-
-import CoverScrollTransform from "helpers/CoverScrollTransform";
-import {Heading} from "support/displays";
-import WebIsland from "widgets/animations/islands/WebIsland";
-import ProcessingIsland from "widgets/animations/islands/ProcessingIsland";
-import SonicIsland from "widgets/animations/islands/SonicIsland";
-import Breadcrumbs from 'widgets/navigation/Breadcrumbs';
-import WhenModel from 'support/conditionals/WhenModel';
+import Sky from 'widgets/animations/partials/Sky'
+import Water from 'widgets/animations/partials/Water'
+import ScratchIsland from 'widgets/animations/islands/ScratchIsland'
+import { Heading } from 'support/displays'
+import WebIsland from 'widgets/animations/islands/WebIsland'
+import ProcessingIsland from 'widgets/animations/islands/ProcessingIsland'
+import SonicIsland from 'widgets/animations/islands/SonicIsland'
+import Breadcrumbs from 'widgets/navigation/Breadcrumbs'
+import WhenModel from 'support/conditionals/WhenModel'
 
 @inject(['model'])
 export default class CourseCoverWorld extends World {

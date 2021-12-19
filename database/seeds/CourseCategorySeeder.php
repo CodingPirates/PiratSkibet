@@ -12,7 +12,7 @@ class CourseCategorySeeder extends Seeder
      */
     public function run()
     {
-        factory(\App\Models\Course\CourseCategory::class, 1)->create([
+        $categoryOne = factory(\App\Models\Course\CourseCategory::class, 1)->create([
             'title' => 'Scratch',
             'description' => 'Scratch er et gratis værktøj, som du kan bruge til at programmere dine egne interaktive historier, spil og tegnefilm. Hvis du aldrig har prøvet at programmere før, er Scratch et rigtig godt sted at starte, da Scratch er meget begyndervenligt.',
             'color' => '#f9d12b',
@@ -24,7 +24,11 @@ class CourseCategorySeeder extends Seeder
             },
         ]);
 
-        factory(\App\Models\Course\CourseCategory::class, 1)->create([
+        $categoryOne->first()->resourceLinks()->createMany(
+            factory(\App\Models\ResourceLink::class, 3)->make()->toArray()
+        );
+
+        $categoryTwo = factory(\App\Models\Course\CourseCategory::class, 1)->create([
             'title' => 'Javascript via p5.js',
             'description' => 'p5.js er et JavaScript-bibliotek, der gør kodning let og tilgængelig for børn og unge, der interesserer sig for at kodning inden for design.',
             'color' => '#F7DF1E',
@@ -36,7 +40,11 @@ class CourseCategorySeeder extends Seeder
             },
         ]);
 
-        factory(\App\Models\Course\CourseCategory::class, 1)->create([
+        $categoryTwo->first()->resourceLinks()->createMany(
+            factory(\App\Models\ResourceLink::class, 1)->make()->toArray()
+        );
+
+        $categoryThree = factory(\App\Models\Course\CourseCategory::class, 1)->create([
             'title' => 'Processing.py',
             'color' => '#006673',
             'active' => false,
@@ -47,6 +55,10 @@ class CourseCategorySeeder extends Seeder
                 return File::createFromStorage('public', 'courses/course-placeholder2.png')->id;
             },
         ]);
+
+        $categoryThree->first()->resourceLinks()->createMany(
+            factory(\App\Models\ResourceLink::class, 2)->make()->toArray()
+        );
 
         factory(\App\Models\Course\CourseCategory::class, 1)->create([
             'title' => 'HTML/CSS',
