@@ -17,3 +17,5 @@ yarn-error.log
 .vscode
 .DS_Store
 .rnd
+shell.nix
+docker-compose.yml
