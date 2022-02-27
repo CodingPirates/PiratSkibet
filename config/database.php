@@ -123,16 +123,16 @@ return [
         ],
 
         'default' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
+            'host' => parse_url(env('REDIS_URL'), PHP_URL_HOST),
+            'password' => parse_url(env('REDIS_URL'), PHP_URL_PASS),
+            'port' => parse_url(env('REDIS_URL'), PHP_URL_PORT),
             'database' => env('REDIS_DB', 0),
         ],
 
         'cache' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
+            'host' => parse_url(env('REDIS_URL'), PHP_URL_HOST),
+            'password' => parse_url(env('REDIS_URL'), PHP_URL_PASS),
+            'port' => parse_url(env('REDIS_URL'), PHP_URL_PORT),
             'database' => env('REDIS_CACHE_DB', 1),
         ],
 
