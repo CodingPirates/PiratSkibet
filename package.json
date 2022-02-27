@@ -1,5 +1,10 @@
 {
+    "name": "piratskibet",
     "private": true,
+    "engines": {
+        "node": "10.19.0",
+        "npm": "6.14.2"
+    },
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
