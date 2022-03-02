@@ -22,8 +22,6 @@ class LandlubberRequirements extends ExportableEnum
     {
         return [
             static::BIRTHDAY,
-            static::PARENT_EMAIL,
-            static::EMAIL_VERIFIED_AT,
         ];
     }
 
