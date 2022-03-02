@@ -34,4 +34,21 @@ class LandlubberRequirements extends ExportableEnum
             static::ACCEPTED_PIRATE_VOWS,
         ];
     }
+
+
+    public static function options()
+    {
+        $keys = static::$by_keys ?
+            static::keys() :
+            static::values();
+
+        return collect($keys)
+            ->reject(function ($value){
+                return in_array($value, [static::PARENT_EMAIL, static::EMAIL_VERIFIED_AT], true);
+            })
+            ->reduce(function ($acc, $value) {
+                $acc[$value] = static::translate($value);
+                return $acc;
+            });
+    }
 }
