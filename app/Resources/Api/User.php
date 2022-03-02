@@ -101,7 +101,7 @@ class User extends CrudResource
                 ->validates(function (Model $user) {
                     return $user->hasVerifiedEmail()
                         ? 'in:'.$user->parent_email
-                        : 'required|string|email|different:email|max:255';
+                        : 'nullable|string|email|different:email|max:255';
                 }),
 
             Field::create('description')->validates('nullable|string'),

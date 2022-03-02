@@ -55,7 +55,7 @@ class User extends CrudResource
                 ]);
             }),
 
-            Field::create('parent_email')->validates('required|string|email|different:email|max:255'),
+            Field::create('parent_email')->validates('nullable|string|email|different:email|max:255'),
             Field::create('birthday')->validates('required|date|before:today'),
             Field::create('zipcode')
                 ->validates('required|integer|exists:zipcodes,zipcode')
