@@ -36,7 +36,7 @@ export default class EditUserForm extends React.Component {
             <Fieldset cols={2}>
               <Fields.Input name='name' label='Fulde navn' required />
               <Fields.Input name='email' label='Mail' type='email' required />
-              <Fields.Input name='parent_email' label='Forældremail' type='email' required />
+              <Fields.Input name='parent_email' label='Forældremail' type='email' />
 
               <Fields.Case name='parent_email' exists>
                 <FieldWrapper label='Bekræft forældremail'>
