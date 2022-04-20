@@ -31,7 +31,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
-use MorningTrain\Laravel\Fields\Files\Models\File;
+use \App\Models\File;
 
 class Project extends Model implements Moderateable, OwnedByUser
 {

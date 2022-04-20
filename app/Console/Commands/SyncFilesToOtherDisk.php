@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
-use MorningTrain\Laravel\Fields\Files\Models\File;
+use \App\Models\File;
 
 class SyncFilesToOtherDisk extends Command
 {

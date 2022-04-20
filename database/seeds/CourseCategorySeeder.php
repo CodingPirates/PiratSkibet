@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use MorningTrain\Laravel\Fields\Files\Models\File;
+use \App\Models\File;
 
 class CourseCategorySeeder extends Seeder
 {
