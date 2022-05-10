@@ -20,7 +20,7 @@ return [
     | Here you may specify the filesystem disk that should be used.
     |
     */
-    'disk' => 'uploads',
+    'disk' => env('FILEPOND_DISK', 'uploads'),
 
     /*
     |--------------------------------------------------------------------------

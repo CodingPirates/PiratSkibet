@@ -8,7 +8,7 @@ use App\Support\Traits\HasUserGeneratedContent;
 use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use MorningTrain\Laravel\Fields\Files\Models\File;
+use \App\Models\File;
 
 class CourseCategory extends Model
 {

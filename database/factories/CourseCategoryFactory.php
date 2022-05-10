@@ -5,7 +5,7 @@
 use App\Models\Course\CourseCategory;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
-use MorningTrain\Laravel\Fields\Files\Models\File;
+use \App\Models\File;
 
 $factory->define(CourseCategory::class, function (Faker $faker) {
 
