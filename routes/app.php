@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/piratsnak/{any?}', function () {
-    return redirect(route('app.pages.posts', ['path' => 'piratsnak']));
-})->where('any', '.*');
+// Route::get('/piratsnak/{any?}', function () {
+//     return redirect(route('app.pages.posts', ['path' => 'piratsnak']));
+// })->where('any', '.*');
 
 ResourceRepository::routes('app', ['guard' => 'web']);
