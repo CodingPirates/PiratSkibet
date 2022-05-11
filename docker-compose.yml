@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  db:
+    image: mariadb:latest
+    container_name: piratskibet-db
+    environment:
+      MYSQL_DATABASE: 'homestead'
+      # So you don't have to use root, but you can if you like
+      MYSQL_USER: 'homestead'
+      # You can use whatever password you like
+      MYSQL_PASSWORD: 'secret'
+      # Password for root access
+      MYSQL_ROOT_PASSWORD: 'secret'
+    ports:
+      - "3306:3306"
+  pg-db:
+    image: postgres:latest
+    container_name: piratskib-pg-db
+    environment:
+      - "POSTGRES_HOST_AUTH_METHOD=trust"
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+    ports:
+      - "5432:5432"
+
+  redis:
+      image: redis:latest
+      container_name: piratskibet-redis
+      ports:
+        - '6379:6379'
